@@ -1,0 +1,244 @@
+[
+  {
+    "cornerAlpha" : [
+      0,
+      0,
+      0,
+      0
+    ],
+    "file" : "Assets\/tabby-preferred.png",
+    "hueDegreesP25P50P75" : [
+      25.862068965517235,
+      28.96551724137931,
+      31.058823529411764
+    ],
+    "medianLuma" : 0.36958666666666662,
+    "medianSaturation" : 0.58267716535433067,
+    "opaqueBrownSamples" : 360075,
+    "size" : [
+      1402,
+      1122
+    ],
+    "sourceColorSpace" : "kCGColorSpaceSRGB"
+  },
+  {
+    "cornerAlpha" : [
+      0,
+      0,
+      0,
+      0
+    ],
+    "file" : "Assets\/tabby-stand-center-v2.png",
+    "hueDegreesP25P50P75" : [
+      24.375000000000007,
+      26.153846153846153,
+      28.723404255319146
+    ],
+    "medianLuma" : 0.37353960784313722,
+    "medianSaturation" : 0.56382978723404253,
+    "opaqueBrownSamples" : 350826,
+    "size" : [
+      1402,
+      1122
+    ],
+    "sourceColorSpace" : "kCGColorSpaceSRGB"
+  },
+  {
+    "cornerAlpha" : [
+      0,
+      0,
+      0,
+      0
+    ],
+    "file" : "Assets\/character-model\/v1\/wipe-keyframes.png",
+    "hueDegreesP25P50P75" : [
+      22.758620689655174,
+      24.705882352941185,
+      26.769230769230781
+    ],
+    "medianLuma" : 0.39534509803921569,
+    "medianSaturation" : 0.5730337078651685,
+    "opaqueBrownSamples" : 388018,
+    "size" : [
+      1981,
+      793
+    ],
+    "sourceColorSpace" : "kCGColorSpaceSRGB"
+  },
+  {
+    "cornerAlpha" : [
+      0,
+      0,
+      0,
+      0
+    ],
+    "file" : "Assets\/character-model\/v1\/feeding\/rise-front-v5.png",
+    "hueDegreesP25P50P75" : [
+      20,
+      21.702127659574465,
+      23.305785123966942
+    ],
+    "medianLuma" : 0.38042039215686274,
+    "medianSaturation" : 0.64596273291925466,
+    "opaqueBrownSamples" : 367416,
+    "size" : [
+      1536,
+      1024
+    ],
+    "sourceColorSpace" : "kCGColorSpaceSRGB"
+  },
+  {
+    "cornerAlpha" : [
+      0,
+      0,
+      0,
+      0
+    ],
+    "file" : "Assets\/character-model\/v1\/feeding\/rise-coat-v8.png",
+    "hueDegreesP25P50P75" : [
+      22.941176470588232,
+      24.255319148936167,
+      25.263157894736842
+    ],
+    "medianLuma" : 0.41390823529411763,
+    "medianSaturation" : 0.55629139072847678,
+    "opaqueBrownSamples" : 442060,
+    "size" : [
+      1536,
+      1024
+    ],
+    "sourceColorSpace" : "kCGColorSpaceSRGB"
+  },
+  {
+    "cornerAlpha" : [
+      0,
+      0,
+      0,
+      0
+    ],
+    "file" : "Assets\/character-model\/v1\/feeding\/idle-bridge-v1.png",
+    "hueDegreesP25P50P75" : [
+      23.414634146341463,
+      25.5,
+      27.5
+    ],
+    "medianLuma" : 0.3884078431372549,
+    "medianSaturation" : 0.58163265306122447,
+    "opaqueBrownSamples" : 452582,
+    "size" : [
+      1536,
+      1024
+    ],
+    "sourceColorSpace" : "kCGColorSpaceSRGB"
+  },
+  {
+    "cornerAlpha" : [
+      0,
+      0,
+      0,
+      0
+    ],
+    "file" : "Assets\/character-model\/v1\/feeding\/chew.png",
+    "hueDegreesP25P50P75" : [
+      21.971830985915485,
+      23.999999999999996,
+      26.111111111111107
+    ],
+    "medianLuma" : 0.39341019607843136,
+    "medianSaturation" : 0.59541984732824416,
+    "opaqueBrownSamples" : 402534,
+    "size" : [
+      1983,
+      793
+    ],
+    "sourceColorSpace" : "kCGColorSpaceSRGB"
+  },
+  {
+    "cornerAlpha" : [
+      0,
+      0,
+      0,
+      0
+    ],
+    "file" : "Assets\/character-model\/v1\/feeding\/jump-proportions-v2.png",
+    "hueDegreesP25P50P75" : [
+      22.285714285714288,
+      24.123711340206185,
+      26.000000000000007
+    ],
+    "medianLuma" : 0.38503686274509807,
+    "medianSaturation" : 0.58549222797927458,
+    "opaqueBrownSamples" : 305949,
+    "size" : [
+      1983,
+      793
+    ],
+    "sourceColorSpace" : "kCGColorSpaceSRGB"
+  },
+  {
+    "cornerAlpha" : [
+      0,
+      0,
+      1,
+      0
+    ],
+    "file" : "Assets\/character-model\/v1\/feeding\/turn-back-steps.png",
+    "hueDegreesP25P50P75" : [
+      22.727272727272723,
+      24.857142857142851,
+      26.966292134831466
+    ],
+    "medianLuma" : 0.38590196078431371,
+    "medianSaturation" : 0.5641025641025641,
+    "opaqueBrownSamples" : 457860,
+    "size" : [
+      1402,
+      1122
+    ],
+    "sourceColorSpace" : "kCGColorSpaceSRGB"
+  },
+  {
+    "cornerAlpha" : [
+      0,
+      0,
+      0,
+      0
+    ],
+    "file" : "Assets\/character-model\/v1\/feeding\/return-front-steps.png",
+    "hueDegreesP25P50P75" : [
+      22.962962962962958,
+      25.161290322580648,
+      27.27272727272727
+    ],
+    "medianLuma" : 0.40212313725490201,
+    "medianSaturation" : 0.56756756756756754,
+    "opaqueBrownSamples" : 413222,
+    "size" : [
+      1402,
+      1122
+    ],
+    "sourceColorSpace" : "kCGColorSpaceSRGB"
+  },
+  {
+    "cornerAlpha" : [
+      0,
+      0,
+      0,
+      0
+    ],
+    "file" : "Assets\/character-model\/v1\/feeding\/turn.png",
+    "hueDegreesP25P50P75" : [
+      23.333333333333339,
+      25.263157894736842,
+      27.321428571428573
+    ],
+    "medianLuma" : 0.38839215686274509,
+    "medianSaturation" : 0.57541899441340782,
+    "opaqueBrownSamples" : 471196,
+    "size" : [
+      1983,
+      793
+    ],
+    "sourceColorSpace" : "kCGColorSpaceSRGB"
+  }
+]

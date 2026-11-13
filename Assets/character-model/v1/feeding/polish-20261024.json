@@ -1,0 +1,85 @@
+{
+  "date": "2026-10-24",
+  "status": "integrated-for-review",
+  "generatedWith": "built-in image_gen",
+  "preservedRuntimeClips": [
+    "Idle",
+    "IdleAccent",
+    "Hover"
+  ],
+  "changes": [
+    "Front-facing physical sit/stand; stable endpoint cels shared between consecutive actions",
+    "A small stepping transition connects the feeding front stance to the existing three-quarter idle stance",
+    "Jump head proportions corrected; ground motion ends before landing absorption",
+    "Rapid panel toggles finish physical transitions; queued feeding waits for sit/stand completion",
+    "Native state-machine preview covers idle, notes, feeding, seated companionship and return to existing idle"
+  ],
+  "sources": {
+    "rise-front-v5.png": "exec-7a56220f-c3bd-47e7-9041-2f9dbcc604de.png",
+    "jump-proportions-v2.png": "exec-4551e86a-10fc-44af-8ad4-0d712c87a567.png",
+    "idle-bridge-v1.png": "exec-cf03e733-4eff-42a3-a1fc-553b95a9da21.png"
+  },
+  "prompts": [
+    {
+      "key": "rise-front-v2",
+      "refs": [
+        "/Users/hey/Documents/ChatGPT/桌面宠物/Assets/character-model/v1/wipe-keyframes.png",
+        "/Users/hey/Documents/ChatGPT/桌面宠物/Assets/character-model/v1/standing-front.png",
+        "/Users/hey/Documents/ChatGPT/桌面宠物/Assets/character-model/v1/sitting-front.png",
+        "/Users/hey/Documents/ChatGPT/桌面宠物/Assets/tabby-preferred.png"
+      ],
+      "prompt": "Use case: identity-preserve. Production pixel-art ANIMATION sprite sheet of this exact approved brown tabby. Input 1 first upper-left cel is the seated neutral start we must connect from. Input 2 is the fully front-facing standing END. Input 3 seated model and input 4 original approved identity are immutable references. Draw SIX genuine in-between poses of the seated cat rising to a front-facing stand. Layout exactly 3 columns by 2 rows, transparent PNG, requested canvas 1536x1024, each cell 512x512; one complete cat per cell, no labels, no grid, no floor/shadow/props. Same camera, pixel texture, fixed head size, warm stocky adult tabby identity, round olive eyes, pink nose, cream muzzle/chest, M stripes, thick hooked ringed tail. Head upright and level, nose always centered local x=230, both forefeet planted at same x and baseline y=495. Tail attaches on image right. Do NOT turn sideways or twist the body during rising. Do not make head grow or shrink. Frontal symmetrical physical rise by extending hind knees/hocks and lifting hips: 1 exact neutral seated start with hips low and both forepaws planted; 2 lean weight a little forward over forepaws, elbows slightly soften, head dips slightly forward; 3 hips begin lifting as hind paws pull under pelvis, forelegs still supported; 4 hind hocks extend halfway, hips off floor, belly lifts, no crouched haunch bulges duplicated with standing legs; 5 almost upright, forelegs straighten, hips level out; 6 exact neutral front-facing standing pose of input 2. Exactly 4 anatomical limbs in every cel. Never 4 standing paws plus extra seated feet. Preserve natural full torso length, original head-to-body proportions, no baby/chibi enlargement. Identity, texture and pixel edge treatment MUST match references. Keep all whiskers, ears and tail in each cell. These physical poses must work slowly forward and backward as sit/stand, without camera rotation, image wobble, rubber deformation or texture changes."
+    },
+    {
+      "key": "jump-proportions-v2",
+      "refs": [
+        "/Users/hey/Documents/ChatGPT/桌面宠物/Assets/character-model/v1/feeding/jump.png",
+        "/Users/hey/Documents/ChatGPT/桌面宠物/Assets/character-model/v1/standing-front.png",
+        "/Users/hey/Documents/ChatGPT/桌面宠物/Assets/tabby-preferred.png"
+      ],
+      "prompt": "Use case: precise-object-edit. Input 1 is the existing 4 columns by 2 rows, eight-pose jump animation atlas to correct. Input 2 is the approved front standing master; input 3 original cat identity. Preserve input 1 exact eight poses, frame ordering, atlas layout, transparent background, body stripe map, limbs, paw locations, tail, pixel-art texture, colors and camera. The ONLY correction: the head in the jump atlas has become overlarge relative to the adult stocky body, making it look like a different baby/chibi cat. Reduce each head (including ears and muzzle) by approximately 12 percent around its neck connection, and join the neck fur naturally, to match input 2 head-to-torso proportions. Keep same round face and olive gold eyes, original pink nose and cream muzzle, no elongated face, no thin cat, no redesign. All eight cels must retain the same head size as each other; preserve current head angle and expression in each. Frame1 standing; 2 crouched anticipation; 3 push off with front paws curled and rear legs extended; 4 apex open mouth; 5 apex mouth shut; 6 descending front paws reach floor; 7 landed knees absorbing; 8 return standing. Do not move baseline or change body scale to fit the head. Exactly four anatomical limbs per cel. Transparent PNG, same 4x2 packing, no labels/shadows/grid/props. Do not add a card; runtime draws it. Keep detailed crisp original pixel texture, no smooth vector/painting."
+    },
+    {
+      "key": "idle-bridge-v1",
+      "refs": [
+        "/Users/hey/Documents/ChatGPT/桌面宠物/Assets/character-model/v1/standing-front.png",
+        "/Users/hey/Documents/ChatGPT/桌面宠物/Assets/tabby-stand-center-v2.png",
+        "/Users/hey/Documents/ChatGPT/桌面宠物/Assets/tabby-preferred.png"
+      ],
+      "prompt": "Use case: identity-preserve. A SIX-cel small physical foot adjustment from a front-facing standing tabby (input1) to the existing desktop idle stance (input2). Input3 is approved identity. This is a transition ONLY; preserve the current idle character, not a new idle design. Layout 3 columns x 2 rows transparent PNG, requested 1536x1024, cells512x512; no labels, grid, shadow, props or extra cats. Same stocky adult warm brown tabby face/coat/olive eyes/cream muzzle, large ears, fine pixel-art rendering and thick ringed hooked tail. Exact same scale/head size/pixel texture throughout. Baseline local y=495. Poses read row-major: 1 precisely front-on standing input1. 2 weight shifts gently onto image-right forepaw; image-left forepaw lifts a tiny amount and head remains looking at viewer. 3 lifted forepaw plants slightly forward/left while shoulder turns just 10 degrees; hips lag behind. 4 hind paw steps to image-right under rump, revealing the stocky torso toward screen-right as in input2; front feet support, no hovering. 5 settle into the exact three-quarter BODY stance in input2, head still upright looking forward at viewer. 6 reproduce exact input2 final idle posture including its feet, body pointing toward screen-left but head toward viewer, ringed tail on right. Do not copy the original sideways head tilt from input3; input2 head stays level. Do not rotate entire character like a turntable: lift and plant paws, shoulders before hips. At most a 20–30 degree body adjustment, not a 90 degree side view or a backward turn. Exactly four anatomical limbs, no double forepaw left on ground beneath raised forepaw. Head height and skull size invariant. Preserve original identity and adult proportions, no chibi redesign or painterly smoothing. Full ears/whiskers/tail contained."
+    }
+  ],
+  "corrections": [
+    {
+      "key": "rise-front-v3",
+      "prompt": "Use case: precise-object-edit. Edit ONLY the bottom-left cat (cell 4) in this existing SIX-cel 3-column x 2-row sprite sheet. Preserve all five other cats EXACTLY unchanged: poses, sizes, facial identity, fur texture, colors, location. Cell 4 currently incorrectly turns into a three-quarter side stance. Change ONLY its torso and hind legs to face directly FRONT like the other five cels, while retaining its head exactly upright and same size/position. It is the halfway rise between upper-right (hips lifting) and bottom-middle (almost standing): hips now higher, both hind hocks extending symmetrically under hips, belly lifting, both forepaws still planted at current positions. Both shoulders and both haunches face viewer symmetrically; no sideways rump projecting to the right. Exactly two forelegs and two hindlegs; no extra seated haunch feet. Same original fine pixel tabby texture and original skull size, same tail attached at right. No modification to the cats in cells 1,2,3,5,6. Preserve 1536x1024 PNG and existing per-cell positions. Transparent alpha background, no new backdrop, no shadow, no labels, no props. Only correct cell4 orientation/anatomy.",
+      "source": "exec-f9553fcb-4cf6-469f-a284-9f17a5eae9b7.png"
+    },
+    {
+      "key": "rise-front-v5",
+      "prompt": "Edit this exact SIX-pose SIT-TO-STAND sprite sheet. Preserve the LOWER BODY of every cat: torso, paws, legs, tail and its pose remain unchanged. ONLY enlarge each cat's HEAD AND EARS by 25 percent around the base of the neck. Keep the same round face, eyes, fur and pixel texture. Do NOT change the action. These are SIX sit-to-stand poses, with both forepaws on or near the floor. NO grooming, NO paw at mouth, NO waving, NO wipe, NO eating. Keep all six poses in the same order and 3-column 2-row arrangement. Head enlargement only. Add transparent padding around cells if enlarged ears need room. Transparent background. Do not draw any floor, backdrop, labels or props."
+    }
+  ],
+  "rejected": [
+    {
+      "source": "exec-ce9c9e58-5ad3-4202-af6c-037831ea21ce.png",
+      "reason": "Generated grooming poses instead of sit/stand. Not included in runtime.",
+      "prompt": "Use case: precise-object-edit. Input1 is six front-facing sit-to-stand animation cels being corrected; input2 the existing production seated/wiping cat; input3 the front standing master. IMPORTANT identity correction: the heads in input1 became far too small and the cat now looks skinny compared with input2 and input3. Enlarge ONLY each head/skull/ears/muzzle of input1 by 25 percent relative to its torso, preserving the original broad rounded cheek shape from input2. Use the original large round olive eyes, round cream muzzle, large ears and forehead M; do not sharpen or narrow the face. Keep the exact existing six lower-body poses, exact FOUR limbs, all paw contact points relative to the body, front-facing shoulders/hips, the body size, adult stocky haunches, coat colors, tail and crisp pixel rendering. Do not turn sideways; do not add limbs. Attach enlarged head naturally to same neck position, and keep SAME head size across all six poses; slight positional nod of cel2 may remain. Repack with sufficient transparent margin into 3 columns x 2 rows, requested 1800x1280 PNG, so expanded ears do NOT clip or overlap cells. One cat per cell, all grounded at local y=620, same uniform pixel scale and same global logical body scale in all six. Transparent background only, no brown or gray backdrop, no floor/shadow/labels/grid. This is a proportional consistency repair of input1, NOT a new character/style. The corrected head-to-body ratio must match the round-faced stocky cat in input2 and input3. Preserve lower-body pixels/poses as much as possible; only head size, neck connection, and atlas packing change."
+    },
+    {
+      "source": "rise-front-v3.png",
+      "reason": "Head too small relative to other active poses; superseded by v5."
+    }
+  ],
+  "validation": {
+    "alpha": "All new atlas corner alpha samples are 0; production PNG pixels are unchanged.",
+    "native": "23→24 clips; FaceCard prepares a standing pet without forcing a seated rise.",
+    "checks": [
+      "shared boundary frame identity",
+      "rapid panel toggle continuity",
+      "return to existing idle",
+      "persistent tasks, queue, duplicate feed, undo, cancellation, save failure"
+    ],
+    "ui": "Native window automation timed out; native renderer/state-machine playback inspected in browser. No successful live button-click claim."
+  }
+}

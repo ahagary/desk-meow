@@ -1,0 +1,42 @@
+{
+  "date": "2026-11-12",
+  "status": "provisional-identity-repair",
+  "useCase": "identity-preserve",
+  "source": {
+    "method": "built-in image_gen",
+    "generatedFile": "exec-e4828e6f-fcf2-47ba-b5d1-629c68b77351.png",
+    "projectMaster": "feed-master-v1.png",
+    "runtimeAtlas": "feed-master-v1-normalized.png"
+  },
+  "references": [
+    {"file": "../../tabby-preferred.png", "role": "immutable identity reference"},
+    {"file": "../standing-front.png", "role": "approved front standing support"},
+    {"file": "../sitting-front.png", "role": "approved front sitting support"},
+    {"file": "jump-proportions-v2.png", "role": "motion only"},
+    {"file": "../wipe-keyframes.png", "role": "motion only"}
+  ],
+  "layout": {
+    "columns": 4,
+    "rows": 4,
+    "cellWidth": 315,
+    "cellHeight": 311,
+    "frameOrder": "row-major"
+  },
+  "normalization": "Removed only the fully transparent 1 px right and 3 px bottom generator remainder; visible pixels were not resampled.",
+  "blink": {
+    "runtimeFrame": "feed-master-blink-v3.png",
+    "method": "The body is pixel-identical to master cell 1. Only two feathered eye-shaped regions were transferred from the same master's closed-eye wipe cel with measured 6 px horizontal / 2 px vertical face registration.",
+    "rejectedGeneratedFile": "exec-229ddfee-f1a1-4d0f-97f5-7cfad9dc344e.png",
+    "rejectionReason": "The generated blink redrew the entire character at a different scale and was not integrated."
+  },
+  "promptSummary": "One coherent 4x4 transparent feeding sheet. Image 1 overrides every motion reference. Lock broad round face, olive-gold eye size and spacing, dusty pink nose, cream muzzle/chest, M forehead, warm brown stripe map, stocky body, sturdy paws, large ears and thick hooked ringed tail. Poses: sit, rise, stand, crouch, jump, catch, land, chew, single-paw wipe, physical turn and back view. No extra limbs, props, borders, labels, shadows or background.",
+  "rejectedRuntimeSources": [
+    "rise-coat-v8.png",
+    "jump-proportions-v2.png",
+    "chew.png",
+    "wipe-keyframes.png",
+    "turn-back-steps.png",
+    "return-front-steps.png"
+  ],
+  "reason": "Those separately generated atlases depict visibly different cats when concatenated. They remain archived but are no longer used by the feeding runtime."
+}

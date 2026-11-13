@@ -1,0 +1,2125 @@
+{
+  "canvas": [
+    1402,
+    1122
+  ],
+  "clips": {
+    "Idle": {
+      "loop": true,
+      "provisional": true,
+      "frames": [
+        {
+          "file": "tabby-stand-center-v2.png",
+          "duration": 0.55,
+          "anchor": [
+            701,
+            1089
+          ]
+        },
+        {
+          "file": "tabby-stand-half-left-v3.png",
+          "duration": 0.1,
+          "anchor": [
+            701,
+            1089
+          ]
+        },
+        {
+          "file": "tabby-stand-look-left-v2.png",
+          "duration": 0.22,
+          "anchor": [
+            701,
+            1089
+          ]
+        },
+        {
+          "file": "tabby-stand-half-left-v3.png",
+          "duration": 0.1,
+          "anchor": [
+            701,
+            1089
+          ]
+        },
+        {
+          "file": "tabby-stand-center-v2.png",
+          "duration": 0.26,
+          "anchor": [
+            701,
+            1089
+          ]
+        },
+        {
+          "file": "tabby-stand-ear-twitch-v2.png",
+          "duration": 0.14,
+          "anchor": [
+            701,
+            1089
+          ]
+        },
+        {
+          "file": "tabby-stand-center-v2.png",
+          "duration": 0.38,
+          "anchor": [
+            701,
+            1089
+          ]
+        },
+        {
+          "file": "tabby-stand-half-right-v3.png",
+          "duration": 0.1,
+          "anchor": [
+            701,
+            1089
+          ]
+        },
+        {
+          "file": "tabby-stand-look-right-v2.png",
+          "duration": 0.22,
+          "anchor": [
+            701,
+            1089
+          ]
+        },
+        {
+          "file": "tabby-stand-half-right-v3.png",
+          "duration": 0.1,
+          "anchor": [
+            701,
+            1089
+          ]
+        },
+        {
+          "file": "tabby-stand-center-v2.png",
+          "duration": 0.3,
+          "anchor": [
+            701,
+            1089
+          ]
+        },
+        {
+          "file": "tabby-stand-halfblink-v3.png",
+          "duration": 0.07,
+          "anchor": [
+            701,
+            1089
+          ]
+        },
+        {
+          "file": "tabby-stand-blink-v2.png",
+          "duration": 0.07,
+          "anchor": [
+            701,
+            1089
+          ]
+        },
+        {
+          "file": "tabby-stand-halfblink-v3.png",
+          "duration": 0.07,
+          "anchor": [
+            701,
+            1089
+          ]
+        },
+        {
+          "file": "tabby-stand-center-v2.png",
+          "duration": 0.65,
+          "anchor": [
+            701,
+            1089
+          ]
+        }
+      ]
+    },
+    "IdleAccent": {
+      "loop": false,
+      "provisional": true,
+      "frames": [
+        {
+          "file": "tabby-stand-center-v2.png",
+          "duration": 0.05,
+          "anchor": [
+            701,
+            1089
+          ]
+        },
+        {
+          "file": "tabby-stand-half-left-v3.png",
+          "duration": 0.06,
+          "anchor": [
+            701,
+            1089
+          ]
+        },
+        {
+          "file": "tabby-stand-look-left-v2.png",
+          "duration": 0.07,
+          "anchor": [
+            701,
+            1089
+          ]
+        },
+        {
+          "file": "tabby-stand-half-left-v3.png",
+          "duration": 0.06,
+          "anchor": [
+            701,
+            1089
+          ]
+        },
+        {
+          "file": "tabby-stand-center-v2.png",
+          "duration": 0.05,
+          "anchor": [
+            701,
+            1089
+          ]
+        },
+        {
+          "file": "tabby-stand-half-right-v3.png",
+          "duration": 0.06,
+          "anchor": [
+            701,
+            1089
+          ]
+        },
+        {
+          "file": "tabby-stand-look-right-v2.png",
+          "duration": 0.07,
+          "anchor": [
+            701,
+            1089
+          ]
+        },
+        {
+          "file": "tabby-stand-half-right-v3.png",
+          "duration": 0.06,
+          "anchor": [
+            701,
+            1089
+          ]
+        },
+        {
+          "file": "tabby-stand-center-v2.png",
+          "duration": 0.07,
+          "anchor": [
+            701,
+            1089
+          ]
+        }
+      ]
+    },
+    "Hover": {
+      "loop": true,
+      "provisional": true,
+      "frames": [
+        {
+          "file": "tabby-hover-notice-v2.png",
+          "duration": 0.28,
+          "anchor": [
+            701,
+            1089
+          ]
+        },
+        {
+          "file": "tabby-hover-approach-v3.png",
+          "duration": 0.18,
+          "anchor": [
+            701,
+            1089
+          ]
+        },
+        {
+          "file": "tabby-hover-reach-v2.png",
+          "duration": 0.18,
+          "anchor": [
+            701,
+            1089
+          ]
+        },
+        {
+          "file": "tabby-hover-contact-v2.png",
+          "duration": 0.22,
+          "anchor": [
+            701,
+            1089
+          ]
+        },
+        {
+          "file": "tabby-hover-press-v3.png",
+          "duration": 0.24,
+          "anchor": [
+            701,
+            1089
+          ]
+        },
+        {
+          "file": "tabby-hover-rub-v2.png",
+          "duration": 0.3,
+          "anchor": [
+            701,
+            1089
+          ]
+        },
+        {
+          "file": "tabby-hover-press-v3.png",
+          "duration": 0.22,
+          "anchor": [
+            701,
+            1089
+          ]
+        },
+        {
+          "file": "tabby-hover-contact-v2.png",
+          "duration": 0.18,
+          "anchor": [
+            701,
+            1089
+          ]
+        },
+        {
+          "file": "tabby-hover-recover-v2.png",
+          "duration": 0.26,
+          "anchor": [
+            701,
+            1089
+          ]
+        }
+      ]
+    },
+    "EnterAwait": {
+      "loop": false,
+      "provisional": true,
+      "blendFrames": false,
+      "frames": [
+        {
+          "file": "tabby-stand-center-v2.png",
+          "duration": 0.12,
+          "anchor": [
+            701,
+            1089
+          ]
+        },
+        {
+          "file": "character-model/v1/feeding/feed-master-v1-normalized.png",
+          "sourceRect": [
+            0,
+            933,
+            315,
+            311
+          ],
+          "displaySize": [
+            1181.25,
+            1166.25
+          ],
+          "anchor": [
+            543.75,
+            1091.25
+          ],
+          "mouth": [
+            543.75,
+            423.75
+          ],
+          "duration": 0.12
+        },
+        {
+          "file": "character-model/v1/feeding/feed-master-v1-normalized.png",
+          "sourceRect": [
+            630,
+            0,
+            315,
+            311
+          ],
+          "displaySize": [
+            1181.25,
+            1166.25
+          ],
+          "anchor": [
+            543.75,
+            1076.25
+          ],
+          "mouth": [
+            543.75,
+            468.75
+          ],
+          "duration": 0.12
+        },
+        {
+          "file": "character-model/v1/feeding/feed-master-v1-normalized.png",
+          "sourceRect": [
+            315,
+            0,
+            315,
+            311
+          ],
+          "displaySize": [
+            1181.25,
+            1166.25
+          ],
+          "anchor": [
+            536.25,
+            1076.25
+          ],
+          "mouth": [
+            536.25,
+            513.75
+          ],
+          "duration": 0.12
+        },
+        {
+          "file": "character-model/v1/feeding/feed-master-v1-normalized.png",
+          "sourceRect": [
+            0,
+            0,
+            315,
+            311
+          ],
+          "displaySize": [
+            1181.25,
+            1166.25
+          ],
+          "anchor": [
+            543.75,
+            1080.0
+          ],
+          "mouth": [
+            543.75,
+            480.0
+          ],
+          "duration": 0.16
+        }
+      ]
+    },
+    "AwaitInput": {
+      "loop": true,
+      "provisional": true,
+      "blendFrames": false,
+      "frames": [
+        {
+          "file": "character-model/v1/feeding/feed-master-v1-normalized.png",
+          "sourceRect": [
+            0,
+            0,
+            315,
+            311
+          ],
+          "displaySize": [
+            1181.25,
+            1166.25
+          ],
+          "anchor": [
+            543.75,
+            1080.0
+          ],
+          "mouth": [
+            543.75,
+            480.0
+          ],
+          "duration": 1.35
+        },
+        {
+          "file": "character-model/v1/feeding/feed-master-blink-v3.png",
+          "sourceRect": [
+            0,
+            0,
+            315,
+            311
+          ],
+          "displaySize": [
+            1181.25,
+            1166.25
+          ],
+          "anchor": [
+            543.75,
+            1080.0
+          ],
+          "mouth": [
+            543.75,
+            480.0
+          ],
+          "duration": 0.12
+        },
+        {
+          "file": "character-model/v1/feeding/feed-master-v1-normalized.png",
+          "sourceRect": [
+            0,
+            0,
+            315,
+            311
+          ],
+          "displaySize": [
+            1181.25,
+            1166.25
+          ],
+          "anchor": [
+            543.75,
+            1080.0
+          ],
+          "mouth": [
+            543.75,
+            480.0
+          ],
+          "duration": 1.25
+        }
+      ]
+    },
+    "ExitAwait": {
+      "loop": false,
+      "provisional": true,
+      "blendFrames": false,
+      "frames": [
+        {
+          "file": "character-model/v1/feeding/feed-master-v1-normalized.png",
+          "sourceRect": [
+            0,
+            0,
+            315,
+            311
+          ],
+          "displaySize": [
+            1181.25,
+            1166.25
+          ],
+          "anchor": [
+            543.75,
+            1080.0
+          ],
+          "mouth": [
+            543.75,
+            480.0
+          ],
+          "duration": 0.12
+        },
+        {
+          "file": "character-model/v1/feeding/feed-master-v1-normalized.png",
+          "sourceRect": [
+            315,
+            0,
+            315,
+            311
+          ],
+          "displaySize": [
+            1181.25,
+            1166.25
+          ],
+          "anchor": [
+            536.25,
+            1076.25
+          ],
+          "mouth": [
+            536.25,
+            513.75
+          ],
+          "duration": 0.12
+        },
+        {
+          "file": "character-model/v1/feeding/feed-master-v1-normalized.png",
+          "sourceRect": [
+            630,
+            0,
+            315,
+            311
+          ],
+          "displaySize": [
+            1181.25,
+            1166.25
+          ],
+          "anchor": [
+            543.75,
+            1076.25
+          ],
+          "mouth": [
+            543.75,
+            468.75
+          ],
+          "duration": 0.12
+        },
+        {
+          "file": "character-model/v1/feeding/feed-master-v1-normalized.png",
+          "sourceRect": [
+            945,
+            0,
+            315,
+            311
+          ],
+          "displaySize": [
+            1181.25,
+            1166.25
+          ],
+          "anchor": [
+            543.75,
+            1072.5
+          ],
+          "mouth": [
+            543.75,
+            461.25
+          ],
+          "duration": 0.12
+        },
+        {
+          "file": "character-model/v1/feeding/feed-master-v1-normalized.png",
+          "sourceRect": [
+            0,
+            933,
+            315,
+            311
+          ],
+          "displaySize": [
+            1181.25,
+            1166.25
+          ],
+          "anchor": [
+            543.75,
+            1091.25
+          ],
+          "mouth": [
+            543.75,
+            423.75
+          ],
+          "duration": 0.14
+        },
+        {
+          "file": "tabby-stand-center-v2.png",
+          "duration": 0.16,
+          "anchor": [
+            701,
+            1089
+          ]
+        }
+      ]
+    },
+    "Roam": {
+      "loop": false,
+      "provisional": true,
+      "frames": [
+        {
+          "file": "tabby-preferred.png",
+          "duration": 0.5,
+          "anchor": [
+            701,
+            1089
+          ]
+        },
+        {
+          "file": "tabby-nuzzle.png",
+          "duration": 0.25,
+          "anchor": [
+            701,
+            1094
+          ]
+        }
+      ]
+    },
+    "Play": {
+      "loop": false,
+      "provisional": true,
+      "frames": [
+        {
+          "file": "tabby-preferred.png",
+          "duration": 0.2,
+          "anchor": [
+            701,
+            1089
+          ]
+        },
+        {
+          "file": "tabby-lie.png",
+          "duration": 0.25,
+          "anchor": [
+            701,
+            1033
+          ]
+        },
+        {
+          "file": "tabby-preferred.png",
+          "duration": 0.2,
+          "anchor": [
+            701,
+            1089
+          ]
+        }
+      ]
+    },
+    "PlayYarn": {
+      "loop": false,
+      "provisional": true,
+      "frames": [
+        {
+          "file": "tabby-preferred.png",
+          "duration": 0.2,
+          "anchor": [
+            701,
+            1089
+          ]
+        },
+        {
+          "file": "tabby-nuzzle.png",
+          "duration": 0.25,
+          "anchor": [
+            701,
+            1094
+          ]
+        },
+        {
+          "file": "tabby-preferred.png",
+          "duration": 0.2,
+          "anchor": [
+            701,
+            1089
+          ]
+        }
+      ]
+    },
+    "PlayButterfly": {
+      "loop": false,
+      "provisional": true,
+      "frames": [
+        {
+          "file": "tabby-preferred.png",
+          "duration": 0.2,
+          "anchor": [
+            701,
+            1089
+          ]
+        },
+        {
+          "file": "tabby-jump.png",
+          "duration": 0.25,
+          "anchor": [
+            701,
+            1076
+          ],
+          "mouth": [
+            550,
+            365
+          ]
+        },
+        {
+          "file": "tabby-preferred.png",
+          "duration": 0.2,
+          "anchor": [
+            701,
+            1089
+          ]
+        }
+      ]
+    },
+    "FeedStart": {
+      "loop": false,
+      "provisional": true,
+      "blendFrames": false,
+      "frames": [
+        {
+          "file": "character-model/v1/feeding/feed-master-v1-normalized.png",
+          "sourceRect": [
+            0,
+            0,
+            315,
+            311
+          ],
+          "displaySize": [
+            1181.25,
+            1166.25
+          ],
+          "anchor": [
+            543.75,
+            1080.0
+          ],
+          "mouth": [
+            543.75,
+            480.0
+          ],
+          "duration": 0.55
+        }
+      ]
+    },
+    "Eat": {
+      "loop": false,
+      "provisional": true,
+      "blendFrames": false,
+      "frames": [
+        {
+          "file": "character-model/v1/feeding/feed-master-v1-normalized.png",
+          "sourceRect": [
+            0,
+            0,
+            315,
+            311
+          ],
+          "displaySize": [
+            1181.25,
+            1166.25
+          ],
+          "anchor": [
+            543.75,
+            1080.0
+          ],
+          "mouth": [
+            543.75,
+            480.0
+          ],
+          "duration": 0.12
+        },
+        {
+          "file": "character-model/v1/feeding/feed-master-v1-normalized.png",
+          "sourceRect": [
+            0,
+            622,
+            315,
+            311
+          ],
+          "displaySize": [
+            1181.25,
+            1166.25
+          ],
+          "anchor": [
+            543.75,
+            1080.0
+          ],
+          "mouth": [
+            543.75,
+            487.5
+          ],
+          "duration": 0.12
+        },
+        {
+          "file": "character-model/v1/feeding/feed-master-v1-normalized.png",
+          "sourceRect": [
+            315,
+            622,
+            315,
+            311
+          ],
+          "displaySize": [
+            1181.25,
+            1166.25
+          ],
+          "anchor": [
+            543.75,
+            1080.0
+          ],
+          "mouth": [
+            543.75,
+            495.0
+          ],
+          "duration": 0.13
+        },
+        {
+          "file": "character-model/v1/feeding/feed-master-v1-normalized.png",
+          "sourceRect": [
+            0,
+            622,
+            315,
+            311
+          ],
+          "displaySize": [
+            1181.25,
+            1166.25
+          ],
+          "anchor": [
+            543.75,
+            1080.0
+          ],
+          "mouth": [
+            543.75,
+            487.5
+          ],
+          "duration": 0.12
+        },
+        {
+          "file": "character-model/v1/feeding/feed-master-v1-normalized.png",
+          "sourceRect": [
+            315,
+            622,
+            315,
+            311
+          ],
+          "displaySize": [
+            1181.25,
+            1166.25
+          ],
+          "anchor": [
+            543.75,
+            1080.0
+          ],
+          "mouth": [
+            543.75,
+            495.0
+          ],
+          "duration": 0.13
+        },
+        {
+          "file": "character-model/v1/feeding/feed-master-v1-normalized.png",
+          "sourceRect": [
+            0,
+            622,
+            315,
+            311
+          ],
+          "displaySize": [
+            1181.25,
+            1166.25
+          ],
+          "anchor": [
+            543.75,
+            1080.0
+          ],
+          "mouth": [
+            543.75,
+            487.5
+          ],
+          "duration": 0.12
+        },
+        {
+          "file": "character-model/v1/feeding/feed-master-v1-normalized.png",
+          "sourceRect": [
+            315,
+            622,
+            315,
+            311
+          ],
+          "displaySize": [
+            1181.25,
+            1166.25
+          ],
+          "anchor": [
+            543.75,
+            1080.0
+          ],
+          "mouth": [
+            543.75,
+            495.0
+          ],
+          "duration": 0.13
+        },
+        {
+          "file": "character-model/v1/feeding/feed-master-v1-normalized.png",
+          "sourceRect": [
+            0,
+            622,
+            315,
+            311
+          ],
+          "displaySize": [
+            1181.25,
+            1166.25
+          ],
+          "anchor": [
+            543.75,
+            1080.0
+          ],
+          "mouth": [
+            543.75,
+            487.5
+          ],
+          "duration": 0.16
+        }
+      ]
+    },
+    "Celebrate": {
+      "loop": false,
+      "provisional": true,
+      "frames": [
+        {
+          "file": "tabby-sit.png",
+          "duration": 0.08,
+          "anchor": [
+            701,
+            1083
+          ]
+        },
+        {
+          "file": "tabby-jump.png",
+          "duration": 0.2,
+          "anchor": [
+            701,
+            1076
+          ],
+          "mouth": [
+            550,
+            365
+          ]
+        },
+        {
+          "file": "tabby-sit.png",
+          "duration": 0.1,
+          "anchor": [
+            701,
+            1083
+          ]
+        }
+      ]
+    },
+    "TurnBack": {
+      "loop": false,
+      "provisional": true,
+      "blendFrames": false,
+      "frames": [
+        {
+          "file": "character-model/v1/feeding/feed-master-v1-normalized.png",
+          "sourceRect": [
+            0,
+            933,
+            315,
+            311
+          ],
+          "displaySize": [
+            1181.25,
+            1166.25
+          ],
+          "anchor": [
+            543.75,
+            1091.25
+          ],
+          "mouth": [
+            543.75,
+            423.75
+          ],
+          "duration": 0.14
+        },
+        {
+          "file": "character-model/v1/feeding/feed-master-v1-normalized.png",
+          "sourceRect": [
+            315,
+            933,
+            315,
+            311
+          ],
+          "displaySize": [
+            1181.25,
+            1166.25
+          ],
+          "anchor": [
+            577.5,
+            1087.5
+          ],
+          "mouth": [
+            495.0,
+            435.0
+          ],
+          "duration": 0.18
+        },
+        {
+          "file": "character-model/v1/feeding/feed-master-v1-normalized.png",
+          "sourceRect": [
+            630,
+            933,
+            315,
+            311
+          ],
+          "displaySize": [
+            1181.25,
+            1166.25
+          ],
+          "anchor": [
+            566.25,
+            1087.5
+          ],
+          "mouth": [
+            217.5,
+            397.5
+          ],
+          "duration": 0.2
+        },
+        {
+          "file": "character-model/v1/feeding/feed-master-v1-normalized.png",
+          "sourceRect": [
+            945,
+            933,
+            315,
+            311
+          ],
+          "displaySize": [
+            1181.25,
+            1166.25
+          ],
+          "anchor": [
+            581.25,
+            1083.75
+          ],
+          "mouth": [
+            581.25,
+            393.75
+          ],
+          "duration": 0.2
+        }
+      ]
+    },
+    "Poop": {
+      "loop": false,
+      "provisional": true,
+      "blendFrames": false,
+      "frames": [
+        {
+          "file": "character-model/v1/feeding/feed-master-v1-normalized.png",
+          "sourceRect": [
+            945,
+            933,
+            315,
+            311
+          ],
+          "displaySize": [
+            1181.25,
+            1166.25
+          ],
+          "anchor": [
+            581.25,
+            1083.75
+          ],
+          "mouth": [
+            581.25,
+            393.75
+          ],
+          "duration": 0.82
+        }
+      ]
+    },
+    "Proud": {
+      "loop": false,
+      "provisional": true,
+      "blendFrames": false,
+      "frames": [
+        {
+          "file": "character-model/v1/feeding/feed-master-v1-normalized.png",
+          "sourceRect": [
+            0,
+            933,
+            315,
+            311
+          ],
+          "displaySize": [
+            1181.25,
+            1166.25
+          ],
+          "anchor": [
+            543.75,
+            1091.25
+          ],
+          "mouth": [
+            543.75,
+            423.75
+          ],
+          "duration": 0.1
+        },
+        {
+          "file": "character-model/v1/feeding/feed-master-v1-normalized.png",
+          "sourceRect": [
+            630,
+            0,
+            315,
+            311
+          ],
+          "displaySize": [
+            1181.25,
+            1166.25
+          ],
+          "anchor": [
+            543.75,
+            1076.25
+          ],
+          "mouth": [
+            543.75,
+            468.75
+          ],
+          "duration": 0.12
+        },
+        {
+          "file": "character-model/v1/feeding/feed-master-v1-normalized.png",
+          "sourceRect": [
+            315,
+            0,
+            315,
+            311
+          ],
+          "displaySize": [
+            1181.25,
+            1166.25
+          ],
+          "anchor": [
+            536.25,
+            1076.25
+          ],
+          "mouth": [
+            536.25,
+            513.75
+          ],
+          "duration": 0.12
+        },
+        {
+          "file": "character-model/v1/feeding/feed-master-v1-normalized.png",
+          "sourceRect": [
+            0,
+            0,
+            315,
+            311
+          ],
+          "displaySize": [
+            1181.25,
+            1166.25
+          ],
+          "anchor": [
+            543.75,
+            1080.0
+          ],
+          "mouth": [
+            543.75,
+            480.0
+          ],
+          "duration": 0.22
+        },
+        {
+          "file": "character-model/v1/feeding/feed-master-blink-v3.png",
+          "sourceRect": [
+            0,
+            0,
+            315,
+            311
+          ],
+          "displaySize": [
+            1181.25,
+            1166.25
+          ],
+          "anchor": [
+            543.75,
+            1080.0
+          ],
+          "mouth": [
+            543.75,
+            480.0
+          ],
+          "duration": 0.12
+        },
+        {
+          "file": "character-model/v1/feeding/feed-master-v1-normalized.png",
+          "sourceRect": [
+            0,
+            0,
+            315,
+            311
+          ],
+          "displaySize": [
+            1181.25,
+            1166.25
+          ],
+          "anchor": [
+            543.75,
+            1080.0
+          ],
+          "mouth": [
+            543.75,
+            480.0
+          ],
+          "duration": 0.34
+        }
+      ]
+    },
+    "Rise": {
+      "loop": false,
+      "provisional": true,
+      "blendFrames": false,
+      "frames": [
+        {
+          "file": "character-model/v1/feeding/feed-master-v1-normalized.png",
+          "sourceRect": [
+            0,
+            0,
+            315,
+            311
+          ],
+          "displaySize": [
+            1181.25,
+            1166.25
+          ],
+          "anchor": [
+            543.75,
+            1080.0
+          ],
+          "mouth": [
+            543.75,
+            480.0
+          ],
+          "duration": 0.12
+        },
+        {
+          "file": "character-model/v1/feeding/feed-master-v1-normalized.png",
+          "sourceRect": [
+            315,
+            0,
+            315,
+            311
+          ],
+          "displaySize": [
+            1181.25,
+            1166.25
+          ],
+          "anchor": [
+            536.25,
+            1076.25
+          ],
+          "mouth": [
+            536.25,
+            513.75
+          ],
+          "duration": 0.12
+        },
+        {
+          "file": "character-model/v1/feeding/feed-master-v1-normalized.png",
+          "sourceRect": [
+            630,
+            0,
+            315,
+            311
+          ],
+          "displaySize": [
+            1181.25,
+            1166.25
+          ],
+          "anchor": [
+            543.75,
+            1076.25
+          ],
+          "mouth": [
+            543.75,
+            468.75
+          ],
+          "duration": 0.12
+        },
+        {
+          "file": "character-model/v1/feeding/feed-master-v1-normalized.png",
+          "sourceRect": [
+            945,
+            0,
+            315,
+            311
+          ],
+          "displaySize": [
+            1181.25,
+            1166.25
+          ],
+          "anchor": [
+            543.75,
+            1072.5
+          ],
+          "mouth": [
+            543.75,
+            461.25
+          ],
+          "duration": 0.12
+        },
+        {
+          "file": "character-model/v1/feeding/feed-master-v1-normalized.png",
+          "sourceRect": [
+            0,
+            933,
+            315,
+            311
+          ],
+          "displaySize": [
+            1181.25,
+            1166.25
+          ],
+          "anchor": [
+            543.75,
+            1091.25
+          ],
+          "mouth": [
+            543.75,
+            423.75
+          ],
+          "duration": 0.14
+        }
+      ]
+    },
+    "CatchCard": {
+      "loop": false,
+      "provisional": true,
+      "blendFrames": false,
+      "frames": [
+        {
+          "file": "character-model/v1/feeding/feed-master-v1-normalized.png",
+          "sourceRect": [
+            0,
+            933,
+            315,
+            311
+          ],
+          "displaySize": [
+            1181.25,
+            1166.25
+          ],
+          "anchor": [
+            543.75,
+            1091.25
+          ],
+          "mouth": [
+            543.75,
+            423.75
+          ],
+          "duration": 0.12
+        },
+        {
+          "file": "character-model/v1/feeding/feed-master-v1-normalized.png",
+          "sourceRect": [
+            0,
+            311,
+            315,
+            311
+          ],
+          "displaySize": [
+            1181.25,
+            1166.25
+          ],
+          "anchor": [
+            525.0,
+            1095.0
+          ],
+          "mouth": [
+            525.0,
+            701.25
+          ],
+          "duration": 0.14
+        },
+        {
+          "file": "character-model/v1/feeding/feed-master-v1-normalized.png",
+          "sourceRect": [
+            315,
+            311,
+            315,
+            311
+          ],
+          "displaySize": [
+            1181.25,
+            1166.25
+          ],
+          "anchor": [
+            562.5,
+            1095.0
+          ],
+          "mouth": [
+            562.5,
+            393.75
+          ],
+          "duration": 0.13
+        },
+        {
+          "file": "character-model/v1/feeding/feed-master-v1-normalized.png",
+          "sourceRect": [
+            630,
+            311,
+            315,
+            311
+          ],
+          "displaySize": [
+            1181.25,
+            1166.25
+          ],
+          "anchor": [
+            562.5,
+            1095.0
+          ],
+          "mouth": [
+            562.5,
+            416.25
+          ],
+          "duration": 0.18
+        },
+        {
+          "file": "character-model/v1/feeding/feed-master-v1-normalized.png",
+          "sourceRect": [
+            315,
+            311,
+            315,
+            311
+          ],
+          "displaySize": [
+            1181.25,
+            1166.25
+          ],
+          "anchor": [
+            562.5,
+            1095.0
+          ],
+          "mouth": [
+            562.5,
+            393.75
+          ],
+          "duration": 0.1
+        },
+        {
+          "file": "character-model/v1/feeding/feed-master-v1-normalized.png",
+          "sourceRect": [
+            945,
+            311,
+            315,
+            311
+          ],
+          "displaySize": [
+            1181.25,
+            1166.25
+          ],
+          "anchor": [
+            525.0,
+            1095.0
+          ],
+          "mouth": [
+            525.0,
+            675.0
+          ],
+          "duration": 0.16
+        }
+      ]
+    },
+    "ReturnFront": {
+      "loop": false,
+      "provisional": true,
+      "blendFrames": false,
+      "frames": [
+        {
+          "file": "character-model/v1/feeding/feed-master-v1-normalized.png",
+          "sourceRect": [
+            945,
+            933,
+            315,
+            311
+          ],
+          "displaySize": [
+            1181.25,
+            1166.25
+          ],
+          "anchor": [
+            581.25,
+            1083.75
+          ],
+          "mouth": [
+            581.25,
+            393.75
+          ],
+          "duration": 0.16
+        },
+        {
+          "file": "character-model/v1/feeding/feed-master-v1-normalized.png",
+          "sourceRect": [
+            630,
+            933,
+            315,
+            311
+          ],
+          "displaySize": [
+            1181.25,
+            1166.25
+          ],
+          "anchor": [
+            566.25,
+            1087.5
+          ],
+          "mouth": [
+            217.5,
+            397.5
+          ],
+          "duration": 0.2
+        },
+        {
+          "file": "character-model/v1/feeding/feed-master-v1-normalized.png",
+          "sourceRect": [
+            315,
+            933,
+            315,
+            311
+          ],
+          "displaySize": [
+            1181.25,
+            1166.25
+          ],
+          "anchor": [
+            577.5,
+            1087.5
+          ],
+          "mouth": [
+            495.0,
+            435.0
+          ],
+          "duration": 0.18
+        },
+        {
+          "file": "character-model/v1/feeding/feed-master-v1-normalized.png",
+          "sourceRect": [
+            0,
+            933,
+            315,
+            311
+          ],
+          "displaySize": [
+            1181.25,
+            1166.25
+          ],
+          "anchor": [
+            543.75,
+            1091.25
+          ],
+          "mouth": [
+            543.75,
+            423.75
+          ],
+          "duration": 0.16
+        }
+      ]
+    },
+    "Settle": {
+      "loop": false,
+      "provisional": true,
+      "blendFrames": false,
+      "frames": [
+        {
+          "file": "character-model/v1/feeding/feed-master-v1-normalized.png",
+          "sourceRect": [
+            945,
+            311,
+            315,
+            311
+          ],
+          "displaySize": [
+            1181.25,
+            1166.25
+          ],
+          "anchor": [
+            525.0,
+            1095.0
+          ],
+          "mouth": [
+            525.0,
+            675.0
+          ],
+          "duration": 0.12
+        },
+        {
+          "file": "character-model/v1/feeding/feed-master-v1-normalized.png",
+          "sourceRect": [
+            0,
+            311,
+            315,
+            311
+          ],
+          "displaySize": [
+            1181.25,
+            1166.25
+          ],
+          "anchor": [
+            525.0,
+            1095.0
+          ],
+          "mouth": [
+            525.0,
+            701.25
+          ],
+          "duration": 0.12
+        },
+        {
+          "file": "character-model/v1/feeding/feed-master-v1-normalized.png",
+          "sourceRect": [
+            945,
+            0,
+            315,
+            311
+          ],
+          "displaySize": [
+            1181.25,
+            1166.25
+          ],
+          "anchor": [
+            543.75,
+            1072.5
+          ],
+          "mouth": [
+            543.75,
+            461.25
+          ],
+          "duration": 0.1
+        },
+        {
+          "file": "character-model/v1/feeding/feed-master-v1-normalized.png",
+          "sourceRect": [
+            630,
+            0,
+            315,
+            311
+          ],
+          "displaySize": [
+            1181.25,
+            1166.25
+          ],
+          "anchor": [
+            543.75,
+            1076.25
+          ],
+          "mouth": [
+            543.75,
+            468.75
+          ],
+          "duration": 0.11
+        },
+        {
+          "file": "character-model/v1/feeding/feed-master-v1-normalized.png",
+          "sourceRect": [
+            315,
+            0,
+            315,
+            311
+          ],
+          "displaySize": [
+            1181.25,
+            1166.25
+          ],
+          "anchor": [
+            536.25,
+            1076.25
+          ],
+          "mouth": [
+            536.25,
+            513.75
+          ],
+          "duration": 0.12
+        },
+        {
+          "file": "character-model/v1/feeding/feed-master-v1-normalized.png",
+          "sourceRect": [
+            0,
+            0,
+            315,
+            311
+          ],
+          "displaySize": [
+            1181.25,
+            1166.25
+          ],
+          "anchor": [
+            543.75,
+            1080.0
+          ],
+          "mouth": [
+            543.75,
+            480.0
+          ],
+          "duration": 0.18
+        }
+      ]
+    },
+    "Swallow": {
+      "loop": false,
+      "provisional": true,
+      "blendFrames": false,
+      "frames": [
+        {
+          "file": "character-model/v1/feeding/feed-master-v1-normalized.png",
+          "sourceRect": [
+            0,
+            622,
+            315,
+            311
+          ],
+          "displaySize": [
+            1181.25,
+            1166.25
+          ],
+          "anchor": [
+            543.75,
+            1080.0
+          ],
+          "mouth": [
+            543.75,
+            487.5
+          ],
+          "duration": 0.08
+        },
+        {
+          "file": "character-model/v1/feeding/feed-master-v1-normalized.png",
+          "sourceRect": [
+            315,
+            622,
+            315,
+            311
+          ],
+          "displaySize": [
+            1181.25,
+            1166.25
+          ],
+          "anchor": [
+            543.75,
+            1080.0
+          ],
+          "mouth": [
+            543.75,
+            495.0
+          ],
+          "duration": 0.1
+        },
+        {
+          "file": "character-model/v1/feeding/feed-master-v1-normalized.png",
+          "sourceRect": [
+            0,
+            622,
+            315,
+            311
+          ],
+          "displaySize": [
+            1181.25,
+            1166.25
+          ],
+          "anchor": [
+            543.75,
+            1080.0
+          ],
+          "mouth": [
+            543.75,
+            487.5
+          ],
+          "duration": 0.12
+        },
+        {
+          "file": "character-model/v1/feeding/feed-master-v1-normalized.png",
+          "sourceRect": [
+            0,
+            0,
+            315,
+            311
+          ],
+          "displaySize": [
+            1181.25,
+            1166.25
+          ],
+          "anchor": [
+            543.75,
+            1080.0
+          ],
+          "mouth": [
+            543.75,
+            480.0
+          ],
+          "duration": 0.18
+        }
+      ]
+    },
+    "WipeMouth": {
+      "loop": false,
+      "provisional": true,
+      "blendFrames": false,
+      "frames": [
+        {
+          "file": "character-model/v1/feeding/feed-master-v1-normalized.png",
+          "sourceRect": [
+            0,
+            0,
+            315,
+            311
+          ],
+          "displaySize": [
+            1181.25,
+            1166.25
+          ],
+          "anchor": [
+            543.75,
+            1080.0
+          ],
+          "mouth": [
+            543.75,
+            480.0
+          ],
+          "duration": 0.18
+        },
+        {
+          "file": "character-model/v1/feeding/feed-master-v1-normalized.png",
+          "sourceRect": [
+            630,
+            622,
+            315,
+            311
+          ],
+          "displaySize": [
+            1181.25,
+            1166.25
+          ],
+          "anchor": [
+            543.75,
+            1080.0
+          ],
+          "mouth": [
+            543.75,
+            487.5
+          ],
+          "duration": 0.15
+        },
+        {
+          "file": "character-model/v1/feeding/feed-master-v1-normalized.png",
+          "sourceRect": [
+            945,
+            622,
+            315,
+            311
+          ],
+          "displaySize": [
+            1181.25,
+            1166.25
+          ],
+          "anchor": [
+            543.75,
+            1080.0
+          ],
+          "mouth": [
+            525.0,
+            498.75
+          ],
+          "duration": 0.24
+        },
+        {
+          "file": "character-model/v1/feeding/feed-master-v1-normalized.png",
+          "sourceRect": [
+            630,
+            622,
+            315,
+            311
+          ],
+          "displaySize": [
+            1181.25,
+            1166.25
+          ],
+          "anchor": [
+            543.75,
+            1080.0
+          ],
+          "mouth": [
+            543.75,
+            487.5
+          ],
+          "duration": 0.17
+        },
+        {
+          "file": "character-model/v1/feeding/feed-master-v1-normalized.png",
+          "sourceRect": [
+            945,
+            622,
+            315,
+            311
+          ],
+          "displaySize": [
+            1181.25,
+            1166.25
+          ],
+          "anchor": [
+            543.75,
+            1080.0
+          ],
+          "mouth": [
+            525.0,
+            498.75
+          ],
+          "duration": 0.22
+        },
+        {
+          "file": "character-model/v1/feeding/feed-master-v1-normalized.png",
+          "sourceRect": [
+            630,
+            622,
+            315,
+            311
+          ],
+          "displaySize": [
+            1181.25,
+            1166.25
+          ],
+          "anchor": [
+            543.75,
+            1080.0
+          ],
+          "mouth": [
+            543.75,
+            487.5
+          ],
+          "duration": 0.16
+        },
+        {
+          "file": "character-model/v1/feeding/feed-master-v1-normalized.png",
+          "sourceRect": [
+            0,
+            622,
+            315,
+            311
+          ],
+          "displaySize": [
+            1181.25,
+            1166.25
+          ],
+          "anchor": [
+            543.75,
+            1080.0
+          ],
+          "mouth": [
+            543.75,
+            487.5
+          ],
+          "duration": 0.18
+        },
+        {
+          "file": "character-model/v1/feeding/feed-master-v1-normalized.png",
+          "sourceRect": [
+            0,
+            0,
+            315,
+            311
+          ],
+          "displaySize": [
+            1181.25,
+            1166.25
+          ],
+          "anchor": [
+            543.75,
+            1080.0
+          ],
+          "mouth": [
+            543.75,
+            480.0
+          ],
+          "duration": 0.18
+        }
+      ]
+    },
+    "StandAfterWipe": {
+      "loop": false,
+      "provisional": true,
+      "blendFrames": false,
+      "frames": [
+        {
+          "file": "character-model/v1/feeding/feed-master-v1-normalized.png",
+          "sourceRect": [
+            0,
+            0,
+            315,
+            311
+          ],
+          "displaySize": [
+            1181.25,
+            1166.25
+          ],
+          "anchor": [
+            543.75,
+            1080.0
+          ],
+          "mouth": [
+            543.75,
+            480.0
+          ],
+          "duration": 0.1
+        },
+        {
+          "file": "character-model/v1/feeding/feed-master-v1-normalized.png",
+          "sourceRect": [
+            315,
+            0,
+            315,
+            311
+          ],
+          "displaySize": [
+            1181.25,
+            1166.25
+          ],
+          "anchor": [
+            536.25,
+            1076.25
+          ],
+          "mouth": [
+            536.25,
+            513.75
+          ],
+          "duration": 0.12
+        },
+        {
+          "file": "character-model/v1/feeding/feed-master-v1-normalized.png",
+          "sourceRect": [
+            630,
+            0,
+            315,
+            311
+          ],
+          "displaySize": [
+            1181.25,
+            1166.25
+          ],
+          "anchor": [
+            543.75,
+            1076.25
+          ],
+          "mouth": [
+            543.75,
+            468.75
+          ],
+          "duration": 0.12
+        },
+        {
+          "file": "character-model/v1/feeding/feed-master-v1-normalized.png",
+          "sourceRect": [
+            0,
+            933,
+            315,
+            311
+          ],
+          "displaySize": [
+            1181.25,
+            1166.25
+          ],
+          "anchor": [
+            543.75,
+            1091.25
+          ],
+          "mouth": [
+            543.75,
+            423.75
+          ],
+          "duration": 0.12
+        }
+      ]
+    },
+    "FaceCard": {
+      "loop": false,
+      "provisional": true,
+      "blendFrames": false,
+      "frames": [
+        {
+          "file": "tabby-stand-center-v2.png",
+          "duration": 0.12,
+          "anchor": [
+            701,
+            1089
+          ]
+        },
+        {
+          "file": "character-model/v1/feeding/feed-master-v1-normalized.png",
+          "sourceRect": [
+            0,
+            933,
+            315,
+            311
+          ],
+          "displaySize": [
+            1181.25,
+            1166.25
+          ],
+          "anchor": [
+            543.75,
+            1091.25
+          ],
+          "mouth": [
+            543.75,
+            423.75
+          ],
+          "duration": 0.12
+        }
+      ]
+    }
+  },
+  "formatNotes": {
+    "sourceRectOrigin": "top-left",
+    "displaySize": "logical size of a tightly packed cel; does not stretch it to the full canvas",
+    "anchors": "logical top-left cel coordinates; fixed anatomical root and ground",
+    "modelVersion": "character-model-v1-feed-master-v1",
+    "animationStatus": "integrated-for-review",
+    "identity": "All feeding poses come from one 4x4 identity-locked master atlas.",
+    "turns": "Body-drawn front, three-quarter, side-back and back poses; no rotation transform."
+  }
+}

@@ -1,0 +1,1967 @@
+{
+  "canvas": [
+    1402,
+    1122
+  ],
+  "frames": {
+    "feed-master-v1-normalized": [
+      {
+        "file": "character-model/v1/feeding/feed-master-v1-normalized.png",
+        "sourceRect": [
+          0,
+          0,
+          315,
+          311
+        ],
+        "displaySize": [
+          1181.25,
+          1166.25
+        ],
+        "anchor": [
+          543.75,
+          1080.0
+        ],
+        "mouth": [
+          543.75,
+          480.0
+        ]
+      },
+      {
+        "file": "character-model/v1/feeding/feed-master-v1-normalized.png",
+        "sourceRect": [
+          315,
+          0,
+          315,
+          311
+        ],
+        "displaySize": [
+          1181.25,
+          1166.25
+        ],
+        "anchor": [
+          536.25,
+          1076.25
+        ],
+        "mouth": [
+          536.25,
+          513.75
+        ]
+      },
+      {
+        "file": "character-model/v1/feeding/feed-master-v1-normalized.png",
+        "sourceRect": [
+          630,
+          0,
+          315,
+          311
+        ],
+        "displaySize": [
+          1181.25,
+          1166.25
+        ],
+        "anchor": [
+          543.75,
+          1076.25
+        ],
+        "mouth": [
+          543.75,
+          468.75
+        ]
+      },
+      {
+        "file": "character-model/v1/feeding/feed-master-v1-normalized.png",
+        "sourceRect": [
+          945,
+          0,
+          315,
+          311
+        ],
+        "displaySize": [
+          1181.25,
+          1166.25
+        ],
+        "anchor": [
+          543.75,
+          1072.5
+        ],
+        "mouth": [
+          543.75,
+          461.25
+        ]
+      },
+      {
+        "file": "character-model/v1/feeding/feed-master-v1-normalized.png",
+        "sourceRect": [
+          0,
+          311,
+          315,
+          311
+        ],
+        "displaySize": [
+          1181.25,
+          1166.25
+        ],
+        "anchor": [
+          525.0,
+          1095.0
+        ],
+        "mouth": [
+          525.0,
+          701.25
+        ]
+      },
+      {
+        "file": "character-model/v1/feeding/feed-master-v1-normalized.png",
+        "sourceRect": [
+          315,
+          311,
+          315,
+          311
+        ],
+        "displaySize": [
+          1181.25,
+          1166.25
+        ],
+        "anchor": [
+          562.5,
+          1095.0
+        ],
+        "mouth": [
+          562.5,
+          393.75
+        ]
+      },
+      {
+        "file": "character-model/v1/feeding/feed-master-v1-normalized.png",
+        "sourceRect": [
+          630,
+          311,
+          315,
+          311
+        ],
+        "displaySize": [
+          1181.25,
+          1166.25
+        ],
+        "anchor": [
+          562.5,
+          1095.0
+        ],
+        "mouth": [
+          562.5,
+          416.25
+        ]
+      },
+      {
+        "file": "character-model/v1/feeding/feed-master-v1-normalized.png",
+        "sourceRect": [
+          945,
+          311,
+          315,
+          311
+        ],
+        "displaySize": [
+          1181.25,
+          1166.25
+        ],
+        "anchor": [
+          525.0,
+          1095.0
+        ],
+        "mouth": [
+          525.0,
+          675.0
+        ]
+      },
+      {
+        "file": "character-model/v1/feeding/feed-master-v1-normalized.png",
+        "sourceRect": [
+          0,
+          622,
+          315,
+          311
+        ],
+        "displaySize": [
+          1181.25,
+          1166.25
+        ],
+        "anchor": [
+          543.75,
+          1080.0
+        ],
+        "mouth": [
+          543.75,
+          487.5
+        ]
+      },
+      {
+        "file": "character-model/v1/feeding/feed-master-v1-normalized.png",
+        "sourceRect": [
+          315,
+          622,
+          315,
+          311
+        ],
+        "displaySize": [
+          1181.25,
+          1166.25
+        ],
+        "anchor": [
+          543.75,
+          1080.0
+        ],
+        "mouth": [
+          543.75,
+          495.0
+        ]
+      },
+      {
+        "file": "character-model/v1/feeding/feed-master-v1-normalized.png",
+        "sourceRect": [
+          630,
+          622,
+          315,
+          311
+        ],
+        "displaySize": [
+          1181.25,
+          1166.25
+        ],
+        "anchor": [
+          543.75,
+          1080.0
+        ],
+        "mouth": [
+          543.75,
+          487.5
+        ]
+      },
+      {
+        "file": "character-model/v1/feeding/feed-master-v1-normalized.png",
+        "sourceRect": [
+          945,
+          622,
+          315,
+          311
+        ],
+        "displaySize": [
+          1181.25,
+          1166.25
+        ],
+        "anchor": [
+          543.75,
+          1080.0
+        ],
+        "mouth": [
+          525.0,
+          498.75
+        ]
+      },
+      {
+        "file": "character-model/v1/feeding/feed-master-v1-normalized.png",
+        "sourceRect": [
+          0,
+          933,
+          315,
+          311
+        ],
+        "displaySize": [
+          1181.25,
+          1166.25
+        ],
+        "anchor": [
+          543.75,
+          1091.25
+        ],
+        "mouth": [
+          543.75,
+          423.75
+        ]
+      },
+      {
+        "file": "character-model/v1/feeding/feed-master-v1-normalized.png",
+        "sourceRect": [
+          315,
+          933,
+          315,
+          311
+        ],
+        "displaySize": [
+          1181.25,
+          1166.25
+        ],
+        "anchor": [
+          577.5,
+          1087.5
+        ],
+        "mouth": [
+          495.0,
+          435.0
+        ]
+      },
+      {
+        "file": "character-model/v1/feeding/feed-master-v1-normalized.png",
+        "sourceRect": [
+          630,
+          933,
+          315,
+          311
+        ],
+        "displaySize": [
+          1181.25,
+          1166.25
+        ],
+        "anchor": [
+          566.25,
+          1087.5
+        ],
+        "mouth": [
+          217.5,
+          397.5
+        ]
+      },
+      {
+        "file": "character-model/v1/feeding/feed-master-v1-normalized.png",
+        "sourceRect": [
+          945,
+          933,
+          315,
+          311
+        ],
+        "displaySize": [
+          1181.25,
+          1166.25
+        ],
+        "anchor": [
+          581.25,
+          1083.75
+        ],
+        "mouth": [
+          581.25,
+          393.75
+        ]
+      }
+    ],
+    "feed-master-blink-v3": [
+      {
+        "file": "character-model/v1/feeding/feed-master-blink-v3.png",
+        "sourceRect": [
+          0,
+          0,
+          315,
+          311
+        ],
+        "displaySize": [
+          1181.25,
+          1166.25
+        ],
+        "anchor": [
+          543.75,
+          1080.0
+        ],
+        "mouth": [
+          543.75,
+          480.0
+        ]
+      }
+    ],
+    "rise-coat-v8": [
+      {
+        "file": "character-model/v1/feeding/rise-coat-v8.png",
+        "sourceRect": [
+          78,
+          7,
+          431,
+          461
+        ],
+        "displaySize": [
+          905.1,
+          968.1
+        ],
+        "anchor": [
+          346.5,
+          955.5
+        ],
+        "mouth": [
+          352.8,
+          443.1
+        ]
+      },
+      {
+        "file": "character-model/v1/feeding/rise-coat-v8.png",
+        "sourceRect": [
+          577,
+          8,
+          447,
+          460
+        ],
+        "displaySize": [
+          938.7,
+          966.0
+        ],
+        "anchor": [
+          367.5,
+          953.4
+        ],
+        "mouth": [
+          367.5,
+          457.8
+        ]
+      },
+      {
+        "file": "character-model/v1/feeding/rise-coat-v8.png",
+        "sourceRect": [
+          1092,
+          6,
+          432,
+          462
+        ],
+        "displaySize": [
+          907.2,
+          970.2
+        ],
+        "anchor": [
+          361.2,
+          957.6
+        ],
+        "mouth": [
+          361.2,
+          459.9
+        ]
+      },
+      {
+        "file": "character-model/v1/feeding/rise-coat-v8.png",
+        "sourceRect": [
+          67,
+          471,
+          445,
+          521
+        ],
+        "displaySize": [
+          934.5,
+          1094.1
+        ],
+        "anchor": [
+          369.6,
+          1079.4
+        ],
+        "mouth": [
+          373.8,
+          480.9
+        ]
+      },
+      {
+        "file": "character-model/v1/feeding/rise-coat-v8.png",
+        "sourceRect": [
+          579,
+          472,
+          446,
+          521
+        ],
+        "displaySize": [
+          936.6,
+          1094.1
+        ],
+        "anchor": [
+          367.5,
+          1081.5
+        ],
+        "mouth": [
+          367.5,
+          478.8
+        ]
+      },
+      {
+        "file": "character-model/v1/feeding/rise-coat-v8.png",
+        "sourceRect": [
+          1092,
+          472,
+          434,
+          520
+        ],
+        "displaySize": [
+          911.4,
+          1092.0
+        ],
+        "anchor": [
+          363.3,
+          1079.4
+        ],
+        "mouth": [
+          363.3,
+          480.9
+        ]
+      }
+    ],
+    "idle-bridge-v1": [
+      {
+        "file": "character-model/v1/feeding/idle-bridge-v1.png",
+        "sourceRect": [
+          69,
+          7,
+          443,
+          508
+        ],
+        "displaySize": [
+          943.59,
+          1082.04
+        ],
+        "anchor": [
+          383.4,
+          1073.52
+        ],
+        "mouth": [
+          383.4,
+          432.39
+        ]
+      },
+      {
+        "file": "character-model/v1/feeding/idle-bridge-v1.png",
+        "sourceRect": [
+          583,
+          11,
+          429,
+          504
+        ],
+        "displaySize": [
+          913.77,
+          1073.52
+        ],
+        "anchor": [
+          387.66,
+          1065.0
+        ],
+        "mouth": [
+          381.27,
+          430.26
+        ]
+      },
+      {
+        "file": "character-model/v1/feeding/idle-bridge-v1.png",
+        "sourceRect": [
+          1069,
+          8,
+          435,
+          507
+        ],
+        "displaySize": [
+          926.55,
+          1079.91
+        ],
+        "anchor": [
+          398.31,
+          1071.39
+        ],
+        "mouth": [
+          366.36,
+          434.52
+        ]
+      },
+      {
+        "file": "character-model/v1/feeding/idle-bridge-v1.png",
+        "sourceRect": [
+          20,
+          516,
+          472,
+          485
+        ],
+        "displaySize": [
+          1005.36,
+          1033.05
+        ],
+        "anchor": [
+          404.7,
+          1020.27
+        ],
+        "mouth": [
+          336.54,
+          411.09
+        ]
+      },
+      {
+        "file": "character-model/v1/feeding/idle-bridge-v1.png",
+        "sourceRect": [
+          529,
+          516,
+          469,
+          488
+        ],
+        "displaySize": [
+          998.97,
+          1039.44
+        ],
+        "anchor": [
+          411.09,
+          1026.66
+        ],
+        "mouth": [
+          334.41,
+          415.35
+        ]
+      },
+      {
+        "file": "character-model/v1/feeding/idle-bridge-v1.png",
+        "sourceRect": [
+          1033,
+          516,
+          479,
+          493
+        ],
+        "displaySize": [
+          1020.27,
+          1050.09
+        ],
+        "anchor": [
+          428.13,
+          1037.31
+        ],
+        "mouth": [
+          347.19,
+          430.26
+        ]
+      }
+    ],
+    "jump-proportions-v2": [
+      {
+        "file": "character-model/v1/feeding/jump-proportions-v2.png",
+        "sourceRect": [
+          116,
+          38,
+          354,
+          352
+        ],
+        "displaySize": [
+          1047.84,
+          1041.92
+        ],
+        "anchor": [
+          402.56,
+          1027.12
+        ],
+        "mouth": [
+          402.56,
+          411.44
+        ]
+      },
+      {
+        "file": "character-model/v1/feeding/jump-proportions-v2.png",
+        "sourceRect": [
+          594,
+          73,
+          358,
+          311
+        ],
+        "displaySize": [
+          1059.68,
+          920.56
+        ],
+        "anchor": [
+          455.84,
+          905.76
+        ],
+        "mouth": [
+          455.84,
+          426.24
+        ]
+      },
+      {
+        "file": "character-model/v1/feeding/jump-proportions-v2.png",
+        "sourceRect": [
+          1094,
+          18,
+          331,
+          374
+        ],
+        "displaySize": [
+          979.76,
+          1107.04
+        ],
+        "anchor": [
+          444.0,
+          1092.24
+        ],
+        "mouth": [
+          411.44,
+          405.52
+        ]
+      },
+      {
+        "file": "character-model/v1/feeding/jump-proportions-v2.png",
+        "sourceRect": [
+          1571,
+          22,
+          333,
+          315
+        ],
+        "displaySize": [
+          985.68,
+          932.4
+        ],
+        "anchor": [
+          429.2,
+          1080.4
+        ],
+        "mouth": [
+          411.44,
+          429.2
+        ]
+      },
+      {
+        "file": "character-model/v1/feeding/jump-proportions-v2.png",
+        "sourceRect": [
+          110,
+          411,
+          333,
+          321
+        ],
+        "displaySize": [
+          985.68,
+          950.16
+        ],
+        "anchor": [
+          414.4,
+          1041.92
+        ],
+        "mouth": [
+          411.44,
+          408.48
+        ]
+      },
+      {
+        "file": "character-model/v1/feeding/jump-proportions-v2.png",
+        "sourceRect": [
+          604,
+          410,
+          350,
+          358
+        ],
+        "displaySize": [
+          1036.0,
+          1059.68
+        ],
+        "anchor": [
+          417.36,
+          1044.88
+        ],
+        "mouth": [
+          414.4,
+          414.4
+        ]
+      },
+      {
+        "file": "character-model/v1/feeding/jump-proportions-v2.png",
+        "sourceRect": [
+          1108,
+          444,
+          365,
+          319
+        ],
+        "displaySize": [
+          1080.4,
+          944.24
+        ],
+        "anchor": [
+          420.32,
+          929.44
+        ],
+        "mouth": [
+          426.24,
+          426.24
+        ]
+      },
+      {
+        "file": "character-model/v1/feeding/jump-proportions-v2.png",
+        "sourceRect": [
+          1582,
+          407,
+          358,
+          361
+        ],
+        "displaySize": [
+          1059.68,
+          1068.56
+        ],
+        "anchor": [
+          405.52,
+          1053.76
+        ],
+        "mouth": [
+          402.56,
+          420.32
+        ]
+      }
+    ],
+    "sit-stand": [
+      {
+        "file": "character-model/v1/feeding/sit-stand.png",
+        "sourceRect": [
+          195,
+          18,
+          452,
+          493
+        ],
+        "displaySize": [
+          931.12,
+          1015.58
+        ],
+        "anchor": [
+          348.14,
+          1009.4
+        ],
+        "mouth": [
+          348.14,
+          416.12
+        ]
+      },
+      {
+        "file": "character-model/v1/feeding/sit-stand.png",
+        "sourceRect": [
+          837,
+          13,
+          454,
+          498
+        ],
+        "displaySize": [
+          935.24,
+          1025.88
+        ],
+        "anchor": [
+          364.62,
+          1019.7
+        ],
+        "mouth": [
+          364.62,
+          401.7
+        ]
+      },
+      {
+        "file": "character-model/v1/feeding/sit-stand.png",
+        "sourceRect": [
+          189,
+          557,
+          474,
+          524
+        ],
+        "displaySize": [
+          976.44,
+          1079.44
+        ],
+        "anchor": [
+          360.5,
+          1073.26
+        ],
+        "mouth": [
+          360.5,
+          422.3
+        ]
+      },
+      {
+        "file": "character-model/v1/feeding/sit-stand.png",
+        "sourceRect": [
+          840,
+          559,
+          468,
+          525
+        ],
+        "displaySize": [
+          964.08,
+          1081.5
+        ],
+        "anchor": [
+          358.44,
+          1075.32
+        ],
+        "mouth": [
+          358.44,
+          449.08
+        ]
+      }
+    ],
+    "chew": [
+      {
+        "file": "character-model/v1/feeding/chew.png",
+        "sourceRect": [
+          111,
+          4,
+          373,
+          387
+        ],
+        "displaySize": [
+          976.141,
+          1012.779
+        ],
+        "anchor": [
+          363.763,
+          1007.545
+        ],
+        "mouth": [
+          363.763,
+          418.72
+        ]
+      },
+      {
+        "file": "character-model/v1/feeding/chew.png",
+        "sourceRect": [
+          593,
+          5,
+          373,
+          386
+        ],
+        "displaySize": [
+          976.141,
+          1010.162
+        ],
+        "anchor": [
+          361.146,
+          1004.928
+        ],
+        "mouth": [
+          361.146,
+          434.422
+        ]
+      },
+      {
+        "file": "character-model/v1/feeding/chew.png",
+        "sourceRect": [
+          1071,
+          4,
+          372,
+          387
+        ],
+        "displaySize": [
+          973.524,
+          1012.779
+        ],
+        "anchor": [
+          363.763,
+          1007.545
+        ],
+        "mouth": [
+          363.763,
+          421.337
+        ]
+      },
+      {
+        "file": "character-model/v1/feeding/chew.png",
+        "sourceRect": [
+          1552,
+          6,
+          378,
+          385
+        ],
+        "displaySize": [
+          989.226,
+          1007.545
+        ],
+        "anchor": [
+          368.997,
+          1002.311
+        ],
+        "mouth": [
+          368.997,
+          450.124
+        ]
+      },
+      {
+        "file": "character-model/v1/feeding/chew.png",
+        "sourceRect": [
+          111,
+          394,
+          374,
+          384
+        ],
+        "displaySize": [
+          978.758,
+          1004.928
+        ],
+        "anchor": [
+          363.763,
+          999.694
+        ],
+        "mouth": [
+          358.529,
+          429.188
+        ]
+      },
+      {
+        "file": "character-model/v1/feeding/chew.png",
+        "sourceRect": [
+          592,
+          394,
+          372,
+          384
+        ],
+        "displaySize": [
+          973.524,
+          1004.928
+        ],
+        "anchor": [
+          363.763,
+          999.694
+        ],
+        "mouth": [
+          363.763,
+          418.72
+        ]
+      },
+      {
+        "file": "character-model/v1/feeding/chew.png",
+        "sourceRect": [
+          1068,
+          392,
+          378,
+          386
+        ],
+        "displaySize": [
+          989.226,
+          1010.162
+        ],
+        "anchor": [
+          371.614,
+          1004.928
+        ],
+        "mouth": [
+          371.614,
+          363.763
+        ]
+      },
+      {
+        "file": "character-model/v1/feeding/chew.png",
+        "sourceRect": [
+          1552,
+          394,
+          378,
+          384
+        ],
+        "displaySize": [
+          989.226,
+          1004.928
+        ],
+        "anchor": [
+          368.997,
+          999.694
+        ],
+        "mouth": [
+          368.997,
+          418.72
+        ]
+      }
+    ],
+    "jump": [
+      {
+        "file": "character-model/v1/feeding/jump.png",
+        "sourceRect": [
+          79,
+          8,
+          377,
+          387
+        ],
+        "displaySize": [
+          1057.108,
+          1085.148
+        ],
+        "anchor": [
+          423.404,
+          1076.736
+        ],
+        "mouth": [
+          423.404,
+          459.856
+        ]
+      },
+      {
+        "file": "character-model/v1/feeding/jump.png",
+        "sourceRect": [
+          571,
+          64,
+          367,
+          326
+        ],
+        "displaySize": [
+          1029.068,
+          914.104
+        ],
+        "anchor": [
+          431.816,
+          919.712
+        ],
+        "mouth": [
+          431.816,
+          451.444
+        ]
+      },
+      {
+        "file": "character-model/v1/feeding/jump.png",
+        "sourceRect": [
+          1064,
+          8,
+          342,
+          387
+        ],
+        "displaySize": [
+          958.968,
+          1085.148
+        ],
+        "anchor": [
+          437.424,
+          1076.736
+        ],
+        "mouth": [
+          437.424,
+          451.444
+        ]
+      },
+      {
+        "file": "character-model/v1/feeding/jump.png",
+        "sourceRect": [
+          1559,
+          8,
+          343,
+          337
+        ],
+        "displaySize": [
+          961.772,
+          944.948
+        ],
+        "anchor": [
+          437.424,
+          1076.736
+        ],
+        "mouth": [
+          437.424,
+          457.052
+        ]
+      },
+      {
+        "file": "character-model/v1/feeding/jump.png",
+        "sourceRect": [
+          75,
+          403,
+          340,
+          350
+        ],
+        "displaySize": [
+          953.36,
+          981.4
+        ],
+        "anchor": [
+          434.62,
+          1079.54
+        ],
+        "mouth": [
+          434.62,
+          454.248
+        ]
+      },
+      {
+        "file": "character-model/v1/feeding/jump.png",
+        "sourceRect": [
+          576,
+          408,
+          357,
+          364
+        ],
+        "displaySize": [
+          1001.028,
+          1020.656
+        ],
+        "anchor": [
+          417.796,
+          1065.52
+        ],
+        "mouth": [
+          417.796,
+          459.856
+        ]
+      },
+      {
+        "file": "character-model/v1/feeding/jump.png",
+        "sourceRect": [
+          1069,
+          453,
+          371,
+          329
+        ],
+        "displaySize": [
+          1040.284,
+          922.516
+        ],
+        "anchor": [
+          423.404,
+          939.34
+        ],
+        "mouth": [
+          423.404,
+          473.876
+        ]
+      },
+      {
+        "file": "character-model/v1/feeding/jump.png",
+        "sourceRect": [
+          1565,
+          403,
+          378,
+          386
+        ],
+        "displaySize": [
+          1059.912,
+          1082.344
+        ],
+        "anchor": [
+          420.6,
+          1079.54
+        ],
+        "mouth": [
+          420.6,
+          451.444
+        ]
+      }
+    ],
+    "turn": [
+      {
+        "file": "character-model/v1/feeding/turn.png",
+        "sourceRect": [
+          63,
+          3,
+          365,
+          396
+        ],
+        "displaySize": [
+          999.735,
+          1084.644
+        ],
+        "anchor": [
+          402.633,
+          1076.427
+        ],
+        "mouth": [
+          402.633,
+          454.674
+        ]
+      },
+      {
+        "file": "character-model/v1/feeding/turn.png",
+        "sourceRect": [
+          501,
+          7,
+          421,
+          391
+        ],
+        "displaySize": [
+          1153.119,
+          1070.949
+        ],
+        "anchor": [
+          599.841,
+          1062.732
+        ],
+        "mouth": [
+          230.076,
+          419.067
+        ]
+      },
+      {
+        "file": "character-model/v1/feeding/turn.png",
+        "sourceRect": [
+          983,
+          15,
+          471,
+          383
+        ],
+        "displaySize": [
+          1290.069,
+          1049.037
+        ],
+        "anchor": [
+          676.533,
+          1040.82
+        ],
+        "mouth": [
+          128.733,
+          424.545
+        ]
+      },
+      {
+        "file": "character-model/v1/feeding/turn.png",
+        "sourceRect": [
+          1485,
+          16,
+          479,
+          383
+        ],
+        "displaySize": [
+          1311.981,
+          1049.037
+        ],
+        "anchor": [
+          698.445,
+          1040.82
+        ],
+        "mouth": [
+          109.56,
+          435.501
+        ]
+      },
+      {
+        "file": "character-model/v1/feeding/turn.png",
+        "sourceRect": [
+          44,
+          405,
+          418,
+          378
+        ],
+        "displaySize": [
+          1144.902,
+          1035.342
+        ],
+        "anchor": [
+          605.319,
+          1027.125
+        ],
+        "mouth": [
+          167.079,
+          397.155
+        ]
+      },
+      {
+        "file": "character-model/v1/feeding/turn.png",
+        "sourceRect": [
+          572,
+          406,
+          306,
+          377
+        ],
+        "displaySize": [
+          838.134,
+          1032.603
+        ],
+        "anchor": [
+          432.762,
+          1024.386
+        ],
+        "mouth": [
+          131.472,
+          394.416
+        ]
+      },
+      {
+        "file": "character-model/v1/feeding/turn.png",
+        "sourceRect": [
+          1084,
+          405,
+          325,
+          372
+        ],
+        "displaySize": [
+          890.175,
+          1018.908
+        ],
+        "anchor": [
+          304.029,
+          1010.691
+        ],
+        "mouth": [
+          304.029,
+          397.155
+        ]
+      },
+      {
+        "file": "character-model/v1/feeding/turn.png",
+        "sourceRect": [
+          1584,
+          416,
+          353,
+          355
+        ],
+        "displaySize": [
+          966.867,
+          972.345
+        ],
+        "anchor": [
+          331.419,
+          964.128
+        ],
+        "mouth": [
+          331.419,
+          367.026
+        ]
+      }
+    ],
+    "turn-back-steps": [
+      {
+        "file": "character-model/v1/feeding/turn-back-steps.png",
+        "sourceRect": [
+          61,
+          10,
+          348,
+          364
+        ],
+        "displaySize": [
+          1030.08,
+          1077.44
+        ],
+        "anchor": [
+          411.44,
+          1062.64
+        ],
+        "mouth": [
+          405.52,
+          426.24
+        ]
+      },
+      {
+        "file": "character-model/v1/feeding/turn-back-steps.png",
+        "sourceRect": [
+          507,
+          7,
+          396,
+          367
+        ],
+        "displaySize": [
+          1172.16,
+          1086.32
+        ],
+        "anchor": [
+          512.08,
+          1071.52
+        ],
+        "mouth": [
+          201.28,
+          417.36
+        ]
+      },
+      {
+        "file": "character-model/v1/feeding/turn-back-steps.png",
+        "sourceRect": [
+          953,
+          6,
+          430,
+          368
+        ],
+        "displaySize": [
+          1272.8,
+          1089.28
+        ],
+        "anchor": [
+          553.52,
+          1074.48
+        ],
+        "mouth": [
+          192.4,
+          432.16
+        ]
+      },
+      {
+        "file": "character-model/v1/feeding/turn-back-steps.png",
+        "sourceRect": [
+          3,
+          376,
+          438,
+          352
+        ],
+        "displaySize": [
+          1296.48,
+          1041.92
+        ],
+        "anchor": [
+          606.8,
+          1033.04
+        ],
+        "mouth": [
+          156.88,
+          444.0
+        ]
+      },
+      {
+        "file": "character-model/v1/feeding/turn-back-steps.png",
+        "sourceRect": [
+          477,
+          376,
+          417,
+          352
+        ],
+        "displaySize": [
+          1234.32,
+          1041.92
+        ],
+        "anchor": [
+          594.96,
+          1033.04
+        ],
+        "mouth": [
+          171.68,
+          467.68
+        ]
+      },
+      {
+        "file": "character-model/v1/feeding/turn-back-steps.png",
+        "sourceRect": [
+          940,
+          384,
+          435,
+          342
+        ],
+        "displaySize": [
+          1287.6,
+          1012.32
+        ],
+        "anchor": [
+          651.2,
+          1003.44
+        ],
+        "mouth": [
+          177.6,
+          444.0
+        ]
+      },
+      {
+        "file": "character-model/v1/feeding/turn-back-steps.png",
+        "sourceRect": [
+          35,
+          738,
+          389,
+          352
+        ],
+        "displaySize": [
+          1151.44,
+          1041.92
+        ],
+        "anchor": [
+          636.4,
+          1033.04
+        ],
+        "mouth": [
+          177.6,
+          420.32
+        ]
+      },
+      {
+        "file": "character-model/v1/feeding/turn-back-steps.png",
+        "sourceRect": [
+          523,
+          728,
+          358,
+          368
+        ],
+        "displaySize": [
+          1059.68,
+          1089.28
+        ],
+        "anchor": [
+          405.52,
+          1080.4
+        ],
+        "mouth": [
+          168.72,
+          449.92
+        ]
+      },
+      {
+        "file": "character-model/v1/feeding/turn-back-steps.png",
+        "sourceRect": [
+          1018,
+          730,
+          324,
+          363
+        ],
+        "displaySize": [
+          959.04,
+          1074.48
+        ],
+        "anchor": [
+          340.4,
+          1065.6
+        ],
+        "mouth": [
+          340.4,
+          444.0
+        ]
+      }
+    ],
+    "return-front-steps": [
+      {
+        "file": "character-model/v1/feeding/return-front-steps.png",
+        "sourceRect": [
+          115,
+          3,
+          304,
+          372
+        ],
+        "displaySize": [
+          875.52,
+          1071.36
+        ],
+        "anchor": [
+          365.76,
+          1059.84
+        ],
+        "mouth": [
+          365.76,
+          452.16
+        ]
+      },
+      {
+        "file": "character-model/v1/feeding/return-front-steps.png",
+        "sourceRect": [
+          509,
+          3,
+          337,
+          369
+        ],
+        "displaySize": [
+          970.56,
+          1062.72
+        ],
+        "anchor": [
+          504.0,
+          1054.08
+        ],
+        "mouth": [
+          146.88,
+          440.64
+        ]
+      },
+      {
+        "file": "character-model/v1/feeding/return-front-steps.png",
+        "sourceRect": [
+          952,
+          27,
+          416,
+          348
+        ],
+        "displaySize": [
+          1198.08,
+          1002.24
+        ],
+        "anchor": [
+          521.28,
+          993.6
+        ],
+        "mouth": [
+          164.16,
+          426.24
+        ]
+      },
+      {
+        "file": "character-model/v1/feeding/return-front-steps.png",
+        "sourceRect": [
+          29,
+          381,
+          383,
+          334
+        ],
+        "displaySize": [
+          1103.04,
+          961.92
+        ],
+        "anchor": [
+          636.48,
+          953.28
+        ],
+        "mouth": [
+          169.92,
+          429.12
+        ]
+      },
+      {
+        "file": "character-model/v1/feeding/return-front-steps.png",
+        "sourceRect": [
+          497,
+          380,
+          397,
+          346
+        ],
+        "displaySize": [
+          1143.36,
+          996.48
+        ],
+        "anchor": [
+          584.64,
+          987.84
+        ],
+        "mouth": [
+          164.16,
+          455.04
+        ]
+      },
+      {
+        "file": "character-model/v1/feeding/return-front-steps.png",
+        "sourceRect": [
+          952,
+          382,
+          413,
+          346
+        ],
+        "displaySize": [
+          1189.44,
+          996.48
+        ],
+        "anchor": [
+          599.04,
+          987.84
+        ],
+        "mouth": [
+          172.8,
+          463.68
+        ]
+      },
+      {
+        "file": "character-model/v1/feeding/return-front-steps.png",
+        "sourceRect": [
+          54,
+          725,
+          370,
+          379
+        ],
+        "displaySize": [
+          1065.6,
+          1091.52
+        ],
+        "anchor": [
+          449.28,
+          1082.88
+        ],
+        "mouth": [
+          282.24,
+          432.0
+        ]
+      },
+      {
+        "file": "character-model/v1/feeding/return-front-steps.png",
+        "sourceRect": [
+          514,
+          730,
+          360,
+          373
+        ],
+        "displaySize": [
+          1036.8,
+          1074.24
+        ],
+        "anchor": [
+          434.88,
+          1065.6
+        ],
+        "mouth": [
+          302.4,
+          440.64
+        ]
+      },
+      {
+        "file": "character-model/v1/feeding/return-front-steps.png",
+        "sourceRect": [
+          1016,
+          727,
+          335,
+          381
+        ],
+        "displaySize": [
+          964.8,
+          1097.28
+        ],
+        "anchor": [
+          357.12,
+          1088.64
+        ],
+        "mouth": [
+          357.12,
+          411.84
+        ]
+      }
+    ],
+    "wipe": [
+      {
+        "file": "character-model/v1/wipe-keyframes.png",
+        "sourceRect": [
+          0,
+          0,
+          495,
+          396
+        ],
+        "displaySize": [
+          1336.5,
+          1069.2
+        ],
+        "anchor": [
+          648,
+          1026
+        ],
+        "mouth": [
+          648,
+          426.6
+        ]
+      },
+      {
+        "file": "character-model/v1/wipe-keyframes.png",
+        "sourceRect": [
+          495,
+          0,
+          495,
+          396
+        ],
+        "displaySize": [
+          1336.5,
+          1069.2
+        ],
+        "anchor": [
+          648,
+          1026
+        ],
+        "mouth": [
+          648,
+          426.6
+        ]
+      },
+      {
+        "file": "character-model/v1/wipe-keyframes.png",
+        "sourceRect": [
+          990,
+          0,
+          495,
+          396
+        ],
+        "displaySize": [
+          1336.5,
+          1069.2
+        ],
+        "anchor": [
+          648,
+          1026
+        ],
+        "mouth": [
+          648,
+          426.6
+        ]
+      },
+      {
+        "file": "character-model/v1/wipe-keyframes.png",
+        "sourceRect": [
+          1485,
+          0,
+          495,
+          396
+        ],
+        "displaySize": [
+          1336.5,
+          1069.2
+        ],
+        "anchor": [
+          648,
+          1026
+        ],
+        "mouth": [
+          648,
+          426.6
+        ]
+      },
+      {
+        "file": "character-model/v1/wipe-keyframes.png",
+        "sourceRect": [
+          0,
+          396,
+          495,
+          396
+        ],
+        "displaySize": [
+          1336.5,
+          1069.2
+        ],
+        "anchor": [
+          648,
+          1026
+        ],
+        "mouth": [
+          648,
+          426.6
+        ]
+      },
+      {
+        "file": "character-model/v1/wipe-keyframes.png",
+        "sourceRect": [
+          495,
+          396,
+          495,
+          396
+        ],
+        "displaySize": [
+          1336.5,
+          1069.2
+        ],
+        "anchor": [
+          648,
+          1026
+        ],
+        "mouth": [
+          648,
+          426.6
+        ]
+      },
+      {
+        "file": "character-model/v1/wipe-keyframes.png",
+        "sourceRect": [
+          990,
+          396,
+          495,
+          396
+        ],
+        "displaySize": [
+          1336.5,
+          1069.2
+        ],
+        "anchor": [
+          648,
+          1026
+        ],
+        "mouth": [
+          648,
+          426.6
+        ]
+      },
+      {
+        "file": "character-model/v1/wipe-keyframes.png",
+        "sourceRect": [
+          1485,
+          396,
+          495,
+          396
+        ],
+        "displaySize": [
+          1336.5,
+          1069.2
+        ],
+        "anchor": [
+          648,
+          1026
+        ],
+        "mouth": [
+          648,
+          426.6
+        ]
+      }
+    ],
+    "idle": [
+      {
+        "file": "tabby-stand-center-v2.png",
+        "duration": 0.55,
+        "anchor": [
+          701,
+          1089
+        ]
+      }
+    ]
+  },
+  "pixelScales": {
+    "sit-stand": 2.06,
+    "chew": 2.617,
+    "jump": 2.804,
+    "turn": 2.739,
+    "turn-back-steps": 2.96,
+    "return-front-steps": 2.88,
+    "rise-coat-v8": 2.1,
+    "idle-bridge-v1": 2.13,
+    "jump-proportions-v2": 2.96,
+    "feed-master-v1-normalized": 3.75,
+    "feed-master-blink-v3": 3.75
+  },
+  "notes": "Original PNGs remain unchanged; measured atlas regions and anatomical anchors are consumed by the renderer."
+}

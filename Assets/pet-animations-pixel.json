@@ -1,0 +1,840 @@
+{
+  "canvas": [
+    64,
+    64
+  ],
+  "clips": {
+    "Idle": {
+      "loop": true,
+      "provisional": false,
+      "frames": [
+        {
+          "file": "pixel/pixel-idle-00.png",
+          "duration": 0.35,
+          "anchor": [
+            32,
+            59
+          ]
+        },
+        {
+          "file": "pixel/pixel-idle-01.png",
+          "duration": 0.35,
+          "anchor": [
+            32,
+            59
+          ]
+        },
+        {
+          "file": "pixel/pixel-idle-02.png",
+          "duration": 0.35,
+          "anchor": [
+            32,
+            59
+          ]
+        },
+        {
+          "file": "pixel/pixel-idle-03.png",
+          "duration": 0.35,
+          "anchor": [
+            32,
+            59
+          ]
+        },
+        {
+          "file": "pixel/pixel-idle-04.png",
+          "duration": 0.35,
+          "anchor": [
+            32,
+            59
+          ]
+        },
+        {
+          "file": "pixel/pixel-idle-05.png",
+          "duration": 0.12,
+          "anchor": [
+            32,
+            59
+          ]
+        },
+        {
+          "file": "pixel/pixel-idle-06.png",
+          "duration": 0.35,
+          "anchor": [
+            32,
+            59
+          ]
+        },
+        {
+          "file": "pixel/pixel-idle-07.png",
+          "duration": 0.35,
+          "anchor": [
+            32,
+            59
+          ]
+        }
+      ]
+    },
+    "IdleAccent": {
+      "loop": false,
+      "provisional": false,
+      "frames": [
+        {
+          "file": "pixel/pixel-idleaccent-00.png",
+          "duration": 0.1,
+          "anchor": [
+            32,
+            59
+          ]
+        },
+        {
+          "file": "pixel/pixel-idleaccent-01.png",
+          "duration": 0.12,
+          "anchor": [
+            32,
+            59
+          ]
+        },
+        {
+          "file": "pixel/pixel-idleaccent-02.png",
+          "duration": 0.16,
+          "anchor": [
+            32,
+            59
+          ]
+        },
+        {
+          "file": "pixel/pixel-idleaccent-03.png",
+          "duration": 0.12,
+          "anchor": [
+            32,
+            59
+          ]
+        }
+      ]
+    },
+    "Hover": {
+      "loop": true,
+      "provisional": false,
+      "frames": [
+        {
+          "file": "pixel/pixel-hover-00.png",
+          "duration": 0.1,
+          "anchor": [
+            32,
+            59
+          ]
+        },
+        {
+          "file": "pixel/pixel-hover-01.png",
+          "duration": 0.1,
+          "anchor": [
+            32,
+            59
+          ]
+        },
+        {
+          "file": "pixel/pixel-hover-02.png",
+          "duration": 0.1,
+          "anchor": [
+            32,
+            59
+          ]
+        },
+        {
+          "file": "pixel/pixel-hover-03.png",
+          "duration": 0.12,
+          "anchor": [
+            32,
+            59
+          ]
+        },
+        {
+          "file": "pixel/pixel-hover-04.png",
+          "duration": 0.12,
+          "anchor": [
+            32,
+            59
+          ]
+        },
+        {
+          "file": "pixel/pixel-hover-05.png",
+          "duration": 0.1,
+          "anchor": [
+            32,
+            59
+          ]
+        },
+        {
+          "file": "pixel/pixel-hover-06.png",
+          "duration": 0.1,
+          "anchor": [
+            32,
+            59
+          ]
+        },
+        {
+          "file": "pixel/pixel-hover-07.png",
+          "duration": 0.1,
+          "anchor": [
+            32,
+            59
+          ]
+        },
+        {
+          "file": "pixel/pixel-hover-08.png",
+          "duration": 0.1,
+          "anchor": [
+            32,
+            59
+          ]
+        }
+      ]
+    },
+    "EnterAwait": {
+      "loop": false,
+      "provisional": false,
+      "frames": [
+        {
+          "file": "pixel/pixel-enterawait-00.png",
+          "duration": 0.1,
+          "anchor": [
+            32,
+            59
+          ]
+        },
+        {
+          "file": "pixel/pixel-enterawait-01.png",
+          "duration": 0.1,
+          "anchor": [
+            32,
+            59
+          ]
+        },
+        {
+          "file": "pixel/pixel-enterawait-02.png",
+          "duration": 0.12,
+          "anchor": [
+            32,
+            59
+          ]
+        },
+        {
+          "file": "pixel/pixel-enterawait-03.png",
+          "duration": 0.1,
+          "anchor": [
+            32,
+            59
+          ]
+        }
+      ]
+    },
+    "AwaitInput": {
+      "loop": true,
+      "provisional": false,
+      "frames": [
+        {
+          "file": "pixel/pixel-awaitinput-00.png",
+          "duration": 0.4,
+          "anchor": [
+            32,
+            59
+          ]
+        },
+        {
+          "file": "pixel/pixel-awaitinput-01.png",
+          "duration": 0.4,
+          "anchor": [
+            32,
+            59
+          ]
+        },
+        {
+          "file": "pixel/pixel-awaitinput-02.png",
+          "duration": 0.4,
+          "anchor": [
+            32,
+            59
+          ]
+        },
+        {
+          "file": "pixel/pixel-awaitinput-03.png",
+          "duration": 0.4,
+          "anchor": [
+            32,
+            59
+          ]
+        },
+        {
+          "file": "pixel/pixel-awaitinput-04.png",
+          "duration": 0.12,
+          "anchor": [
+            32,
+            59
+          ]
+        },
+        {
+          "file": "pixel/pixel-awaitinput-05.png",
+          "duration": 0.4,
+          "anchor": [
+            32,
+            59
+          ]
+        }
+      ]
+    },
+    "ExitAwait": {
+      "loop": false,
+      "provisional": false,
+      "frames": [
+        {
+          "file": "pixel/pixel-exitawait-00.png",
+          "duration": 0.1,
+          "anchor": [
+            32,
+            59
+          ]
+        },
+        {
+          "file": "pixel/pixel-exitawait-01.png",
+          "duration": 0.1,
+          "anchor": [
+            32,
+            59
+          ]
+        },
+        {
+          "file": "pixel/pixel-exitawait-02.png",
+          "duration": 0.12,
+          "anchor": [
+            32,
+            59
+          ]
+        },
+        {
+          "file": "pixel/pixel-exitawait-03.png",
+          "duration": 0.1,
+          "anchor": [
+            32,
+            59
+          ]
+        }
+      ]
+    },
+    "Play": {
+      "loop": false,
+      "provisional": false,
+      "frames": [
+        {
+          "file": "pixel/pixel-play-00.png",
+          "duration": 0.18,
+          "anchor": [
+            32,
+            59
+          ]
+        },
+        {
+          "file": "pixel/pixel-play-01.png",
+          "duration": 0.12,
+          "anchor": [
+            32,
+            59
+          ]
+        },
+        {
+          "file": "pixel/pixel-play-02.png",
+          "duration": 0.12,
+          "anchor": [
+            32,
+            59
+          ]
+        },
+        {
+          "file": "pixel/pixel-play-03.png",
+          "duration": 0.12,
+          "anchor": [
+            32,
+            59
+          ]
+        },
+        {
+          "file": "pixel/pixel-play-04.png",
+          "duration": 0.12,
+          "anchor": [
+            32,
+            59
+          ]
+        },
+        {
+          "file": "pixel/pixel-play-05.png",
+          "duration": 0.12,
+          "anchor": [
+            32,
+            59
+          ]
+        },
+        {
+          "file": "pixel/pixel-play-06.png",
+          "duration": 0.16,
+          "anchor": [
+            32,
+            59
+          ]
+        },
+        {
+          "file": "pixel/pixel-play-07.png",
+          "duration": 0.16,
+          "anchor": [
+            32,
+            59
+          ]
+        }
+      ]
+    },
+    "PlayYarn": {
+      "loop": false,
+      "provisional": false,
+      "frames": [
+        {
+          "file": "pixel/pixel-playyarn-00.png",
+          "duration": 0.16,
+          "anchor": [
+            32,
+            59
+          ]
+        },
+        {
+          "file": "pixel/pixel-playyarn-01.png",
+          "duration": 0.12,
+          "anchor": [
+            32,
+            59
+          ]
+        },
+        {
+          "file": "pixel/pixel-playyarn-02.png",
+          "duration": 0.12,
+          "anchor": [
+            32,
+            59
+          ]
+        },
+        {
+          "file": "pixel/pixel-playyarn-03.png",
+          "duration": 0.12,
+          "anchor": [
+            32,
+            59
+          ]
+        },
+        {
+          "file": "pixel/pixel-playyarn-04.png",
+          "duration": 0.12,
+          "anchor": [
+            32,
+            59
+          ]
+        },
+        {
+          "file": "pixel/pixel-playyarn-05.png",
+          "duration": 0.12,
+          "anchor": [
+            32,
+            59
+          ]
+        },
+        {
+          "file": "pixel/pixel-playyarn-06.png",
+          "duration": 0.14,
+          "anchor": [
+            32,
+            59
+          ]
+        },
+        {
+          "file": "pixel/pixel-playyarn-07.png",
+          "duration": 0.16,
+          "anchor": [
+            32,
+            59
+          ]
+        }
+      ]
+    },
+    "PlayButterfly": {
+      "loop": false,
+      "provisional": false,
+      "frames": [
+        {
+          "file": "pixel/pixel-playbutterfly-00.png",
+          "duration": 0.12,
+          "anchor": [
+            32,
+            59
+          ]
+        },
+        {
+          "file": "pixel/pixel-playbutterfly-01.png",
+          "duration": 0.1,
+          "anchor": [
+            32,
+            59
+          ]
+        },
+        {
+          "file": "pixel/pixel-playbutterfly-02.png",
+          "duration": 0.1,
+          "anchor": [
+            32,
+            59
+          ]
+        },
+        {
+          "file": "pixel/pixel-playbutterfly-03.png",
+          "duration": 0.1,
+          "anchor": [
+            32,
+            59
+          ]
+        },
+        {
+          "file": "pixel/pixel-playbutterfly-04.png",
+          "duration": 0.1,
+          "anchor": [
+            32,
+            59
+          ]
+        },
+        {
+          "file": "pixel/pixel-playbutterfly-05.png",
+          "duration": 0.1,
+          "anchor": [
+            32,
+            59
+          ]
+        },
+        {
+          "file": "pixel/pixel-playbutterfly-06.png",
+          "duration": 0.12,
+          "anchor": [
+            32,
+            59
+          ]
+        },
+        {
+          "file": "pixel/pixel-playbutterfly-07.png",
+          "duration": 0.14,
+          "anchor": [
+            32,
+            59
+          ]
+        }
+      ]
+    },
+    "Roam": {
+      "loop": false,
+      "provisional": false,
+      "frames": [
+        {
+          "file": "pixel/pixel-roam-00.png",
+          "duration": 0.12,
+          "anchor": [
+            32,
+            59
+          ]
+        },
+        {
+          "file": "pixel/pixel-roam-01.png",
+          "duration": 0.12,
+          "anchor": [
+            32,
+            59
+          ]
+        },
+        {
+          "file": "pixel/pixel-roam-02.png",
+          "duration": 0.12,
+          "anchor": [
+            32,
+            59
+          ]
+        },
+        {
+          "file": "pixel/pixel-roam-03.png",
+          "duration": 0.12,
+          "anchor": [
+            32,
+            59
+          ]
+        },
+        {
+          "file": "pixel/pixel-roam-04.png",
+          "duration": 0.12,
+          "anchor": [
+            32,
+            59
+          ]
+        },
+        {
+          "file": "pixel/pixel-roam-05.png",
+          "duration": 0.12,
+          "anchor": [
+            32,
+            59
+          ]
+        }
+      ]
+    },
+    "FeedStart": {
+      "loop": false,
+      "provisional": false,
+      "frames": [
+        {
+          "file": "pixel/pixel-feedstart-00.png",
+          "duration": 0.1,
+          "anchor": [
+            32,
+            59
+          ]
+        },
+        {
+          "file": "pixel/pixel-feedstart-01.png",
+          "duration": 0.1,
+          "anchor": [
+            32,
+            59
+          ]
+        },
+        {
+          "file": "pixel/pixel-feedstart-02.png",
+          "duration": 0.12,
+          "anchor": [
+            32,
+            59
+          ]
+        }
+      ]
+    },
+    "Eat": {
+      "loop": false,
+      "provisional": false,
+      "frames": [
+        {
+          "file": "pixel/pixel-eat-00.png",
+          "duration": 0.1,
+          "anchor": [
+            32,
+            59
+          ]
+        },
+        {
+          "file": "pixel/pixel-eat-01.png",
+          "duration": 0.09,
+          "anchor": [
+            32,
+            59
+          ]
+        },
+        {
+          "file": "pixel/pixel-eat-02.png",
+          "duration": 0.09,
+          "anchor": [
+            32,
+            59
+          ]
+        },
+        {
+          "file": "pixel/pixel-eat-03.png",
+          "duration": 0.09,
+          "anchor": [
+            32,
+            59
+          ]
+        },
+        {
+          "file": "pixel/pixel-eat-04.png",
+          "duration": 0.09,
+          "anchor": [
+            32,
+            59
+          ]
+        },
+        {
+          "file": "pixel/pixel-eat-05.png",
+          "duration": 0.1,
+          "anchor": [
+            32,
+            59
+          ]
+        }
+      ]
+    },
+    "Celebrate": {
+      "loop": false,
+      "provisional": false,
+      "frames": [
+        {
+          "file": "pixel/pixel-celebrate-00.png",
+          "duration": 0.09,
+          "anchor": [
+            32,
+            59
+          ]
+        },
+        {
+          "file": "pixel/pixel-celebrate-01.png",
+          "duration": 0.1,
+          "anchor": [
+            32,
+            59
+          ]
+        },
+        {
+          "file": "pixel/pixel-celebrate-02.png",
+          "duration": 0.11,
+          "anchor": [
+            32,
+            59
+          ]
+        },
+        {
+          "file": "pixel/pixel-celebrate-03.png",
+          "duration": 0.1,
+          "anchor": [
+            32,
+            59
+          ]
+        },
+        {
+          "file": "pixel/pixel-celebrate-04.png",
+          "duration": 0.1,
+          "anchor": [
+            32,
+            59
+          ]
+        }
+      ]
+    },
+    "TurnBack": {
+      "loop": false,
+      "provisional": false,
+      "frames": [
+        {
+          "file": "pixel/pixel-turnback-00.png",
+          "duration": 0.12,
+          "anchor": [
+            32,
+            59
+          ]
+        },
+        {
+          "file": "pixel/pixel-turnback-01.png",
+          "duration": 0.12,
+          "anchor": [
+            32,
+            59
+          ]
+        },
+        {
+          "file": "pixel/pixel-turnback-02.png",
+          "duration": 0.1,
+          "anchor": [
+            32,
+            59
+          ]
+        },
+        {
+          "file": "pixel/pixel-turnback-03.png",
+          "duration": 0.15,
+          "anchor": [
+            32,
+            59
+          ]
+        }
+      ]
+    },
+    "Poop": {
+      "loop": false,
+      "provisional": false,
+      "frames": [
+        {
+          "file": "pixel/pixel-poop-00.png",
+          "duration": 0.13,
+          "anchor": [
+            32,
+            59
+          ]
+        },
+        {
+          "file": "pixel/pixel-poop-01.png",
+          "duration": 0.13,
+          "anchor": [
+            32,
+            59
+          ]
+        },
+        {
+          "file": "pixel/pixel-poop-02.png",
+          "duration": 0.13,
+          "anchor": [
+            32,
+            59
+          ]
+        },
+        {
+          "file": "pixel/pixel-poop-03.png",
+          "duration": 0.15,
+          "anchor": [
+            32,
+            59
+          ]
+        }
+      ]
+    },
+    "Proud": {
+      "loop": false,
+      "provisional": false,
+      "frames": [
+        {
+          "file": "pixel/pixel-proud-00.png",
+          "duration": 0.12,
+          "anchor": [
+            32,
+            59
+          ]
+        },
+        {
+          "file": "pixel/pixel-proud-01.png",
+          "duration": 0.12,
+          "anchor": [
+            32,
+            59
+          ]
+        },
+        {
+          "file": "pixel/pixel-proud-02.png",
+          "duration": 0.12,
+          "anchor": [
+            32,
+            59
+          ]
+        },
+        {
+          "file": "pixel/pixel-proud-03.png",
+          "duration": 0.14,
+          "anchor": [
+            32,
+            59
+          ]
+        },
+        {
+          "file": "pixel/pixel-proud-04.png",
+          "duration": 0.18,
+          "anchor": [
+            32,
+            59
+          ]
+        }
+      ]
+    }
+  }
+}

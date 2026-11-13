@@ -1,0 +1,144 @@
+{
+  "cell": [
+    495,
+    396
+  ],
+  "columns": 4,
+  "frames": [
+    {
+      "boundsAlpha20": [
+        65,
+        5,
+        425,
+        395
+      ],
+      "index": 0,
+      "sourceRect": [
+        0,
+        0,
+        495,
+        396
+      ],
+      "visiblePixels": 86961
+    },
+    {
+      "boundsAlpha20": [
+        8,
+        9,
+        494,
+        395
+      ],
+      "index": 1,
+      "sourceRect": [
+        495,
+        0,
+        495,
+        396
+      ],
+      "visiblePixels": 96859
+    },
+    {
+      "boundsAlpha20": [
+        0,
+        17,
+        461,
+        395
+      ],
+      "index": 2,
+      "sourceRect": [
+        990,
+        0,
+        495,
+        396
+      ],
+      "visiblePixels": 98086
+    },
+    {
+      "boundsAlpha20": [
+        2,
+        18,
+        476,
+        395
+      ],
+      "index": 3,
+      "sourceRect": [
+        1485,
+        0,
+        495,
+        396
+      ],
+      "visiblePixels": 102822
+    },
+    {
+      "boundsAlpha20": [
+        46,
+        0,
+        459,
+        384
+      ],
+      "index": 4,
+      "sourceRect": [
+        0,
+        396,
+        495,
+        396
+      ],
+      "visiblePixels": 95115
+    },
+    {
+      "boundsAlpha20": [
+        79,
+        12,
+        380,
+        384
+      ],
+      "index": 5,
+      "sourceRect": [
+        495,
+        396,
+        495,
+        396
+      ],
+      "visiblePixels": 78593
+    },
+    {
+      "boundsAlpha20": [
+        96,
+        11,
+        416,
+        378
+      ],
+      "index": 6,
+      "sourceRect": [
+        990,
+        396,
+        495,
+        396
+      ],
+      "visiblePixels": 75799
+    },
+    {
+      "boundsAlpha20": [
+        101,
+        0,
+        449,
+        372
+      ],
+      "index": 7,
+      "sourceRect": [
+        1485,
+        396,
+        495,
+        396
+      ],
+      "visiblePixels": 82369
+    }
+  ],
+  "image": "Assets/character-model/v1/feeding/turn.png",
+  "paddingMaxAlpha": 1,
+  "rows": 2,
+  "size": [
+    1983,
+    793
+  ]
+}

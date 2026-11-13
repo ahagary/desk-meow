@@ -1,0 +1,178 @@
+{
+  "identitySource": "../../tabby-preferred.png",
+  "identitySourceSHA256": "5f44f06d8da5af2b9115d61a483ddd6bd874d8dfe65c097f843603099ef271f1",
+  "version": "character-model-v1",
+  "status": "integrated-for-review",
+  "generatedWith": "built-in image_gen",
+  "requestedCanvas": {
+    "width": 1402,
+    "height": 1122,
+    "baselineY": 1089,
+    "centerX": 701
+  },
+  "views": [
+    {
+      "id": "standing-front",
+      "file": "standing-front.png",
+      "pose": "四脚站立正视，头正、眼平",
+      "contentBoundsAlpha20": [
+        325,
+        19,
+        1275,
+        1096
+      ],
+      "groundAnchor": {
+        "x": 701,
+        "y": 1096
+      }
+    },
+    {
+      "id": "standing-side",
+      "file": "standing-side.png",
+      "pose": "左侧90度站姿，头与脊柱中性对齐",
+      "contentBoundsAlpha20": [
+        42,
+        84,
+        1348,
+        1051
+      ],
+      "groundAnchor": {
+        "x": 701,
+        "y": 1051
+      }
+    },
+    {
+      "id": "standing-back",
+      "file": "standing-back.png",
+      "pose": "背部180度站姿，不回头",
+      "contentBoundsAlpha20": [
+        364,
+        47,
+        1256,
+        1073
+      ],
+      "groundAnchor": {
+        "x": 701,
+        "y": 1073
+      }
+    },
+    {
+      "id": "sitting-front",
+      "file": "sitting-front.png",
+      "pose": "正面蹲坐，两后腿折叠、两前爪支撑",
+      "contentBoundsAlpha20": [
+        319,
+        46,
+        1299,
+        1081
+      ],
+      "groundAnchor": {
+        "x": 701,
+        "y": 1081
+      }
+    }
+  ],
+  "invariants": [
+    "定稿毛色与像素纹理",
+    "橄榄金色大眼、小粉鼻、圆奶油色口鼻",
+    "额头M纹、深色狸花条纹和奶油胸口",
+    "紧凑体型、粗四肢、环纹弯尾",
+    "四条腿、两个前肢与两个后肢，遮挡可减少可见脚数，不能新增肢体",
+    "中性母版头部不侧歪"
+  ],
+  "animationDerivation": {
+    "idle": {
+      "master": "standing-front",
+      "allowedChanges": "眨眼、耳动、尾巴摆动，小幅头部转向"
+    },
+    "walking": {
+      "master": "standing-side",
+      "allowedChanges": "四足交替支撑，脚底接触与重心对应"
+    },
+    "turnAndPoop": {
+      "masters": [
+        "standing-front",
+        "standing-side",
+        "standing-back"
+      ],
+      "allowedChanges": "独立绘制去程与回程：头先转、前爪迈步带肩、后腿跟步带胯；禁止静态朝向图倒放或整猫旋转。"
+    },
+    "eating": {
+      "masters": [
+        "standing-front",
+        "sitting-front"
+      ],
+      "allowedChanges": "落地站稳或坐稳后咀嚼，头颈和下颌协同，吞咽后收口"
+    },
+    "wiping": {
+      "master": "sitting-front",
+      "movingLimb": "猫的右前爪（画面左侧）",
+      "support": "两个后肢保持蹲坐承重，猫的左前爪留在地面",
+      "head": "头保持基本正直，只允许轻微低头靠近爪子；禁止固定侧歪",
+      "frames": [
+        "坐稳，四爪回到母版位置",
+        "身体重心略移到支撑前爪，右前爪离地",
+        "同一前爪抬到胸口",
+        "同一前爪接触嘴边",
+        "同一前爪横擦口鼻",
+        "同一前爪放回原地"
+      ],
+      "mandatoryCheck": "抬爪后删除该前爪原来的落地点；每帧只有一条运动前肢，禁止地面还保留同一只脚导致第五条腿"
+    }
+  },
+  "prompts": [
+    {
+      "key": "standing-front",
+      "prompt": "Use case: identity-preserve. Asset type: production character model-sheet MASTER, one standalone full-body standing FRONT VIEW sprite. Input image is the ONLY approved character design and immutable identity reference. Recreate this exact brown tabby cat as a neutral orthographic front view: head upright and centered, nose on vertical centerline, both eyes and both ear bases level, no sideways head tilt, no playful pose, no perspective yaw, no action. All FOUR anatomical legs exist: TWO front legs straight and planted, TWO hind legs behind them with rear paws subtly visible at the sides; exactly four paws total, no extra legs, no extra paw-shaped fur. Preserve the approved cat's large round olive-gold eyes with dark pupils and small highlights, small dusty pink triangular nose, rounded cream muzzle, cream chin/chest bib, broad compact head with large ears, sturdy stocky torso, dark brown mackerel stripes and forehead M, thick upright curved ringed tail curling toward image right, original fine crisp pixel-art texture, dark brown outlines, warm brown/tan palette and soft upper-left lighting. Do not turn it into a different cat, do not thin or elongate the face, no chibi/cartoon redesign, no low-resolution simplification, no realistic photograph. Transparent background, one cat only. Match original 1402x1122 canvas and pixel scale, feet on y=1089 baseline, body centered x=701, visible breathing room around all whiskers/ears/tail, no clipping, no labels/grid/border/shadow/props. This upright neutral front master will determine the other orthographic views and all animation poses; preserving the approved character identity is paramount."
+    },
+    {
+      "key": "standing-side",
+      "prompt": "Use case: identity-preserve. Asset type: a production orthographic character master sprite, ONE cat only. Image 1 is the immutable ORIGINAL approved cat design. Image 2 is its newly established neutral front master, use it to lock upright head anatomy, round olive-gold eyes, pink nose, rounded cream muzzle and chin, forehead M, cream chest, broad head/large ears, stocky torso, sturdy legs, dark mackerel tabby stripes and thick upright hooked ringed tail. EXACT same character across views. Preserve the fine crisp pixel-art texture, dark brown outline, warm tan/brown palette, soft upper-left illumination and apparent volume of the original. No chibi simplification, no skinny face/long muzzle, no new style, no extra limbs. Transparent background, full body, original 1402x1122 canvas, centered x=701, feet ground y=1089, same scale as front master, whiskers/ears/tail fully contained with breathing room. No labels, grid, backdrop, ground shadow, action, food, or other props. View: strict 90-degree LEFT SIDE profile, cat faces screen-left. Head level and aligned neutrally with spine, no cocked head, no looking at viewer. Only the near eye is visible, with the same olive iris; far eye fully occluded. Short rounded muzzle and correct feline skull. Four anatomically connected legs in TWO pairs: near front leg and far front leg below shoulders, near hind leg and far hind leg below haunches, far limbs slightly staggered for readability; exactly FOUR paws, all on ground. Tail arises from rump and curves upright on image right. Keep full adult compact torso volume and striped coat consistent with the front master. Neutral standing pose, not walking."
+    },
+    {
+      "key": "standing-back",
+      "prompt": "Use case: identity-preserve. Asset type: a production orthographic character master sprite, ONE cat only. Image 1 is the immutable ORIGINAL approved cat design. Image 2 is its newly established neutral front master, use it to lock upright head anatomy, round olive-gold eyes, pink nose, rounded cream muzzle and chin, forehead M, cream chest, broad head/large ears, stocky torso, sturdy legs, dark mackerel tabby stripes and thick upright hooked ringed tail. EXACT same character across views. Preserve the fine crisp pixel-art texture, dark brown outline, warm tan/brown palette, soft upper-left illumination and apparent volume of the original. No chibi simplification, no skinny face/long muzzle, no new style, no extra limbs. Transparent background, full body, original 1402x1122 canvas, centered x=701, feet ground y=1089, same scale as front master, whiskers/ears/tail fully contained with breathing room. No labels, grid, backdrop, ground shadow, action, food, or other props. View: strict 180-degree REAR / BACK view, shoulders and haunches centered and level, no face/eyes/nose/muzzle visible, no looking back. Head upright with two ears level. Show the original tabby stripe pattern continuing coherently around the back, dark dorsal stripe, both hind haunches and exactly FOUR anatomical limbs. Two near hind paws planted symmetrically; the two farther front paws can be partially visible behind/between the hind legs but no invented extra toes or legs. Thick ringed tail connects once at the center of the rump and rises, tip curving toward image right. Neutral relaxed standing posture, not crouching, no toilet action, no anatomical genital detail."
+    },
+    {
+      "key": "sitting-front",
+      "prompt": "Use case: identity-preserve. Asset type: a production orthographic character master sprite, ONE cat only. Image 1 is the immutable ORIGINAL approved cat design. Image 2 is its newly established neutral front master, use it to lock upright head anatomy, round olive-gold eyes, pink nose, rounded cream muzzle and chin, forehead M, cream chest, broad head/large ears, stocky torso, sturdy legs, dark mackerel tabby stripes and thick upright hooked ringed tail. EXACT same character across views. Preserve the fine crisp pixel-art texture, dark brown outline, warm tan/brown palette, soft upper-left illumination and apparent volume of the original. No chibi simplification, no skinny face/long muzzle, no new style, no extra limbs. Transparent background, full body, original 1402x1122 canvas, centered x=701, feet ground y=1089, same scale as front master, whiskers/ears/tail fully contained with breathing room. No labels, grid, backdrop, ground shadow, action, food, or other props. View/pose: strictly FRONT-FACING SEATED / SQUAT-SITTING neutral cat. HEAD UPRIGHT, both eyes level, nose centered, no sideways head tilt, exactly the same face as front master. Hindquarters lowered onto the floor: TWO folded hind legs / haunches resting at the outer sides, TWO front legs straight under chest with two front paws planted close together. Exactly FOUR anatomical paws total (two front plus two hind), no fifth foot or detached limb. Do not depict four standing legs plus seated haunch feet. Centered spine, level shoulders, relaxed mouth closed, attentive neutral eyes. Sitting head height can be modestly lower than standing but same head size and body volume. Thick ringed tail is attached behind hips and curled gently upright to image right. This seated master is the anatomical base for future paw grooming: one front paw may later lift but no gesture yet."
+    },
+    {
+      "key": "standing-back-ear-correction",
+      "prompt": "Use case: precise-object-edit. Image 1 is the edit target, a rear-facing tabby cat sprite. It contains an anatomy mistake: from a strict 180 degree rear view the ear surfaces should be the furry OUTER BACKS of the ears, but this image shows pink cream inner ear cavities. Change ONLY the two ear interior surfaces to the brown/tan short furry backs of the ears, matching the nape fur and original tabby palette. Retain the exact ear outlines, ear size, angle and positions. No exposed pink inner pinna, no bright cream fan-shaped inner-ear folds. Preserve EVERY other part of this image unchanged: same rear-facing head, back stripe pattern, exactly four existing legs/paws, torso, thick ringed tail on image right, pose, silhouette, pixel texture, dimensions 1402x1122, alpha background. Do not redraw or redesign the body or move the character. Image 2 is the original approved cat identity reference for color and pixel rendering only. Output one corrected transparent rear view sprite with no labels/props/background."
+    }
+  ],
+  "generatedFiles": {
+    "standing-front.png": "exec-0921ad19-af62-41e7-b136-18565c4bf1ed.png",
+    "standing-side.png": "exec-b9c44d4a-25c1-4b8d-9a7a-f55c16a33a7e.png",
+    "standing-back.png": "exec-f89bd526-3981-463d-a5d5-3fb31fb065e5.png",
+    "sitting-front.png": "exec-c395b3cf-0162-4123-9da4-0ad91e1026ad.png"
+  },
+  "actualCanvas": {
+    "width": 1402,
+    "height": 1122,
+    "format": "PNG RGBA",
+    "note": "四图均为1402x1122；生成后的脚底像素位置并不等于提示词中的1089，运行时请使用每张图实测groundAnchor对齐。"
+  },
+  "review": {
+    "stage": "candidate-master-views",
+    "userApproved": false,
+    "notes": [
+      "站立正面和蹲坐正面头部摆正，不继承原稿的歪头姿势",
+      "四图的毛色、脸型、粗壮身形与环尾按原稿保持",
+      "背面图已经修正为棕色外耳背部",
+      "正面、侧面与蹲坐图各自有四条完整或部分遮挡的腿",
+      "派生视角中的不可见花纹为依据原稿推演，仍需视觉比对"
+    ]
+  },
+  "derivedPreview": {
+    "file": "wipe.json",
+    "preview": "wipe-preview.html",
+    "status": "integrated-for-review",
+    "integrated": true,
+    "runtimeManifest": "../../pet-animations.json",
+    "fullPreview": "../../../build/preview-feeding-model-v1/index.html"
+  },
+  "runtimePolish": "feeding/polish-20261024.json",
+  "runtimeIdentityCorrection": "feeding/identity-20261025.json"
+}

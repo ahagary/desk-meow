@@ -1,0 +1,19 @@
+# Generated applications, installers, and animation previews
+/build/
+/dist/
+/output/
+.DS_Store
+__pycache__/
+*.py[cod]
+
+# Local configuration and signing credentials
+.env
+.env.*
+!.env.example
+*.p12
+*.p8
+*.mobileprovision
+*.provisionprofile
+
+# Local scratch file
+/test.txt

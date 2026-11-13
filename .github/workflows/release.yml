@@ -1,0 +1,72 @@
+name: macOS Apple Silicon
+
+on:
+  push:
+    branches: [main]
+    tags: ['v*']
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  package:
+    runs-on: macos-15
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+      - name: Check release version
+        env:
+          REF_TYPE: ${{ github.ref_type }}
+          REF_NAME: ${{ github.ref_name }}
+        run: |
+          if [[ "$REF_TYPE" == tag && "$REF_NAME" != "v$(cat VERSION)" ]]; then
+            echo 'Tag must match VERSION (for example v0.1.0).'
+            exit 1
+          fi
+      - name: Build, validate, and package arm64 app
+        env:
+          BUILD_NUMBER: ${{ github.run_number }}
+          MACOSX_DEPLOYMENT_TARGET: '13.0'
+        run: ./release.sh
+      - name: Save installers
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
+        with:
+          name: TabbyDesktopPet-macOS-arm64
+          path: dist/*
+          if-no-files-found: error
+          retention-days: 14
+
+  release:
+    if: startsWith(github.ref, 'refs/tags/v')
+    needs: package
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      actions: read
+      contents: write
+    steps:
+      - name: Download installers from this run
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          RUN_ID: ${{ github.run_id }}
+        run: gh run download "$RUN_ID" --name TabbyDesktopPet-macOS-arm64 --dir dist
+      - name: Create draft GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          RELEASE_TAG: ${{ github.ref_name }}
+        run: |
+          cat > release-notes.txt <<'EOF'
+          适用于 Apple Silicon（M1/M2 等），最低 macOS 13。
+
+          下载 DMG，将应用拖入 Applications；也可以解压 ZIP 后移动应用。
+          本工作流生成的版本使用 ad-hoc 签名，尚未经过 Apple 公证。
+          首次打开若被拦截，请确认来源可信后前往“系统设置 → 隐私与安全性 → 仍要打开”。
+
+          同时提供 SHA-256 校验文件。安装者无需安装开发工具。
+          EOF
+          gh release create "$RELEASE_TAG" dist/* --verify-tag --draft \
+            --title "狸花猫桌面宠物 $RELEASE_TAG" --notes-file release-notes.txt

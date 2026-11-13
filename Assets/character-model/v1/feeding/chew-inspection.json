@@ -1,0 +1,144 @@
+{
+  "cell": [
+    495,
+    396
+  ],
+  "columns": 4,
+  "frames": [
+    {
+      "boundsAlpha20": [
+        112,
+        5,
+        482,
+        395
+      ],
+      "index": 0,
+      "sourceRect": [
+        0,
+        0,
+        495,
+        396
+      ],
+      "visiblePixels": 96536
+    },
+    {
+      "boundsAlpha20": [
+        99,
+        6,
+        469,
+        395
+      ],
+      "index": 1,
+      "sourceRect": [
+        495,
+        0,
+        495,
+        396
+      ],
+      "visiblePixels": 96601
+    },
+    {
+      "boundsAlpha20": [
+        82,
+        6,
+        451,
+        395
+      ],
+      "index": 2,
+      "sourceRect": [
+        990,
+        0,
+        495,
+        396
+      ],
+      "visiblePixels": 96804
+    },
+    {
+      "boundsAlpha20": [
+        68,
+        7,
+        443,
+        395
+      ],
+      "index": 3,
+      "sourceRect": [
+        1485,
+        0,
+        495,
+        396
+      ],
+      "visiblePixels": 97614
+    },
+    {
+      "boundsAlpha20": [
+        112,
+        0,
+        483,
+        380
+      ],
+      "index": 4,
+      "sourceRect": [
+        0,
+        396,
+        495,
+        396
+      ],
+      "visiblePixels": 96333
+    },
+    {
+      "boundsAlpha20": [
+        98,
+        0,
+        467,
+        380
+      ],
+      "index": 5,
+      "sourceRect": [
+        495,
+        396,
+        495,
+        396
+      ],
+      "visiblePixels": 96499
+    },
+    {
+      "boundsAlpha20": [
+        79,
+        0,
+        454,
+        380
+      ],
+      "index": 6,
+      "sourceRect": [
+        990,
+        396,
+        495,
+        396
+      ],
+      "visiblePixels": 96710
+    },
+    {
+      "boundsAlpha20": [
+        68,
+        0,
+        443,
+        380
+      ],
+      "index": 7,
+      "sourceRect": [
+        1485,
+        396,
+        495,
+        396
+      ],
+      "visiblePixels": 97264
+    }
+  ],
+  "image": "Assets/character-model/v1/feeding/chew.png",
+  "paddingMaxAlpha": 0,
+  "rows": 2,
+  "size": [
+    1983,
+    793
+  ]
+}

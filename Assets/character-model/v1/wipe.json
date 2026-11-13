@@ -1,0 +1,139 @@
+{
+  "version": "model-v1-wipe-preview",
+  "status": "integrated-for-review",
+  "generatedWith": "built-in image_gen",
+  "identitySource": "original-approved.png",
+  "master": "sitting-front.png",
+  "image": "wipe-keyframes.png",
+  "imageWidth": 1981,
+  "imageHeight": 793,
+  "gridRegion": {
+    "x": 0,
+    "y": 0,
+    "width": 1980,
+    "height": 792
+  },
+  "frameWidth": 495,
+  "frameHeight": 396,
+  "columns": 4,
+  "rows": 2,
+  "frameCount": 8,
+  "frameOrder": "row-major",
+  "trailingTransparentPadding": {
+    "right": 1,
+    "bottom": 1
+  },
+  "anchor": {
+    "x": 247,
+    "y": 380
+  },
+  "loop": false,
+  "durationsMs": [
+    240,
+    130,
+    150,
+    200,
+    240,
+    160,
+    160,
+    240
+  ],
+  "previewPauseMs": 900,
+  "poses": [
+    "坐稳",
+    "前爪离地",
+    "抬到胸前",
+    "碰到嘴边",
+    "擦过口鼻",
+    "收回胸前",
+    "前爪下落",
+    "落爪眨眼"
+  ],
+  "frames": [
+    {
+      "sourceRect": [
+        0,
+        0,
+        495,
+        396
+      ]
+    },
+    {
+      "sourceRect": [
+        495,
+        0,
+        495,
+        396
+      ]
+    },
+    {
+      "sourceRect": [
+        990,
+        0,
+        495,
+        396
+      ]
+    },
+    {
+      "sourceRect": [
+        1485,
+        0,
+        495,
+        396
+      ]
+    },
+    {
+      "sourceRect": [
+        0,
+        396,
+        495,
+        396
+      ]
+    },
+    {
+      "sourceRect": [
+        495,
+        396,
+        495,
+        396
+      ]
+    },
+    {
+      "sourceRect": [
+        990,
+        396,
+        495,
+        396
+      ]
+    },
+    {
+      "sourceRect": [
+        1485,
+        396,
+        495,
+        396
+      ]
+    }
+  ],
+  "review": {
+    "anatomy": "各帧四肢；抬起的前爪原落地点没有保留重复爪",
+    "head": "头保持基本正直，擦嘴帧轻微前低头",
+    "supportBaselineY": [
+      380,
+      380,
+      380,
+      380,
+      380,
+      380,
+      380,
+      380
+    ],
+    "alpha": "RGBA，图集右侧与底部各一像素完全透明，位于有效网格外",
+    "limitation": "8个擦嘴关键姿态已接入完整喂食流程；运行时结束后追加80ms坐稳。角色派生设定仍待用户审阅。"
+  },
+  "prompt": "Use case: identity-preserve. Asset type: production transparent pixel-art character animation sprite sheet, not an illustration.\nInput image 1 is the NEW FIXED FRONT SEATED MASTER and must be copied faithfully as the base pose in every cell; image 2 is the immutable originally approved character identity. Preserve this exact warm brown stocky tabby, fine pixel clusters, same broad face, olive-gold eyes, pink nose, cream rounded muzzle and chest, forehead M and body stripe map, same body volume, same tail silhouette. Do not redesign, simplify, change face, enlarge the eyes, or tilt the head.\nCanvas contract: EXACT 2804x1122 transparent PNG, a strictly even 4 columns by 2 rows grid, exactly 8 cells, each 701x561 pixels. One complete cat per cell. No labels, borders, gutters, shadows, ground, props or text. Scale the seated reference exactly 50% within each cell; same x/y placement and same scale in every cell. Baseline at local y=540. Upright centered head, both eyes level, torso and two seated hindquarters stay in the same place. Tail stays still. FULL cat including whiskers and tail visible in every cell, no clipping.\nAction: natural seated mouth grooming with ONE front paw, reading left-to-right then second row. Exactly FOUR anatomical limbs per cat: two folded hind legs with hind paws at the outer sides, one planted front leg on IMAGE RIGHT, one moving front leg on IMAGE LEFT (cat's right foreleg). The moving paw must be physically ATTACHED to its own shoulder by a single bent forearm. CRITICAL: whenever this front paw is raised, its original grounded leg and paw MUST BE ABSENT, revealing belly fur/transparent space behind it. There cannot be a stationary left front leg plus a new raised arm. Only THREE paws touch the floor in raised-paw frames, with the fourth paw visibly in the air. Do not mistake the hind paw at far image-left for the moving front paw. Never a fifth limb, fifth foot, doubled forearm, or detached paw.\nFrame 1 (top left): exact seated master, both forepaws grounded, neutral level head.\nFrame 2: gently shift weight onto planted IMAGE-RIGHT forepaw and hindquarters; IMAGE-LEFT forepaw just lifted one paw-height off floor, elbow begins bending. Vacate its former ground position.\nFrame 3: same forepaw halfway upward at lower chest, elbow folded; original forepaw floor position empty. Head stays straight, eyes softly attentive.\nFrame 4: same paw lightly touches left corner of mouth, slight forward nod ONLY, no sideways head tilt. Other three limbs remain planted.\nFrame 5: same paw sweeps a small distance across muzzle toward nose, partially covering mouth, eyes gently half-close, head upright and level. No new limb.\nFrame 6: paw withdraws just below muzzle at upper chest, elbow still folded, head returns to neutral level, eyes gently open.\nFrame 7: paw descends toward its exact original ground position, halfway down at lower chest, same single forearm unfolds.\nFrame 8 (bottom right): paw has returned to exact seated master position, body settles, gentle blink. Same four limbs and original neutral head.\nThis is a single non-looping 1.7 second wipe, not waving or nuzzling. Show eight genuinely distinct anatomical poses with logical paw trajectory. Stable face and body texture, stable supporting paws, no whole-image translation/rotation/squash to fake motion. Render in the approved original finely detailed pixel-art style with crisp pixels and no blurred painterly shading. Transparent alpha background.",
+  "rejectedPackingAttempt": {
+    "reason": "重新排版的输出出现背景和纹理变化，未选用；保留第一版原始图集，以显式网格区域读取。",
+    "prompt": "Use case: compositing. Image 1 is an existing 8-frame mouth-wiping animation sprite sheet for this exact approved tabby character. Change ONLY the packing/layout to a standard exact 1024 x 1536 pixel transparent sprite sheet, with TWO columns and FOUR rows, each cell EXACTLY 512 x 384 pixels, no gutters. Preserve the same eight poses and their exact frame order: old upper row frames 1,2,3,4 followed by old lower row 5,6,7,8. New row1 contains frames1,2; row2 frames3,4; row3 frames5,6; row4 frames7,8. Uniformly size the cat in every frame to the same apparent scale as the other frames, with support paw ground baseline at local y=374, face center at x=250, and all ears/tails/whiskers fully within their cells. Do not stretch or distort the body to fit the cell. Transparent margins can absorb remaining space. Keep the exact pixel detail, original colors, original cat face and stripe patterns of the provided frames. This is a technical sprite atlas repacking operation, no redesign, no added animation frames, no new art style, no new props, no text, no borders, no shadow, no ground. Keep head upright, no head tilt. Preserve exactly four anatomical legs in each pose: in frames2-7 the image-left FRONT leg is lifted and its original floor position is empty; the two hind feet and the other front foot support the seated cat. Never add a fifth limb, no duplicate grounded paw. Keep all planted paws aligned between cells. Exact 1024x1536 PNG with alpha, a regular 2x4 grid."
+  }
+}

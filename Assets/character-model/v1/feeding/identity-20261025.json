@@ -1,0 +1,127 @@
+{
+  "date": "2026-10-25",
+  "status": "integrated-for-review",
+  "userApproved": false,
+  "generatedWith": "built-in image_gen",
+  "issue": "Repeated identity/color popping across the feeding sequence. The same rise-front-v5 atlas was reused in six clips and had strongly red/orange fur, saturated ears and nose.",
+  "selected": {
+    "rise-coat-v8.png": "exec-1affc9f3-86f5-4519-9a94-5439c4246db3.png"
+  },
+  "affectedClips": [
+    "EnterAwait",
+    "ExitAwait",
+    "Rise",
+    "Settle",
+    "StandAfterWipe",
+    "Proud"
+  ],
+  "preserved": "All other clip definitions, including idle, nuzzle, jump, chew, wipe and physical turns. Original approved PNG remains byte-identical.",
+  "iterations": [
+    {
+      "key": "rise-coat-v6",
+      "refs": [
+        "/Users/hey/Documents/ChatGPT/桌面宠物/Assets/character-model/v1/feeding/rise-front-v5.png",
+        "/Users/hey/Documents/ChatGPT/桌面宠物/Assets/character-model/v1/sitting-front.png",
+        "/Users/hey/Documents/ChatGPT/桌面宠物/Assets/tabby-preferred.png"
+      ],
+      "prompt": "Use case: identity-preserve. Correct existing animation atlas IMAGE 1, six sit-to-stand cels in 3 columns x 2 rows. It has an erroneous orange-red kitten appearance. IMAGE 2 is the precise seated model color/face/style reference; IMAGE 3 is the ORIGINAL approved cat and ultimate identity reference. Restore EVERY cel of IMAGE 1 to the muted tawny BROWN coat and pixel texture of 2/3. Specifically remove orange/copper/red cast, salmon-red ears and nose, glossy vector edges; use muted brown/golden tan fur, dark chocolate stripes, ivory-cream muzzle/chest, dusty brown-pink inner ears/nose and olive-gold eyes. Match the broad cheek/muzzle and skull proportions of image2, not narrow kitten face. Reproduce the actual coarse pixel clusters of original cat, not smoothly painted fur. Same stripe widths and stripe map of image2 follow the same anatomical regions through the six poses, tail bands fixed; no stripe appearance/disappearance. This is an appearance correction of image1, NOT new poses. Preserve all SIX lower-body sit-to-stand positions, four limbs, paw contact points, pose ordering, full tails, head orientation, scale, dimensions 1536x1024 and occupied positions; head upright throughout. Do not introduce grooming poses. Same diffuse neutral lighting across ALL cels; no per-frame brightness or saturation changes. Real alpha transparent background, NO brown backdrop, no shadows or text. Preserve 3x2 packing with one complete cat per cell, no clipping.",
+      "source": "exec-5f6e58f6-3c2f-4517-992e-d3810f093a14.png"
+    },
+    {
+      "key": "idle-bridge-coat-v2",
+      "refs": [
+        "/Users/hey/Documents/ChatGPT/桌面宠物/Assets/character-model/v1/feeding/idle-bridge-v1.png",
+        "/Users/hey/Documents/ChatGPT/桌面宠物/Assets/tabby-stand-center-v2.png",
+        "/Users/hey/Documents/ChatGPT/桌面宠物/Assets/tabby-preferred.png"
+      ],
+      "prompt": "Use case: identity-preserve. Edit IMAGE 1 six-cel standing foot-adjustment atlas, 3 columns x 2 rows. Correct only its identity/rendering/color drift so it matches IMAGE 2 existing desktop idle cat and IMAGE 3 original approved cat. Every cel must use their exact muted brown/tawny fur, dark chocolate mackerel stripes, creamy ivory muzzle, dusty brown-pink nose/inner ears, olive-gold eyes, coarse crisp pixel clusters. No copper/orange highlights, no red saturation, no glossy smooth/vector outlines. Restore stocky adult broad-cheek cat, original large round eye/face proportions. Preserve existing six exact poses, 4-limb anatomy and foot positions, head angles, tail shapes, body scale, same atlas positions 1536x1024, and front→slight three-quarter orientation progression. Do not redesign/repose or add actions. Especially cels4-6 must converge to EXACT coat, forehead M, cheek stripe pattern, chest bands and head-to-body proportion of image2. All six cels SAME lighting, exposure and palette. Transparent alpha background ONLY, no brown backdrop, no labels/shadows/grid/props. One complete cat in each cell with transparent separation, no clipping. This is a consistency repair, not a new character.",
+      "source": "exec-6270612f-2cf9-48ca-9fd4-a930916b50cb.png"
+    },
+    {
+      "key": "rise-coat-v7",
+      "prompt": "Use case: precise-object-edit. IMAGE 1 is the SIX-pose sit-to-stand sheet to edit, IMAGE 2 is a color reference only (eight grooming poses). Do NOT copy any pose, paw or action from image2. Preserve image1 exact pose geometry, six cels, 3x2 layout, size1536x1024, facial shape, head sizes, stripe locations, feet, tail and outlines. COLOR MATCH ONLY. Image1 has become too pale/desaturated/cool: its brown-midtones are about 12% brighter and 14% less saturated than image2. Bring the six cats' brown/tan fur to the same midtone brightness, brown hue and saturation as image2: slightly DARKER, richer warm muted BROWN, not orange/red; keep creamy muzzle, olive eyes and dusty nose. Match image2 dark chocolate stripes exactly. Same pixel texture and neutral lighting in every cel. Do not change head/ear proportions or any poses. No licking/grooming/raised paws. Transparent alpha backdrop only. Output only the six-pose corrected sheet, not the reference. This edit should be visually subtle and must not create a new cat.",
+      "refs": [
+        "rise-coat-v6.png",
+        "../wipe-keyframes.png"
+      ],
+      "source": "exec-4090729f-7bd8-4c63-b7dd-0889d12d4cc7.png"
+    },
+    {
+      "key": "rise-coat-v8",
+      "prompt": "Precise COLOR-ONLY edit of this existing six-pose 3x2 cat sprite sheet. Keep ALL geometry, face/eyes, poses, paw locations, striping, texture, scale and packing exactly unchanged. The tan/brown fur midtones are still too pale/washed out. Darken ONLY the tan/brown coat midtones by about 10% and increase their saturation by about 9%, preserving the current warm BROWN hue (do NOT turn orange/red). Keep ivory muzzle/chest highlights, eye colors, dusty pink nose/ear and dark chocolate stripes unchanged. Aim for brown fur median RGB near (153,109,67) in medium-lit tan areas instead of pale beige. Every cel must undergo precisely the same subtle color correction. No new drawing, no expression changes, no proportions changes. Transparent alpha background, same1536x1024 canvas and3x2 atlas. Preserve all six sit-to-stand poses; this is strictly a small fur color adjustment.",
+      "refs": [
+        "rise-coat-v7.png"
+      ],
+      "source": "exec-1affc9f3-86f5-4519-9a94-5439c4246db3.png"
+    }
+  ],
+  "notSelected": [
+    {
+      "file": "rise-coat-v6.png",
+      "reason": "Removed red cast but became too pale and desaturated."
+    },
+    {
+      "file": "rise-coat-v7.png",
+      "reason": "Improved warmth but still pale next to neighboring clips."
+    },
+    {
+      "file": "idle-bridge-coat-v2.png",
+      "reason": "No clear improvement over existing bridge; preserve existing pose/color asset to avoid new drift."
+    }
+  ],
+  "audit": {
+    "tool": "Tools/inspect_coat.swift",
+    "output": "coat-audit-20261025.json",
+    "method": "Read-only sRGB opaque brown-midtone distribution; excludes cream/eye/extreme-dark colors. Pose-dependent statistics are supporting evidence, not proof of identity.",
+    "oldRise": {
+      "medianHue": 21.7021,
+      "saturation": 0.645963,
+      "luma": 0.38042
+    },
+    "selectedRise": {
+      "medianHue": 24.2553,
+      "saturation": 0.556291,
+      "luma": 0.413908
+    },
+    "adjacentWipe": {
+      "medianHue": 24.7059,
+      "saturation": 0.573034,
+      "luma": 0.395345
+    }
+  },
+  "limitations": [
+    "Generated sources remain provisional. Color matching alone does not prove every facial or stripe detail identical to the original."
+  ],
+  "validation": {
+    "comparison": "Native renderer before/after frames synchronized by exact state and cel index; original approved image alongside.",
+    "unchangedOriginalSHA256": "5f44f06d8da5af2b9115d61a483ddd6bd874d8dfe65c097f843603099ef271f1",
+    "resourceCheck": "24 clips passed",
+    "animationFlow": "full feeding sequence passed",
+    "feedingChecks": "passed including save-failure fixture",
+    "beforeAfterTimeline": "509 frames with same state/cel/duration",
+    "renderedChangedFramesByState": {
+      "EnterAwait": 12,
+      "Rise": 13,
+      "Settle": 12,
+      "StandAfterWipe": 13,
+      "Proud": 12,
+      "ExitAwait": 12
+    },
+    "runningApp": "rebuilt and restarted; PID19751 at verification",
+    "selectedAtlas": {
+      "size": [
+        1536,
+        1024
+      ],
+      "poses": 6,
+      "layout": "3 columns x 2 rows, measured source rectangles; four middle poses used between existing exact endpoints",
+      "alphaCorners": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "paletteReview": "original plus synchronized before/after; normal and half-speed controls verified"
+  }
+}

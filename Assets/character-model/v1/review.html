@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="zh-CN">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>狸花猫 · 角色四视图</title>
+<style>
+:root{color-scheme:light;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;color:#3d3027;background:#f2eee6}*{box-sizing:border-box}body{margin:0}header{padding:30px 34px 20px;max-width:1560px;margin:auto}header small{font-size:11px;letter-spacing:3px;color:#87715a}h1{font-size:28px;font-weight:600;letter-spacing:1px;margin:10px 0}p{font-size:13px;line-height:1.8;color:#7e6c5c;margin:6px 0}.toolbar{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:18px}button,a.download{font:inherit;font-size:12px;border:1px solid #d5cab9;background:#fffaf3;color:#54402d;border-radius:8px;padding:8px 13px;cursor:pointer;text-decoration:none}button[aria-pressed=true]{background:#5d4937;color:#fff;border-color:#5d4937}.layout{max-width:1560px;margin:auto;padding:0 34px 34px;display:grid;grid-template-columns:minmax(230px,.72fr) minmax(0,2fr);gap:20px}aside{align-self:start;position:sticky;top:20px}.card{border:1px solid #ded3c4;background:#fffaf2;border-radius:14px;overflow:hidden}.image-stage{background-color:var(--stage,#e5dfd3);position:relative;display:flex;align-items:center;justify-content:center;aspect-ratio:1402/1122}.image-stage img{width:100%;height:100%;object-fit:contain;image-rendering:pixelated}.caption{padding:13px 17px;display:flex;align-items:center;justify-content:space-between;gap:12px}.caption h2{font-size:14px;margin:0 0 5px}.caption span{font-size:11px;color:#8a7562}.caption a{color:#74604c;font-size:11px;text-decoration:none;white-space:nowrap}.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.note{padding:16px 0;font-size:12px;line-height:1.9;color:#7a6654}.tag{display:inline-block;border:1px solid #cbbba6;border-radius:20px;padding:3px 9px;font-size:11px;margin-right:7px}.rules{margin-top:18px;border-top:1px solid #d5c8b6;padding-top:12px}.rules strong{font-size:13px;font-weight:600}.rules ol{padding-left:18px;font-size:12px;line-height:2;color:#725d4b}footer{font-size:11px;color:#8a7968;padding-top:14px}.large .layout{grid-template-columns:1fr}.large aside{position:static;max-width:400px}.large .grid{grid-template-columns:1fr}.checker .image-stage{background-color:#f0ede5;background-image:conic-gradient(#dfd8cb 25%,transparent 0 50%,#dfd8cb 0 75%,transparent 0);background-size:20px 20px}@media(max-width:800px){header{padding:24px 18px 18px}.layout{padding:0 18px 24px;grid-template-columns:1fr}aside{position:static;display:grid;grid-template-columns:1fr 1fr;gap:16px}.note{padding:0}.grid{gap:10px}.caption{padding:11px}.caption span{font-size:10px}}@media(max-width:480px){aside,.grid{grid-template-columns:1fr}.caption h2{font-size:13px}}
+</style>
+<header>
+<small>TABBY · CHARACTER MODEL / V1</small>
+<h1>先固定这只猫，再让它动起来。</h1>
+<p>依据最初定稿生成的四张角色设定图。统一脸型、体型与花纹；中性姿态头部摆正。</p>
+<div class="toolbar"><button data-bg="warm" aria-pressed="true">暖灰底</button><button data-bg="white" aria-pressed="false">白底</button><button data-bg="dark" aria-pressed="false">深色底</button><button data-bg="checker" aria-pressed="false">透明检查</button><button id="size" aria-pressed="false">放大对照</button><a class="download" href="model.json" download>素材说明与生成提示词 ↓</a></div>
+<p style="margin-top:14px"><a class="download" href="wipe-preview.html">查看蹲坐擦嘴的 8 帧预览 →</a></p>
+</header>
+<main class="layout">
+<aside>
+<section class="card"><div class="image-stage"><img src="original-approved.png" alt="最初定稿的狸花猫像素图"></div><div class="caption"><div><h2>最初定稿 · 身份依据</h2><span>原文件保留，供脸型与毛色对照</span></div></div></section>
+<div class="note"><span class="tag">4 张设定图</span><span class="tag">透明 PNG</span><p>本组是新生成的视角设定，尚未标记为用户确认的定稿。</p><div class="rules"><strong>擦嘴动作的固定规则</strong><ol><li>从蹲坐母版开始，头部保持正直。</li><li>两条后腿与另一只前爪支撑身体。</li><li>只抬猫的右前爪（画面左侧）。</li><li>抬爪后，原来的前爪落点必须空出。</li><li>碰到嘴边、擦过口鼻，再放回原处。</li></ol></div><footer>1402 × 1122 px / 每张<br>生成方式：内置 image_gen</footer></div>
+</aside>
+<section class="grid" aria-label="四视图">
+<article class="card"><div class="image-stage"><img src="standing-front.png" alt="狸花猫站立正面，头部摆正，四爪着地"></div><div class="caption"><div><h2>01 / 站立 · 正面</h2><span>脸型与中性头部基准</span></div><a href="standing-front.png" download>PNG ↓</a></div></article>
+<article class="card"><div class="image-stage"><img src="standing-side.png" alt="狸花猫站立左侧面，四肢连接身体"></div><div class="caption"><div><h2>02 / 站立 · 侧面</h2><span>体长、四肢与转身基准</span></div><a href="standing-side.png" download>PNG ↓</a></div></article>
+<article class="card"><div class="image-stage"><img src="standing-back.png" alt="狸花猫站立背面，头部朝前不回头"></div><div class="caption"><div><h2>03 / 站立 · 背面</h2><span>后脑、背纹与尾根基准</span></div><a href="standing-back.png" download>PNG ↓</a></div></article>
+<article class="card"><div class="image-stage"><img src="sitting-front.png" alt="狸花猫蹲坐正面，两前爪和两后爪位置清楚"></div><div class="caption"><div><h2>04 / 蹲坐 · 正面</h2><span>等待、进食与擦嘴的姿态基准</span></div><a href="sitting-front.png" download>PNG ↓</a></div></article>
+</section>
+</main>
+<script>
+for(const button of document.querySelectorAll('[data-bg]'))button.addEventListener('click',()=>{document.body.classList.toggle('checker',button.dataset.bg==='checker');document.documentElement.style.setProperty('--stage',({warm:'#e5dfd3',white:'#fff',dark:'#302c27',checker:'#f0ede5'})[button.dataset.bg]);for(const other of document.querySelectorAll('[data-bg]'))other.setAttribute('aria-pressed',String(other===button))});document.querySelector('#size').addEventListener('click',event=>{const large=document.body.classList.toggle('large');event.currentTarget.setAttribute('aria-pressed',String(large));event.currentTarget.textContent=large?'返回四视图':'放大对照'});
+</script>
+</html>

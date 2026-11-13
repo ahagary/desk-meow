@@ -1,0 +1,80 @@
+{
+  "cell": [
+    701,
+    561
+  ],
+  "columns": 2,
+  "frames": [
+    {
+      "boundsAlpha20": [
+        197,
+        20,
+        644,
+        560
+      ],
+      "index": 0,
+      "sourceRect": [
+        0,
+        0,
+        701,
+        561
+      ],
+      "visiblePixels": 143189
+    },
+    {
+      "boundsAlpha20": [
+        138,
+        15,
+        587,
+        508
+      ],
+      "index": 1,
+      "sourceRect": [
+        701,
+        0,
+        701,
+        561
+      ],
+      "visiblePixels": 140309
+    },
+    {
+      "boundsAlpha20": [
+        191,
+        0,
+        660,
+        517
+      ],
+      "index": 2,
+      "sourceRect": [
+        0,
+        561,
+        701,
+        561
+      ],
+      "visiblePixels": 149955
+    },
+    {
+      "boundsAlpha20": [
+        141,
+        0,
+        604,
+        520
+      ],
+      "index": 3,
+      "sourceRect": [
+        701,
+        561,
+        701,
+        561
+      ],
+      "visiblePixels": 139887
+    }
+  ],
+  "image": "Assets/character-model/v1/feeding/sit-stand.png",
+  "paddingMaxAlpha": 0,
+  "rows": 2,
+  "size": [
+    1402,
+    1122
+  ]
+}
