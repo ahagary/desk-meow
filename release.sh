@@ -29,6 +29,7 @@ APP_VERSION="$version" "$project_dir/build.sh"
 "$executable" --validate-resources
 "$executable" --check-animation-flow
 "$executable" --check-feeding
+"$executable" --check-interaction
 
 mkdir -p "$dist_dir"
 work_dir="$(mktemp -d "$project_dir/build/.release.XXXXXX")"

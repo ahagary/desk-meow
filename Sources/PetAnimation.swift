@@ -365,6 +365,12 @@ final class PetAnimationStateMachine {
 }
 
 enum SpritePainter {
+    static func frameBlend(_ playback: SpritePlayback) -> CGFloat {
+        guard playback.blendFrames, playback.nextFrame != nil else { return 0 }
+        let blend = max(0, min(1, (playback.frameProgress - 0.72) / 0.28))
+        return blend * blend * (3 - 2 * blend)
+    }
+
     static func draw(_ playback: SpritePlayback, canvas: NSSize, in bounds: NSRect,
                      groundY: CGFloat, backingScale: CGFloat = 1,
                      mirrorHorizontally: Bool = false) {
@@ -376,9 +382,7 @@ enum SpritePainter {
             graphics.cgContext.translateBy(x: bounds.minX + bounds.maxX, y: 0)
             graphics.cgContext.scaleBy(x: -1, y: 1)
         }
-        let rawFrameBlend = max(0, min(1, (playback.frameProgress - 0.72) / 0.28))
-        let frameBlend = !playback.blendFrames || playback.nextFrame == nil ? CGFloat(0) :
-                         rawFrameBlend * rawFrameBlend * (3 - 2 * rawFrameBlend)
+        let frameBlend = self.frameBlend(playback)
         draw(playback.frame, canvas: canvas, in: bounds, groundY: groundY,
              backingScale: backingScale,
              opacity: 1 - frameBlend)
@@ -388,17 +392,23 @@ enum SpritePainter {
         }
     }
 
-    private static func draw(_ frame: SpriteFrame, canvas: NSSize, in bounds: NSRect,
-                             groundY: CGFloat, backingScale: CGFloat, opacity: CGFloat) {
-        guard opacity > 0.005 else { return }
+    static func destinationRect(_ frame: SpriteFrame, canvas: NSSize, in bounds: NSRect,
+                                groundY: CGFloat, backingScale: CGFloat) -> NSRect {
         let scale = bounds.width / canvas.width
         func snap(_ value: CGFloat) -> CGFloat {
             (value * backingScale).rounded() / backingScale
         }
-        let rect = NSRect(x: snap(bounds.midX - frame.anchor.x * scale),
-                          y: snap(groundY - frame.anchor.y * scale),
-                          width: snap(frame.displaySize.width * scale),
-                          height: snap(frame.displaySize.height * scale))
+        return NSRect(x: snap(bounds.midX - frame.anchor.x * scale),
+                      y: snap(groundY - frame.anchor.y * scale),
+                      width: snap(frame.displaySize.width * scale),
+                      height: snap(frame.displaySize.height * scale))
+    }
+
+    private static func draw(_ frame: SpriteFrame, canvas: NSSize, in bounds: NSRect,
+                             groundY: CGFloat, backingScale: CGFloat, opacity: CGFloat) {
+        guard opacity > 0.005 else { return }
+        let rect = destinationRect(frame, canvas: canvas, in: bounds,
+                                   groundY: groundY, backingScale: backingScale)
         frame.image.draw(in: rect, from: frame.sourceRect,
                          operation: .sourceOver, fraction: opacity,
                          respectFlipped: true, hints: nil)

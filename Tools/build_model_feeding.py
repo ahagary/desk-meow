@@ -21,7 +21,6 @@ bounds = {
     # generator's fully transparent 1 px right / 3 px bottom remainder.
     'feed-master-v1-normalized': [[(i % 4) * 315, (i // 4) * 311, (i % 4 + 1) * 315 - 1,
                                    (i // 4 + 1) * 311 - 1] for i in range(16)],
-    'feed-master-blink-v3': [[0,0,314,310]],
     'rise-coat-v8': [[78,7,508,467],[577,8,1023,467],[1092,6,1523,467],
                       [67,471,511,991],[579,472,1024,992],[1092,472,1525,991]],
     'idle-bridge-v1': [[69,7,511,514],[583,11,1011,514],[1069,8,1503,514],
@@ -45,7 +44,7 @@ bounds = {
 scales = {'sit-stand': 2.06, 'chew': 2.617, 'jump': 2.804, 'turn': 2.739,
           'turn-back-steps': 2.96, 'return-front-steps': 2.88,
           'rise-coat-v8':2.10, 'idle-bridge-v1':2.13, 'jump-proportions-v2':2.96,
-          'feed-master-v1-normalized': 3.75, 'feed-master-blink-v3': 3.75}
+          'feed-master-v1-normalized': 3.75}
 anchors = {
     # Root points are between the supporting paws. Airborne frames keep the
     # same implied floor root, so their drawn paw height remains intentional.
@@ -53,7 +52,6 @@ anchors = {
                                   [140,292],[150,292],[150,292],[140,292],
                                   [145,288],[145,288],[145,288],[145,288],
                                   [145,291],[154,290],[151,290],[155,289]],
-    'feed-master-blink-v3': [[145,288]],
     'rise-coat-v8': [[243,462],[752,462],[1264,462],[243,985],[754,987],[1265,986]],
     'idle-bridge-v1': [[249,511],[765,511],[1256,511],[210,995],[722,998],[1234,1003]],
     'jump-proportions-v2': [[252,385],[748,379],[1244,387],[1716,387],
@@ -76,7 +74,6 @@ mouths = {
                                   [140,187],[150,105],[150,111],[140,180],
                                   [145,130],[145,132],[145,130],[140,133],
                                   [145,113],[132,116],[58,106],[155,105]],
-    'feed-master-blink-v3': [[145,128]],
     'rise-coat-v8': [[246,218],[752,226],[1264,225],[245,700],[754,700],[1265,701]],
     'idle-bridge-v1': [[249,210],[762,213],[1241,212],[178,709],[686,711],[1196,718]],
     'jump-proportions-v2': [[252,177],[748,217],[1233,155],[1710,167],
@@ -90,6 +87,13 @@ mouths = {
     'return-front-steps': [[242,160],[560,156],[1009,175],[88,530],[554,538],
                           [1012,543],[152,875],[619,883],[1140,870]],
 }
+# Neutral lids plus three progressive closures share the seated cel's geometry.
+blink_names = [f'feed-master-blink-v5-{i}' for i in range(1, 5)]
+for name in blink_names:
+    bounds[name] = [[0,0,314,310]]
+    scales[name] = 3.75
+    anchors[name] = [[145,288]]
+    mouths[name] = [[145,128]]
 frames = {}
 for name, rects in bounds.items():
     scale = scales[name]
@@ -137,7 +141,11 @@ relax = [stand,('idle',0,.16)]
 clip('FaceCard',face)
 clip('EnterAwait',face+sit[1:])
 clip('ExitAwait',rise+relax[1:])
-clip('AwaitInput',[(master,0,1.35),('feed-master-blink-v3',0,.12),(master,0,1.25)],loop=True)
+# Fast closure, brief rest, slightly slower reopening. Keep the iris stationary
+# in intermediate cels; no crossfade between open eyes and a smiling squint.
+blink = [(blink_names[i],0,d) for i,d in
+         [(0,.03),(1,.03),(2,.03),(3,.08),(2,.05),(1,.05),(0,.04)]]
+clip('AwaitInput',[(master,0,1.6)]+blink+[(master,0,2.4)],loop=True)
 clip('FeedStart',[(master,0,.55)])
 clip('Rise',rise)
 clip('CatchCard',[stand,(master,4,.14),(master,5,.13),(master,6,.18),
@@ -157,7 +165,7 @@ clip('TurnBack',[(master,12,.14),(master,13,.18),(master,14,.20),(master,15,.20)
 clip('Poop',[(master,15,.82)])
 clip('ReturnFront',[(master,15,.16),(master,14,.20),(master,13,.18),(master,12,.16)])
 clip('Proud',[(master,12,.10),(master,2,.12),(master,1,.12),
-              (master,0,.22),('feed-master-blink-v3',0,.12),(master,0,.34)])
+              (master,0,.22)]+blink+[(master,0,.34)])
 data['formatNotes'] = {'sourceRectOrigin':'top-left',
     'displaySize':'logical size of a tightly packed cel; does not stretch it to the full canvas',
     'anchors':'logical top-left cel coordinates; fixed anatomical root and ground',

@@ -12,7 +12,15 @@ xcode-select --install  # 只需安装一次，等待安装完成
 open 'build/狸花猫桌面宠物.app'
 ```
 
+本机已准备 Apple 工具链到 `~/.cache/tabby-build-tools/CommandLineTools`，构建脚本会优先使用它；可用 `DEVELOPER_DIR` 显式指定其他 Xcode/SDK。没有该目录的机器按上面的标准安装流程构建。
+
 点击猫咪打开「今日小纸条」；猫咪可拖动。菜单栏可打开动作预览、暂停闲逛、减少动态效果、开关声音与退出。数据存放在 `~/Library/Application Support/TabbyDesktopPet/data.json`。
+
+点击范围贴合猫咪的可见轮廓，边缘保留约 2pt 容差；周围透明空白可点击穿透，不会打开便签。右键猫咪或点击菜单栏 🐈 →「调整猫咪大小…」，拖动滑杆可在 50%～200% 之间连续缩放，不限档位；也可以在猫咪上按住 ⌘ 滚动，或在触控板上双指捏合。调整立即生效，重启后保留，支持一键恢复默认的 100%。点击范围、投喂动画和卡片跟随缩放，便签保持原有字号和大小。
+
+悬停从当前可见轮廓进入后，会保留进入时的轮廓和整段蹭人动作的活动范围，避免两耳之间的额头随动作移开时反复切换待机/悬停。点击范围仍只跟随当前可见像素；鼠标离开后立即结束悬停，透明区域继续穿透。`--check-interaction` 包含真实素材下静止指针 300 帧的回归检查，以及缩放、左右转向和离开后的恢复检查。
+
+构建后可运行 `build/狸花猫桌面宠物.app/Contents/MacOS/TabbyDesktopPet --check-interaction`，检查透明区域、图集裁切、镜像、帧混合、跳跃、连续缩放和屏幕边界；发布脚本也会执行此检查。桌面点击穿透、拖动和右键菜单仍需在真实窗口中验收。
 
 ## Git 仓库与发布
 
@@ -67,6 +75,22 @@ NOTARYTOOL_PROFILE='tabby-notary' ./release.sh
 脚本会启用 Hardened Runtime，提交 Apple 公证、装订公证票据，并检查签名。证书密码和 Apple 凭据不要写进源码或仓库。目前 GitHub 工作流没有导入开发者证书，自动生成的草稿会明确标记为未公证版本；已公证的本地安装包可以手动上传到 Release。
 
 ## 当前动作状态
+
+### 蹲坐自然眨眼（2026-11-13）
+
+蹲坐等待和投喂收尾改用 `feed-master-blink-v5-1.png` 至 `v5-4.png`。v4 虽修正了错位，但闭眼仍是上拱的挤眼笑；用户明确指出表情不自然。本轮用内置 image_gen 生成放松下垂的眼睑，仅把眼窝内的素材对齐到原坐姿。三张中间帧保留尚未被遮住的原始瞳孔，由眼皮逐渐覆盖，闭合后稍慢地睁开，完整眨眼约 310ms。
+
+`Tools/build_natural_blink.swift` 从仓库内的母图和眼睑源稿生成四帧，身体和眼窝外像素保持原样；`blink-neutral-v5.json` 保存完整提示词、来源及使用范围。源稿只提供眼睑，不作为整只猫的替换图。
+
+```sh
+swift Tools/build_natural_blink.swift Assets/character-model/v1/feeding/feed-master-v1-normalized.png Assets/character-model/v1/feeding/feed-master-blink-neutral-source-v1.png Assets/character-model/v1/feeding
+python3 Tools/build_model_feeding.py
+for frame in Assets/character-model/v1/feeding/feed-master-blink-v5-*.png; do
+  swift Tools/check_blink.swift Assets/character-model/v1/feeding/feed-master-v1-normalized.png "$frame"
+done
+```
+
+四张帧的眼窝外像素和透明度检查均通过。表情仍以视觉审阅为准，像素不变检查不代表美术效果已经得到用户确认。旧 v3、v4 和派生脚本保留作历史参考。
 
 ### 投喂统一角色母图（2026-11-12）
 

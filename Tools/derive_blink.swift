@@ -3,8 +3,8 @@ import Foundation
 import ImageIO
 import UniformTypeIdentifiers
 
-guard CommandLine.arguments.count == 4 else {
-    fputs("usage: derive_blink seated-open.png seated-closed-source.png output.png\n", stderr)
+guard [3, 4].contains(CommandLine.arguments.count) else {
+    fputs("usage: derive_blink feed-master-v1-normalized.png output.png\n       derive_blink seated-open.png seated-closed-source.png output.png\n", stderr)
     exit(2)
 }
 
@@ -14,8 +14,20 @@ func load(_ path: String) -> CGImage {
     return CGImageSourceCreateImageAtIndex(source, 0, nil)!
 }
 
-let open = load(CommandLine.arguments[1])
-let closed = load(CommandLine.arguments[2])
+let open: CGImage
+let closed: CGImage
+if CommandLine.arguments.count == 3 {
+    let atlas = load(CommandLine.arguments[1])
+    guard atlas.width == 1260, atlas.height == 1244 else {
+        fputs("blink atlas must be 4 x 4 cells of 315 x 311\n", stderr)
+        exit(3)
+    }
+    open = atlas.cropping(to: CGRect(x: 0, y: 0, width: 315, height: 311))!
+    closed = atlas.cropping(to: CGRect(x: 945, y: 622, width: 315, height: 311))!
+} else {
+    open = load(CommandLine.arguments[1])
+    closed = load(CommandLine.arguments[2])
+}
 guard open.width == 315, open.height == 311,
       closed.width == open.width, closed.height == open.height else {
     fputs("blink sources must both be 315 x 311\n", stderr)
@@ -38,33 +50,40 @@ func render(_ image: CGImage, into bytes: inout [UInt8]) {
 render(open, into: &openBytes)
 render(closed, into: &closedBytes)
 
-// Cell 12 shares the same identity and closed eyelids. Its nose is 6 px left
-// and 2 px above cell 1. Copy two feathered eye-shaped regions rather than a
-// rectangular face band, keeping the original muzzle, forehead and cheeks.
-let eyes = [(x: 119.0, y: 103.0), (x: 171.0, y: 103.0)]
-let radius = (x: 31.0, y: 23.0)
+// Cell 12 has a narrower, left-shifted face. Register each eyelid to the
+// corresponding open eye in cell 1; one nose-based translation cannot align
+// both eyes. Coordinates are in the 315 x 311 cels, measured from the top-left.
+// Keep the masks clear of the nose/muzzle so they remain exactly stationary.
+let eyes = [(x: 130.0, y: 104.0, sourceX: 104, sourceY: 99),
+            (x: 185.0, y: 104.0, sourceX: 165, sourceY: 99)]
+let radius = (x: 22.0, y: 18.0)
 for y in 0..<height {
     for x in 0..<width {
-        let distance: Double = eyes.map { eye -> Double in
+        for eye in eyes {
             let dx = (Double(x) - eye.x) / radius.x
-            let dy = (Double(y) - eye.y) / radius.y
-            return sqrt(dx * dx + dy * dy)
-        }.min()!
-        guard distance < 1 else { continue }
-        let sourceX = x - 6, sourceY = y - 2
-        guard sourceX >= 0, sourceX < width, sourceY >= 0, sourceY < height else { continue }
-        let sourceOffset = sourceY * bytesPerRow + sourceX * 4
-        let destinationOffset = y * bytesPerRow + x * 4
-        let weight = distance <= 0.80 ? 1.0 : (1.0 - distance) / 0.20
-        for channel in 0..<4 {
-            let a = Double(openBytes[destinationOffset + channel])
-            let b = Double(closedBytes[sourceOffset + channel])
-            openBytes[destinationOffset + channel] = UInt8(max(0, min(255, (a + (b - a) * weight).rounded())))
+            // The lower edge stops above the whiskers. Keep enough room above
+            // the eye to replace the open upper lid without a dark ghost rim.
+            let verticalRadius = Double(y) > eye.y ? 14.0 : radius.y
+            let dy = (Double(y) - eye.y) / verticalRadius
+            let distance = sqrt(dx * dx + dy * dy)
+            guard distance < 1 else { continue }
+            let sourceX = x + eye.sourceX - Int(eye.x)
+            let sourceY = y + eye.sourceY - Int(eye.y)
+            guard sourceX >= 0, sourceX < width, sourceY >= 0, sourceY < height else { continue }
+            let sourceOffset = sourceY * bytesPerRow + sourceX * 4
+            let destinationOffset = y * bytesPerRow + x * 4
+            let weight = distance <= 0.80 ? 1.0 : (1.0 - distance) / 0.20
+            // Eye regions are opaque; retain the original silhouette's alpha.
+            for channel in 0..<3 {
+                let a = Double(openBytes[destinationOffset + channel])
+                let b = Double(closedBytes[sourceOffset + channel])
+                openBytes[destinationOffset + channel] = UInt8(max(0, min(255, (a + (b - a) * weight).rounded())))
+            }
         }
     }
 }
 
-let outputURL = URL(fileURLWithPath: CommandLine.arguments[3])
+let outputURL = URL(fileURLWithPath: CommandLine.arguments.last!)
 let result = openBytes.withUnsafeMutableBytes { raw -> CGImage in
     let context = CGContext(data: raw.baseAddress, width: width, height: height,
         bitsPerComponent: 8, bytesPerRow: bytesPerRow,

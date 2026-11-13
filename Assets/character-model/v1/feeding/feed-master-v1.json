@@ -24,10 +24,65 @@
   },
   "normalization": "Removed only the fully transparent 1 px right and 3 px bottom generator remainder; visible pixels were not resampled.",
   "blink": {
-    "runtimeFrame": "feed-master-blink-v3.png",
-    "method": "The body is pixel-identical to master cell 1. Only two feathered eye-shaped regions were transferred from the same master's closed-eye wipe cel with measured 6 px horizontal / 2 px vertical face registration.",
-    "rejectedGeneratedFile": "exec-229ddfee-f1a1-4d0f-97f5-7cfad9dc344e.png",
-    "rejectionReason": "The generated blink redrew the entire character at a different scale and was not integrated."
+    "runtimeFrames": [
+      "feed-master-blink-v5-1.png",
+      "feed-master-blink-v5-2.png",
+      "feed-master-blink-v5-3.png",
+      "feed-master-blink-v5-4.png"
+    ],
+    "method": "Tools/build_natural_blink.swift registers only the neutral eyelid artwork into master cell 1. Three partial closures preserve the original uncovered iris pixels. The nose, whiskers, mouth, body and alpha remain pixel-identical.",
+    "source": "feed-master-blink-neutral-source-v1.png",
+    "sourceMethod": "built-in image_gen; the generated full-body pixels outside the eye sockets are never used",
+    "registration": {
+      "sourceSize": [
+        1254,
+        1254
+      ],
+      "displaySize": [
+        320,
+        320
+      ],
+      "topLeftOffset": [
+        2,
+        0
+      ],
+      "eyeCenters": [
+        [
+          130,
+          104
+        ],
+        [
+          185,
+          104
+        ]
+      ]
+    },
+    "timingSeconds": {
+      "close": [
+        0.03,
+        0.03,
+        0.03
+      ],
+      "closed": 0.08,
+      "open": [
+        0.05,
+        0.05,
+        0.04
+      ],
+      "openHolds": [
+        1.6,
+        2.4
+      ]
+    },
+    "date": "2026-11-13",
+    "status": "integrated-for-user-review",
+    "promptFile": "blink-neutral-v5.json",
+    "supersededFrames": [
+      "feed-master-blink-v3.png",
+      "feed-master-blink-v4.png"
+    ],
+    "supersededReason": "v3 moved the eyes and nose; v4 aligned them but retained an upward smiling squint and hard open/closed cut. User clarified the closed-eye expression was unnatural.",
+    "earlierRejectedGeneratedFile": "exec-229ddfee-f1a1-4d0f-97f5-7cfad9dc344e.png"
   },
   "promptSummary": "One coherent 4x4 transparent feeding sheet. Image 1 overrides every motion reference. Lock broad round face, olive-gold eye size and spacing, dusty pink nose, cream muzzle/chest, M forehead, warm brown stripe map, stocky body, sturdy paws, large ears and thick hooked ringed tail. Poses: sit, rise, stand, crouch, jump, catch, land, chew, single-paw wipe, physical turn and back view. No extra limbs, props, borders, labels, shadows or background.",
   "rejectedRuntimeSources": [

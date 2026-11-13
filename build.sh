@@ -8,6 +8,12 @@ build_number="${BUILD_NUMBER:-1}"
 minimum_macos="${MACOSX_DEPLOYMENT_TARGET:-13.0}"
 python="${PYTHON:-python3}"
 
+# Use the locally validated Apple toolchain when present. DEVELOPER_DIR still
+# lets callers explicitly choose a different Xcode or Command Line Tools SDK.
+local_tools="$HOME/.cache/tabby-build-tools/CommandLineTools"
+if [[ -z "${DEVELOPER_DIR:-}" && -x "$local_tools/usr/bin/swiftc" ]]; then
+  export DEVELOPER_DIR="$local_tools"
+fi
 if ! xcode-select -p >/dev/null 2>&1; then
   print -u2 '缺少 Xcode 命令行工具。请先运行 xcode-select --install，完成安装后重试。'
   exit 1
@@ -26,6 +32,7 @@ mkdir -p "$staged_app/Contents/MacOS" "$staged_app/Contents/Resources"
   -framework AppKit -framework SwiftUI \
   "$project_dir/Sources/main.swift" "$project_dir/Sources/PetAnimation.swift" \
   "$project_dir/Sources/FeedingEffects.swift" "$project_dir/Sources/FeedingChecks.swift" \
+  "$project_dir/Sources/PetInteraction.swift" "$project_dir/Sources/InteractionChecks.swift" \
   -o "$staged_app/Contents/MacOS/TabbyDesktopPet"
 
 "$python" - "$project_dir/Assets" "$staged_app" "$version" "$build_number" "$minimum_macos" <<'PY'

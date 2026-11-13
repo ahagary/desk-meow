@@ -1,0 +1,16 @@
+{
+  "date": "2026-11-13",
+  "method": "built-in image_gen",
+  "generatedFile": "exec-cfc0ce91-6965-48f7-9cf9-fa2a033afbe7.png",
+  "sourceArtwork": "feed-master-blink-neutral-source-v1.png",
+  "reference": "feed-master-v1-normalized.png, cell 1 (top-left 315 x 311)",
+  "prompt": "Use case: precise-object-edit. Asset type: one neutral fully-closed blink keyframe for the exact supplied sitting tabby desktop-pet sprite. Edit target: the supplied transparent seated cat, full body. Change ONLY the eyelids. Preserve the exact cat pose, head outline, face proportions, eye spacing and corners, nose, whiskers, muzzle, ears, forehead stripes, coat colors, paws and tail. The cat is calmly blinking, NOT smiling or squinting. Both upper eyelids have softly descended over the original round eyes, with relaxed fully closed lids sitting low in the original eye sockets. The closed lid lines should be thin, near-horizontal shallow U curves (centers a little LOWER than the corners), NOT the high arched upside-down U curves used for a happy eyes-squeezed-shut expression. Do not raise the cheeks, eyebrow fur, nose or muzzle. Do not add eyelashes, wrinkles or dark rings. Preserve softly detailed original brown fur texture above the closed lids. Do not move the eye sockets in any direction. Maintain the input's full-body composition and transparent background with the cat in exactly the same relative placement. No extra panels, no sheet, no text or decoration. The output will supply eyelid artwork for a registered animation; bodily invariants and a neutral downcast closed-eye shape are essential.",
+  "integration": "Only the eye artwork is sampled by Tools/build_natural_blink.swift. Original source and generated source remain unchanged.",
+  "runtimeFrames": [
+    "feed-master-blink-v5-1.png",
+    "feed-master-blink-v5-2.png",
+    "feed-master-blink-v5-3.png",
+    "feed-master-blink-v5-4.png"
+  ],
+  "validation": "All four frames: 0 altered pixels outside eye sockets and 0 alpha changes. Visual review must assess expression separately."
+}

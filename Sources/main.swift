@@ -419,6 +419,8 @@ final class PetSpriteView: NSView {
     let library: SpriteLibrary
     private let animationMachine: PetAnimationStateMachine
     var onClick: (() -> Void)?
+    var onScaleGesture: ((CGFloat) -> Void)?
+    var onOpenSizeControls: (() -> Void)?
     var onMove: ((NSPoint) -> Void)?
     var onRoamStep: ((CGFloat) -> Void)?
     var onPlayback: ((SpritePlayback) -> Void)?
@@ -429,10 +431,13 @@ final class PetSpriteView: NSView {
     var isWriting: (() -> Bool)?
     var previewState: PetAnimationState?
     var allowsDragging = true
+    var passesThroughTransparentPixels = false
     var reducedMotion = false
     var usesExternalCardFlight = false
     private var feedQueue = FeedQueue()
     private var currentPlayback: SpritePlayback?
+    private let hitTester = SpriteHitTester()
+    private let hoverTracker: SpriteHoverTracker
     private var tickTimer: Timer?
     private var trackingArea: NSTrackingArea?
     private var isHovered = false
@@ -446,11 +451,20 @@ final class PetSpriteView: NSView {
 
     init(frame: NSRect, library: SpriteLibrary) {
         self.library = library
+        self.hoverTracker = SpriteHoverTracker(clip: library.clip(PetAnimationState.hover.rawValue))
         self.animationMachine = PetAnimationStateMachine(library: library,
             now: ProcessInfo.processInfo.systemUptime)
         super.init(frame: frame)
         wantsLayer = true
         layer?.backgroundColor = NSColor.clear.cgColor
+        setAccessibilityElement(true)
+        setAccessibilityRole(.button)
+        setAccessibilityLabel("猫咪，点击打开今日小纸条")
+        setAccessibilityHelp("拖动移动猫咪，右键调整大小；按住 Command 滚动或双指捏合可连续缩放。")
+        setAccessibilityCustomActions([NSAccessibilityCustomAction(name: "调整猫咪大小") { [weak self] in
+            self?.onOpenSizeControls?()
+            return true
+        }])
         let timer = Timer(timeInterval: 1.0 / 60.0, repeats: true) { [weak self] _ in self?.tick() }
         RunLoop.main.add(timer, forMode: .common)
         tickTimer = timer
@@ -460,15 +474,76 @@ final class PetSpriteView: NSView {
     deinit { tickTimer?.invalidate() }
 
     private func tick() {
-        if let window = window {
-            let cursor = NSEvent.mouseLocation
-            isHovered = window.frame.contains(cursor)
-            if isHovered {
-                updateHoverDirection(cursorX: cursor.x - window.frame.minX)
-            }
-        }
+        refreshPointerInteraction()
         advanceAnimation(at: ProcessInfo.processInfo.systemUptime)
         needsDisplay = true
+    }
+
+    func containsPet(at point: NSPoint) -> Bool {
+        guard let playback = currentPlayback else { return false }
+        return hitTester.contains(point, playback: playback, canvas: library.canvasSize,
+            bounds: bounds, backingScale: window?.backingScaleFactor ?? 1,
+            mirrored: playback.state == .hover && hoverMirrored)
+    }
+
+    func containsPet(atScreenPoint point: NSPoint) -> Bool {
+        guard let window = window else { return false }
+        return containsPet(at: convert(window.convertPoint(fromScreen: point), from: nil))
+    }
+
+    func refreshPointerInteraction() {
+        guard let window = window else { return }
+        let point = convert(window.convertPoint(fromScreen: NSEvent.mouseLocation), from: nil)
+        refreshPointerInteraction(at: point)
+    }
+
+    private func refreshPointerInteraction(at point: NSPoint) {
+        guard let window = window, let playback = currentPlayback else { return }
+        let wasMirrored = hoverMirrored
+        let interaction = hoverTracker.update(at: point, playback: playback,
+            canvas: library.canvasSize, bounds: bounds, backingScale: window.backingScaleFactor,
+            mirrored: playback.state == .hover && hoverMirrored, hitTester: hitTester)
+        isHovered = interaction.hovered
+        if isHovered { updateHoverDirection(cursorX: point.x) }
+        if passesThroughTransparentPixels {
+            // Continue receiving drag/up events after leaving the silhouette.
+            // The hover retention envelope must not swallow transparent clicks.
+            // Polling still tracks the pointer while this window is click-through.
+            let visible = wasMirrored == hoverMirrored ? interaction.visible : containsPet(at: point)
+            window.ignoresMouseEvents = mouseStart == nil && !visible
+        }
+    }
+
+    override func hitTest(_ point: NSPoint) -> NSView? {
+        let localPoint = convert(point, from: superview)
+        guard containsPet(at: localPoint) else { return nil }
+        return super.hitTest(point)
+    }
+
+    override func menu(for event: NSEvent) -> NSMenu? {
+        guard containsPet(at: convert(event.locationInWindow, from: nil)) else { return nil }
+        return super.menu(for: event)
+    }
+
+    override func accessibilityPerformPress() -> Bool {
+        guard let onClick = onClick else { return false }
+        onClick()
+        return true
+    }
+
+    override func scrollWheel(with event: NSEvent) {
+        guard event.modifierFlags.contains(.command),
+              containsPet(at: convert(event.locationInWindow, from: nil)) else {
+            super.scrollWheel(with: event)
+            return
+        }
+        let sensitivity: CGFloat = event.hasPreciseScrollingDeltas ? 0.005 : 0.05
+        onScaleGesture?(exp(event.scrollingDeltaY * sensitivity))
+    }
+
+    override func magnify(with event: NSEvent) {
+        guard containsPet(at: convert(event.locationInWindow, from: nil)) else { return }
+        onScaleGesture?(max(0.1, 1 + event.magnification))
     }
 
     private func updateHoverDirection(cursorX: CGFloat) {
@@ -491,18 +566,19 @@ final class PetSpriteView: NSView {
     }
 
     override func mouseEntered(with event: NSEvent) {
-        isHovered = true
         mouseMoved(with: event)
     }
 
     override func mouseMoved(with event: NSEvent) {
         let point = convert(event.locationInWindow, from: nil)
-        updateHoverDirection(cursorX: point.x)
+        refreshPointerInteraction(at: point)
         needsDisplay = true
     }
 
     override func mouseExited(with event: NSEvent) {
-        isHovered = false
+        // Click-through changes can emit an exit even with a stationary pointer.
+        // Use the same retained silhouette as the timer instead of cancelling it.
+        refreshPointerInteraction()
         needsDisplay = true
     }
 
@@ -567,6 +643,7 @@ final class PetSpriteView: NSView {
     }
 
     override func mouseDown(with event: NSEvent) {
+        guard containsPet(at: convert(event.locationInWindow, from: nil)) else { return }
         mouseStart = NSEvent.mouseLocation
         originStart = window?.frame.origin
         didDrag = false
@@ -589,15 +666,24 @@ final class PetSpriteView: NSView {
     }
 
     override func mouseUp(with event: NSEvent) {
-        if !didDrag { onClick?() }
+        if mouseStart != nil, !didDrag,
+           containsPet(at: convert(event.locationInWindow, from: nil)) { onClick?() }
         mouseStart = nil
         originStart = nil
+        refreshPointerInteraction()
     }
 }
 
 final class NotePanel: NSPanel {
     override var canBecomeKey: Bool { true }
     override func cancelOperation(_ sender: Any?) { orderOut(nil) }
+}
+
+final class PetPanel: NSPanel {
+    override func accessibilityPerformRaise() -> Bool {
+        orderFrontRegardless()
+        return true
+    }
 }
 
 // MARK: - Application
@@ -620,6 +706,11 @@ final class PetAppDelegate: NSObject, NSApplicationDelegate {
     private var roamingTimer: Timer?
     private var globalClickMonitor: Any?
     private let feedingFlight = FeedingFlight()
+    private var petScale: CGFloat = 1
+    private var feedingHeadroom = false
+    private var sizePanel: NSPanel?
+    private var sizeSlider: NSSlider?
+    private var sizeLabel: NSTextField?
 
     func applicationDidFinishLaunching(_ notification: Notification) {
         NSApp.setActivationPolicy(.accessory)
@@ -665,9 +756,10 @@ final class PetAppDelegate: NSObject, NSApplicationDelegate {
                 // the pet renderer takes over and the card follows its mouth.
                 let scene = FeedMotion.scene(in: self.spriteView.bounds)
                 let localPoint = FeedMotion.interception(library: library)
-                let point = NSPoint(x: self.petWindow.frame.minX + localPoint.x,
-                                    y: self.petWindow.frame.maxY - scene.minY - localPoint.y)
-                self.feedingFlight.update(playback: playback, target: point)
+                let scale = scene.width / PetLayout.baseSize.width
+                let point = NSPoint(x: self.petWindow.frame.minX + scene.minX + localPoint.x * scale,
+                                    y: self.petWindow.frame.maxY - scene.minY - localPoint.y * scale)
+                self.feedingFlight.update(playback: playback, target: point, scale: scale)
             } else {
                 self.feedingFlight.hide()
             }
@@ -692,7 +784,7 @@ final class PetAppDelegate: NSObject, NSApplicationDelegate {
             DispatchQueue.main.async {
                 guard let self = self, self.notePanel.isVisible else { return }
                 let point = NSEvent.mouseLocation
-                if !self.notePanel.frame.contains(point) && !self.petWindow.frame.contains(point) {
+                if !self.notePanel.frame.contains(point) && !self.spriteView.containsPet(atScreenPoint: point) {
                     self.notePanel.orderOut(nil)
                 }
             }
@@ -705,9 +797,11 @@ final class PetAppDelegate: NSObject, NSApplicationDelegate {
     }
 
     private func setupPet(library: SpriteLibrary) {
-        let size = NSSize(width: 220, height: 176)
-        let primary = NSScreen.main?.visibleFrame ?? NSRect(x: 100, y: 100, width: 1000, height: 700)
         let defaults = UserDefaults.standard
+        petScale = PetLayout.clampedScale(defaults.object(forKey: "petScale") == nil ? 1 :
+                                         CGFloat(defaults.double(forKey: "petScale")))
+        let size = PetLayout.size(scale: petScale, feeding: false)
+        let primary = NSScreen.main?.visibleFrame ?? NSRect(x: 100, y: 100, width: 1000, height: 700)
         let savedX: CGFloat? = defaults.object(forKey: "petX") == nil ? nil : CGFloat(defaults.double(forKey: "petX"))
         let savedY: CGFloat? = defaults.object(forKey: "petY") == nil ? nil : CGFloat(defaults.double(forKey: "petY"))
         let proposed = NSPoint(x: savedX ?? primary.maxX - size.width - 24,
@@ -716,7 +810,7 @@ final class PetAppDelegate: NSObject, NSApplicationDelegate {
         let visible = selectedScreen?.visibleFrame ?? primary
         let origin = NSPoint(x: min(max(proposed.x, visible.minX), visible.maxX - size.width),
                              y: min(max(proposed.y, visible.minY), visible.maxY - size.height))
-        petWindow = NSPanel(contentRect: NSRect(origin: origin, size: size),
+        petWindow = PetPanel(contentRect: NSRect(origin: origin, size: size),
                             styleMask: [.borderless, .nonactivatingPanel],
                             backing: .buffered, defer: false)
         petWindow.isOpaque = false
@@ -727,8 +821,14 @@ final class PetAppDelegate: NSObject, NSApplicationDelegate {
         petWindow.ignoresMouseEvents = false
         spriteView = PetSpriteView(frame: NSRect(origin: .zero, size: size),
                                    library: library)
+        spriteView.passesThroughTransparentPixels = true
         spriteView.reducedMotion = UserDefaults.standard.bool(forKey: "reducedMotion")
         spriteView.onClick = { [weak self] in self?.toggleNotePanel() }
+        spriteView.onScaleGesture = { [weak self] factor in
+            guard let self = self else { return }
+            self.setPetScale(self.petScale * factor)
+        }
+        spriteView.onOpenSizeControls = { [weak self] in self?.openSizeControls() }
         spriteView.onMove = { point in
             UserDefaults.standard.set(Double(point.x), forKey: "petX")
             UserDefaults.standard.set(Double(point.y), forKey: "petY")
@@ -739,10 +839,20 @@ final class PetAppDelegate: NSObject, NSApplicationDelegate {
     }
 
     private func setFeedingHeadroom(_ enabled: Bool) {
-        var frame = petWindow.frame
-        frame.size.height = enabled ? 232 : 176
+        feedingHeadroom = enabled
+        resizePet()
+    }
+
+    private func resizePet(repositionNotes: Bool = false) {
+        let visible = petWindow.screen?.visibleFrame ?? NSScreen.main?.visibleFrame ?? petWindow.frame
+        let frame = PetLayout.resizedFrame(petWindow.frame, scale: petScale,
+                                          feeding: feedingHeadroom, visible: visible)
         petWindow.setFrame(frame, display: true)
         spriteView.frame = NSRect(origin: .zero, size: frame.size)
+        spriteView.needsDisplay = true
+        spriteView.refreshPointerInteraction()
+        spriteView.onMove?(frame.origin)
+        if repositionNotes, notePanel?.isVisible == true { positionNotePanel() }
     }
 
     private func setupNotePanel() {
@@ -758,6 +868,12 @@ final class PetAppDelegate: NSObject, NSApplicationDelegate {
     private func toggleNotePanel() {
         if notePanel.isVisible { notePanel.orderOut(nil); return }
         store.selectedTab = .tasks
+        positionNotePanel()
+        NSApp.activate(ignoringOtherApps: true)
+        notePanel.makeKeyAndOrderFront(nil)
+    }
+
+    private func positionNotePanel() {
         let pet = petWindow.frame
         let screen = petWindow.screen?.visibleFrame ?? NSScreen.main?.visibleFrame ?? pet
         let width = notePanel.frame.width
@@ -766,8 +882,6 @@ final class PetAppDelegate: NSObject, NSApplicationDelegate {
         let x = right + width <= screen.maxX ? right : max(screen.minX, pet.minX - width - 8)
         let y = min(max(pet.midY - height / 2, screen.minY), screen.maxY - height)
         notePanel.setFrameOrigin(NSPoint(x: x, y: y))
-        NSApp.activate(ignoringOtherApps: true)
-        notePanel.makeKeyAndOrderFront(nil)
     }
 
     private func setupMenu() {
@@ -778,6 +892,7 @@ final class PetAppDelegate: NSObject, NSApplicationDelegate {
         addMenuItem("打开今日小纸条", action: #selector(openNotes), to: menu)
         addMenuItem("试喂一张卡片", action: #selector(demoFeed), to: menu)
         addMenuItem("动作预览…", action: #selector(openPreview), to: menu)
+        addMenuItem("调整猫咪大小…", action: #selector(openSizeControls), to: menu)
         menu.addItem(.separator())
         addMenuItem("暂停闲逛", action: #selector(toggleRoaming), to: menu)
         addMenuItem("减少动态效果", action: #selector(toggleReducedMotion), to: menu)
@@ -785,7 +900,72 @@ final class PetAppDelegate: NSObject, NSApplicationDelegate {
         menu.addItem(.separator())
         addMenuItem("退出", action: #selector(quit), to: menu)
         statusItem.menu = menu
+        let contextMenu = NSMenu()
+        addMenuItem("打开今日小纸条", action: #selector(openNotes), to: contextMenu)
+        addMenuItem("调整猫咪大小…", action: #selector(openSizeControls), to: contextMenu)
+        contextMenu.addItem(.separator())
+        addMenuItem("退出", action: #selector(quit), to: contextMenu)
+        spriteView.menu = contextMenu
         refreshMenu()
+    }
+
+    @objc private func openSizeControls() {
+        if sizePanel == nil {
+            let panel = NSPanel(contentRect: NSRect(x: 0, y: 0, width: 280, height: 144),
+                                styleMask: [.titled, .closable, .utilityWindow], backing: .buffered, defer: false)
+            panel.title = "猫咪大小"
+            panel.isReleasedWhenClosed = false
+            panel.level = .floating
+            panel.collectionBehavior = [.canJoinAllSpaces]
+            let content = NSView(frame: NSRect(x: 0, y: 0, width: 280, height: 144))
+            let label = NSTextField(labelWithString: "")
+            label.frame = NSRect(x: 20, y: 108, width: 240, height: 22)
+            label.alignment = .center
+            label.font = .systemFont(ofSize: 14, weight: .medium)
+            content.addSubview(label)
+            let slider = NSSlider(value: Double(petScale) * 100, minValue: 50, maxValue: 200,
+                                  target: self, action: #selector(changePetSize(_:)))
+            slider.frame = NSRect(x: 20, y: 72, width: 240, height: 24)
+            slider.isContinuous = true
+            slider.setAccessibilityLabel("猫咪大小")
+            content.addSubview(slider)
+            let hint = NSTextField(labelWithString: "⌘ + 滚轮 / 双指捏合也可缩放")
+            hint.frame = NSRect(x: 10, y: 48, width: 260, height: 16)
+            hint.alignment = .center
+            hint.font = .systemFont(ofSize: 11)
+            hint.textColor = .secondaryLabelColor
+            content.addSubview(hint)
+            let reset = NSButton(title: "恢复默认大小", target: self, action: #selector(resetPetSize))
+            reset.frame = NSRect(x: 80, y: 10, width: 120, height: 28)
+            reset.bezelStyle = .rounded
+            content.addSubview(reset)
+            panel.contentView = content
+            panel.center()
+            sizePanel = panel
+            sizeSlider = slider
+            sizeLabel = label
+        }
+        refreshSizeControls()
+        NSApp.activate(ignoringOtherApps: true)
+        sizePanel?.makeKeyAndOrderFront(nil)
+    }
+
+    @objc private func changePetSize(_ sender: NSSlider) {
+        setPetScale(CGFloat(sender.doubleValue / 100))
+    }
+
+    @objc private func resetPetSize() { setPetScale(1) }
+
+    private func setPetScale(_ value: CGFloat) {
+        petScale = PetLayout.clampedScale(value)
+        UserDefaults.standard.set(Double(petScale), forKey: "petScale")
+        resizePet(repositionNotes: true)
+        refreshSizeControls()
+    }
+
+    private func refreshSizeControls() {
+        sizeSlider?.doubleValue = Double(petScale) * 100
+        sizeLabel?.stringValue = "大小 \(Int((petScale * 100).rounded()))%"
     }
 
     private func addMenuItem(_ title: String, action: Selector, to menu: NSMenu) {
@@ -805,7 +985,7 @@ final class PetAppDelegate: NSObject, NSApplicationDelegate {
         guard !UserDefaults.standard.bool(forKey: "pauseRoaming"), !notePanel.isVisible else { return }
         let frame = petWindow.frame
         guard let visible = petWindow.screen?.visibleFrame else { return }
-        let x = min(max(frame.origin.x + delta, visible.minX), visible.maxX - frame.width)
+        let x = min(max(frame.origin.x + delta * petScale, visible.minX), visible.maxX - frame.width)
         petWindow.setFrameOrigin(NSPoint(x: x, y: frame.origin.y))
         UserDefaults.standard.set(Double(x), forKey: "petX")
     }
@@ -900,6 +1080,13 @@ if CommandLine.arguments.contains("--validate-resources") {
         print("animation resources valid: \(library.clips.count) clips")
     } catch {
         fputs("animation resources invalid: \(error)\n", stderr)
+        exit(1)
+    }
+} else if CommandLine.arguments.contains("--check-interaction") {
+    do {
+        try InteractionChecks.run(library: SpriteLibrary())
+    } catch {
+        fputs("interaction checks failed: \(error)\n", stderr)
         exit(1)
     }
 } else if CommandLine.arguments.contains("--check-feeding") {

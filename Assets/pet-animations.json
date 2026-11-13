@@ -414,10 +414,10 @@
             543.75,
             480.0
           ],
-          "duration": 1.35
+          "duration": 1.6
         },
         {
-          "file": "character-model/v1/feeding/feed-master-blink-v3.png",
+          "file": "character-model/v1/feeding/feed-master-blink-v5-1.png",
           "sourceRect": [
             0,
             0,
@@ -436,7 +436,139 @@
             543.75,
             480.0
           ],
-          "duration": 0.12
+          "duration": 0.03
+        },
+        {
+          "file": "character-model/v1/feeding/feed-master-blink-v5-2.png",
+          "sourceRect": [
+            0,
+            0,
+            315,
+            311
+          ],
+          "displaySize": [
+            1181.25,
+            1166.25
+          ],
+          "anchor": [
+            543.75,
+            1080.0
+          ],
+          "mouth": [
+            543.75,
+            480.0
+          ],
+          "duration": 0.03
+        },
+        {
+          "file": "character-model/v1/feeding/feed-master-blink-v5-3.png",
+          "sourceRect": [
+            0,
+            0,
+            315,
+            311
+          ],
+          "displaySize": [
+            1181.25,
+            1166.25
+          ],
+          "anchor": [
+            543.75,
+            1080.0
+          ],
+          "mouth": [
+            543.75,
+            480.0
+          ],
+          "duration": 0.03
+        },
+        {
+          "file": "character-model/v1/feeding/feed-master-blink-v5-4.png",
+          "sourceRect": [
+            0,
+            0,
+            315,
+            311
+          ],
+          "displaySize": [
+            1181.25,
+            1166.25
+          ],
+          "anchor": [
+            543.75,
+            1080.0
+          ],
+          "mouth": [
+            543.75,
+            480.0
+          ],
+          "duration": 0.08
+        },
+        {
+          "file": "character-model/v1/feeding/feed-master-blink-v5-3.png",
+          "sourceRect": [
+            0,
+            0,
+            315,
+            311
+          ],
+          "displaySize": [
+            1181.25,
+            1166.25
+          ],
+          "anchor": [
+            543.75,
+            1080.0
+          ],
+          "mouth": [
+            543.75,
+            480.0
+          ],
+          "duration": 0.05
+        },
+        {
+          "file": "character-model/v1/feeding/feed-master-blink-v5-2.png",
+          "sourceRect": [
+            0,
+            0,
+            315,
+            311
+          ],
+          "displaySize": [
+            1181.25,
+            1166.25
+          ],
+          "anchor": [
+            543.75,
+            1080.0
+          ],
+          "mouth": [
+            543.75,
+            480.0
+          ],
+          "duration": 0.05
+        },
+        {
+          "file": "character-model/v1/feeding/feed-master-blink-v5-1.png",
+          "sourceRect": [
+            0,
+            0,
+            315,
+            311
+          ],
+          "displaySize": [
+            1181.25,
+            1166.25
+          ],
+          "anchor": [
+            543.75,
+            1080.0
+          ],
+          "mouth": [
+            543.75,
+            480.0
+          ],
+          "duration": 0.04
         },
         {
           "file": "character-model/v1/feeding/feed-master-v1-normalized.png",
@@ -458,7 +590,7 @@
             543.75,
             480.0
           ],
-          "duration": 1.25
+          "duration": 2.4
         }
       ]
     },
@@ -1167,7 +1299,7 @@
           "duration": 0.22
         },
         {
-          "file": "character-model/v1/feeding/feed-master-blink-v3.png",
+          "file": "character-model/v1/feeding/feed-master-blink-v5-1.png",
           "sourceRect": [
             0,
             0,
@@ -1186,7 +1318,139 @@
             543.75,
             480.0
           ],
-          "duration": 0.12
+          "duration": 0.03
+        },
+        {
+          "file": "character-model/v1/feeding/feed-master-blink-v5-2.png",
+          "sourceRect": [
+            0,
+            0,
+            315,
+            311
+          ],
+          "displaySize": [
+            1181.25,
+            1166.25
+          ],
+          "anchor": [
+            543.75,
+            1080.0
+          ],
+          "mouth": [
+            543.75,
+            480.0
+          ],
+          "duration": 0.03
+        },
+        {
+          "file": "character-model/v1/feeding/feed-master-blink-v5-3.png",
+          "sourceRect": [
+            0,
+            0,
+            315,
+            311
+          ],
+          "displaySize": [
+            1181.25,
+            1166.25
+          ],
+          "anchor": [
+            543.75,
+            1080.0
+          ],
+          "mouth": [
+            543.75,
+            480.0
+          ],
+          "duration": 0.03
+        },
+        {
+          "file": "character-model/v1/feeding/feed-master-blink-v5-4.png",
+          "sourceRect": [
+            0,
+            0,
+            315,
+            311
+          ],
+          "displaySize": [
+            1181.25,
+            1166.25
+          ],
+          "anchor": [
+            543.75,
+            1080.0
+          ],
+          "mouth": [
+            543.75,
+            480.0
+          ],
+          "duration": 0.08
+        },
+        {
+          "file": "character-model/v1/feeding/feed-master-blink-v5-3.png",
+          "sourceRect": [
+            0,
+            0,
+            315,
+            311
+          ],
+          "displaySize": [
+            1181.25,
+            1166.25
+          ],
+          "anchor": [
+            543.75,
+            1080.0
+          ],
+          "mouth": [
+            543.75,
+            480.0
+          ],
+          "duration": 0.05
+        },
+        {
+          "file": "character-model/v1/feeding/feed-master-blink-v5-2.png",
+          "sourceRect": [
+            0,
+            0,
+            315,
+            311
+          ],
+          "displaySize": [
+            1181.25,
+            1166.25
+          ],
+          "anchor": [
+            543.75,
+            1080.0
+          ],
+          "mouth": [
+            543.75,
+            480.0
+          ],
+          "duration": 0.05
+        },
+        {
+          "file": "character-model/v1/feeding/feed-master-blink-v5-1.png",
+          "sourceRect": [
+            0,
+            0,
+            315,
+            311
+          ],
+          "displaySize": [
+            1181.25,
+            1166.25
+          ],
+          "anchor": [
+            543.75,
+            1080.0
+          ],
+          "mouth": [
+            543.75,
+            480.0
+          ],
+          "duration": 0.04
         },
         {
           "file": "character-model/v1/feeding/feed-master-v1-normalized.png",

@@ -10,7 +10,8 @@ struct FeedRequest {
 enum FeedMotion {
     static let catchFraction: CGFloat = 0.50
     static func scene(in bounds: NSRect) -> NSRect {
-        NSRect(x: bounds.minX, y: bounds.maxY - 176, width: 220, height: 176)
+        let height = PetLayout.baseSize.height * bounds.width / PetLayout.baseSize.width
+        return NSRect(x: bounds.minX, y: bounds.maxY - height, width: bounds.width, height: height)
     }
 
     static func lift(_ playback: SpritePlayback) -> CGFloat {
@@ -45,8 +46,9 @@ enum FeedMotion {
     static func drawCat(_ playback: SpritePlayback, canvas: NSSize, in bounds: NSRect,
                         backingScale: CGFloat = 1, mirrored: Bool = false) {
         let scene = self.scene(in: bounds)
+        let scale = scene.width / PetLayout.baseSize.width
         SpritePainter.draw(playback, canvas: canvas, in: scene,
-                           groundY: scene.maxY - 5 + lift(playback),
+                           groundY: scene.maxY - 5 * scale + lift(playback) * scale,
                            backingScale: backingScale, mirrorHorizontally: mirrored)
     }
 }
@@ -203,29 +205,30 @@ enum FeedingPainter {
     }
 
     static func drawFlight(title: String, source: NSRect, target: NSPoint,
-                           state: PetAnimationState, progress: CGFloat) {
+                           state: PetAnimationState, progress: CGFloat, targetScale: CGFloat = 1) {
         NSGraphicsContext.saveGraphicsState()
         defer { NSGraphicsContext.restoreGraphicsState() }
-        let startTip = NSPoint(x: source.midX + 27, y: source.midY + 10)
-        let above = NSPoint(x: target.x, y: target.y - 28)
+        let cardWidth = 54 * targetScale, cardHeight = 28 * targetScale
+        let startTip = NSPoint(x: source.midX + cardWidth / 2, y: source.midY + 10 * targetScale)
+        let above = NSPoint(x: target.x, y: target.y - cardHeight)
         if state == .feedStart {
             let t = ease(progress / 0.65)
-            let width = source.width + (54 - source.width) * t
-            let height = source.height + (28 - source.height) * t
+            let width = source.width + (cardWidth - source.width) * t
+            let height = source.height + (cardHeight - source.height) * t
             let tip = NSPoint(x: source.maxX + (startTip.x - source.maxX) * t,
-                              y: source.midY + 10 * t)
+                              y: source.midY + 10 * targetScale * t)
             NSGraphicsContext.current?.cgContext.setAlpha(ease(progress / 0.25))
             drawCard(title: title, tip: tip, width: width, height: height, angle: -0.25 * t)
         } else if state == .rise {
             let t = ease(progress)
             let tip = NSPoint(x: startTip.x + (above.x - startTip.x) * t,
                               y: startTip.y + (above.y - startTip.y) * t - sin(t * .pi) * 18)
-            drawCard(title: title, tip: tip, width: 54, height: 28,
+            drawCard(title: title, tip: tip, width: cardWidth, height: cardHeight,
                      angle: -0.25 + sin(t * .pi * 2) * 0.12)
         } else {
             let t = ease(progress / FeedMotion.catchFraction)
             let tip = NSPoint(x: above.x, y: above.y + (target.y - above.y) * t)
-            drawCard(title: title, tip: tip, width: 54, height: 28, angle: -0.25)
+            drawCard(title: title, tip: tip, width: cardWidth, height: cardHeight, angle: -0.25)
         }
     }
 
@@ -279,7 +282,7 @@ final class FeedingFlight {
         sourceRect = request.sourceRect
     }
 
-    func update(playback: SpritePlayback, target: NSPoint) {
+    func update(playback: SpritePlayback, target: NSPoint, scale: CGFloat = 1) {
         guard let request = request else { return }
         let origin = request.origin ?? NSPoint(x: target.x - 100, y: target.y + 45)
         let row = sourceRect ?? NSRect(x: origin.x - 120, y: origin.y - 20, width: 240, height: 40)
@@ -297,7 +300,8 @@ final class FeedingFlight {
             panel = created
             view = content
         }
-        let frame = row.union(NSRect(x: target.x - 80, y: target.y - 50, width: 160, height: 130)).insetBy(dx: -30, dy: -40)
+        let frame = row.union(NSRect(x: target.x - 80 * scale, y: target.y - 50 * scale,
+                                    width: 160 * scale, height: 130 * scale)).insetBy(dx: -30, dy: -40)
         panel?.setFrame(frame, display: false)
         view?.title = request.title
         view?.source = NSRect(x: row.minX - frame.minX, y: frame.maxY - row.maxY,
@@ -305,6 +309,7 @@ final class FeedingFlight {
         view?.target = NSPoint(x: target.x - frame.minX, y: frame.maxY - target.y)
         view?.progress = playback.clipProgress
         view?.state = playback.state
+        view?.targetScale = scale
         view?.needsDisplay = true
         panel?.orderFrontRegardless()
     }
@@ -322,12 +327,13 @@ private final class FlightView: NSView {
     var target = NSPoint.zero
     var progress: CGFloat = 0
     var state: PetAnimationState = .feedStart
+    var targetScale: CGFloat = 1
     override var isFlipped: Bool { true }
 
     override func draw(_ dirtyRect: NSRect) {
         NSColor.clear.setFill()
         bounds.fill(using: .copy)
         FeedingPainter.drawFlight(title: title, source: source, target: target,
-                                  state: state, progress: progress)
+                                  state: state, progress: progress, targetScale: targetScale)
     }
 }
