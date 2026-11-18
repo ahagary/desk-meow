@@ -2,29 +2,27 @@ import AppKit
 import Sparkle
 
 /// Sparkle owns signature verification, download, installation and relaunch.
-/// This adapter adds the menu-bar app's quiet reminders and first-release state.
-final class AppUpdater: NSObject, SPUUpdaterDelegate, SPUStandardUserDriverDelegate, NSMenuItemValidation {
+/// Only an explicit user action starts an update check.
+final class AppUpdater: NSObject, SPUUpdaterDelegate, NSMenuItemValidation {
     let currentVersion = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "未知"
-    private(set) var availableVersion: String?
     var onStateChanged: (() -> Void)?
     private var preparingCheck = false
     private var observations: [NSKeyValueObservation] = []
     private lazy var controller = SPUStandardUpdaterController(startingUpdater: false,
-        updaterDelegate: self, userDriverDelegate: self)
+        updaterDelegate: self, userDriverDelegate: nil)
 
-    var automaticallyChecks: Bool { controller.updater.automaticallyChecksForUpdates }
     var menuTitle: String {
         if preparingCheck { return "正在检查更新…" }
-        if let version = availableVersion { return "发现新版 \(version)…" }
         return "检查更新…"
     }
 
     func start() {
+        // 0.2.0 may have persisted automatic checks. Disable those before Sparkle
+        // is initialized so an existing installation also becomes manual-only.
+        UserDefaults.standard.set(false, forKey: "SUEnableAutomaticChecks")
+        UserDefaults.standard.set(false, forKey: "SUAutomaticallyUpdate")
         observations = [
             controller.updater.observe(\.canCheckForUpdates, options: [.new]) { [weak self] _, _ in
-                self?.onStateChanged?()
-            },
-            controller.updater.observe(\.automaticallyChecksForUpdates, options: [.new]) { [weak self] _, _ in
                 self?.onStateChanged?()
             }
         ]
@@ -32,18 +30,9 @@ final class AppUpdater: NSObject, SPUUpdaterDelegate, SPUStandardUserDriverDeleg
         onStateChanged?()
     }
 
-    @objc func toggleAutomaticChecks(_ sender: Any?) {
-        controller.updater.automaticallyChecksForUpdates.toggle()
-    }
-
     @objc func checkForUpdates(_ sender: Any?) {
         guard !preparingCheck, controller.updater.canCheckForUpdates else { return }
         NSApp.activate(ignoringOtherApps: true)
-        // If a scheduled check already found an update, show that existing session.
-        if availableVersion != nil {
-            controller.checkForUpdates(sender)
-            return
-        }
         guard let address = Bundle.main.object(forInfoDictionaryKey: "SUFeedURL") as? String,
               let url = URL(string: address) else { return }
         preparingCheck = true
@@ -75,31 +64,6 @@ final class AppUpdater: NSObject, SPUUpdaterDelegate, SPUStandardUserDriverDeleg
             return !preparingCheck && controller.updater.canCheckForUpdates
         }
         return true
-    }
-
-    var supportsGentleScheduledUpdateReminders: Bool { true }
-
-    func standardUserDriverShouldHandleShowingScheduledUpdate(_ update: SUAppcastItem,
-                                                              andInImmediateFocus immediateFocus: Bool) -> Bool {
-        // A desktop companion should announce background updates in its menu,
-        // without taking focus away from the user's current work.
-        return false
-    }
-
-    func standardUserDriverWillHandleShowingUpdate(_ handleShowingUpdate: Bool,
-                                                   forUpdate update: SUAppcastItem, state: SPUUserUpdateState) {
-        availableVersion = update.displayVersionString
-        onStateChanged?()
-    }
-
-    func standardUserDriverDidReceiveUserAttention(forUpdate update: SUAppcastItem) {
-        availableVersion = nil
-        onStateChanged?()
-    }
-
-    func standardUserDriverWillFinishUpdateSession() {
-        availableVersion = nil
-        onStateChanged?()
     }
 
     private func showMessage(_ title: String, detail: String) {

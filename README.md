@@ -16,7 +16,7 @@ open 'build/桌咪.app'
 
 本机已准备 Apple 工具链到 `~/.cache/tabby-build-tools/CommandLineTools`，构建脚本会优先使用它；可用 `DEVELOPER_DIR` 显式指定其他 Xcode/SDK。没有该目录的机器按上面的标准安装流程构建。首次构建会从 Sparkle 官方 Release 下载固定的 2.10.1 版本，并校验仓库中固定的 SHA-256；缓存位于 `~/.cache/zhuomi/`。
 
-点击猫咪打开「今日小纸条」；猫咪可拖动。菜单栏显示当前版本（点击可打开关于窗口），并提供显示猫咪、打开小纸条、猫咪设置、检查更新与退出。大小、暂停闲逛、减少动态效果、声音和自动检查更新开关位于「猫咪设置」子菜单。试喂与动作预览不出现在用户菜单，开发验收仍可用 `--demo-feed`、`--preview` 启动。数据存放在 `~/Library/Application Support/TabbyDesktopPet/data.json`。
+点击猫咪打开「今日小纸条」；猫咪可拖动。菜单栏显示当前版本（点击可打开关于窗口），并提供显示猫咪、打开小纸条、猫咪设置、检查更新与退出。大小、暂停闲逛、减少动态效果、声音开关位于「猫咪设置」子菜单。试喂与动作预览不出现在用户菜单，开发验收仍可用 `--demo-feed`、`--preview` 启动。数据存放在 `~/Library/Application Support/TabbyDesktopPet/data.json`。
 
 应用图标是白底、黑色线条的轻跃小猫，源图与生成提示词在 `Assets/AppIcon/`。构建时自动导出 16～1024 像素的标准 macOS 图标规格并打包为 `AppIcon.icns`；Finder 和运行中的应用使用同一图标。菜单栏采用随系统明暗模式变化的单色猫咪符号（旧系统回退为爪印）。
 
@@ -49,9 +49,9 @@ Git 提交邮箱与远程登录是两回事：推送仍需 GitHub 的 SSH 或 HT
 
 脚本从当前源码重新编译，检查 arm64 架构，运行资源、动画状态和投喂数据检查，再生成：
 
-- `dist/ZhuoMi-0.2.0-macOS-arm64.dmg`：打开后将应用拖入 Applications。
-- `dist/ZhuoMi-0.2.0-macOS-arm64.zip`：首次安装与应用内更新使用的完整应用包。
-- `dist/ZhuoMi-0.2.0-macOS-arm64.sha256`：安装包与更新列表的 SHA-256 校验值。
+- `dist/ZhuoMi-0.2.1-macOS-arm64.dmg`：打开后将应用拖入 Applications。
+- `dist/ZhuoMi-0.2.1-macOS-arm64.zip`：首次安装与应用内更新使用的完整应用包。
+- `dist/ZhuoMi-0.2.1-macOS-arm64.sha256`：安装包与更新列表的 SHA-256 校验值。
 - `dist/appcast.xml`：签名的更新列表，嵌入此版本的变更说明。
 - `dist/release-notes.md`：用于 GitHub Release 的具体变更和签名状态。
 
@@ -64,15 +64,15 @@ M1 和 M2 使用同一个 arm64 包。版本号由 `VERSION` 管理；更新发�
 推送与 `VERSION` 一致的标签，会在构建和检查成功后创建带安装包的 **Release 草稿**。自动生成草稿需要预先配置更新签名密钥（见下一节）；未配置密钥时以及普通分支、PR 只构建验证包，正式发布可上传本机签好的产物：
 
 ```sh
-git tag -a v0.2.0 -m 'Release 0.2.0'
-git push origin v0.2.0
+git tag -a v0.2.1 -m 'Release 0.2.1'
+git push origin v0.2.1
 ```
 
 到 GitHub 的 Releases 页面检查草稿，再点击 Publish release，其他人就能在仓库可见范围内下载。不要把安装包提交进 Git 历史。工作流使用 [GitHub 官方 macOS 15 arm64 runner](https://github.com/actions/runner-images)。
 
 ### 应用内更新与版本说明
 
-从 0.2.0 开始使用 [Sparkle 2](https://sparkle-project.org/documentation/) 完成更新。默认每天自动检查一次，在菜单栏以圆点和「发现新版」提示；不会自动安装或抢占当前工作。用户点击「检查更新…」可查看当前／最新版本、变更说明，再确认下载、安装并重启。新版本的任务数据仍使用原应用标识与目录。旧的 0.1.x 没有更新器，需要手动安装一次 0.2.0。
+从 0.2.0 开始使用 [Sparkle 2](https://sparkle-project.org/documentation/) 完成更新。从 0.2.1 开始只在用户点击「检查更新…」时联网检查，不在后台定时检查、下载或安装。检查结果显示当前／最新版本和变更说明，用户可选择安装、稍后处理或跳过该版本。主动再次检查仍可看到之前跳过的版本。升级到 0.2.1 后，旧版保存的自动检查设置也会关闭。新版本的任务数据仍使用原应用标识与目录。旧的 0.1.x 没有更新器，需要手动安装一次 0.2.0。
 
 更新列表固定为 `https://github.com/ahagary/desk-meow/releases/latest/download/appcast.xml`，下载链接固定指向对应版本标签的 ZIP。只有公开发布且标记为 Latest 的正式 Release 才会进入通道；草稿不会推送给用户。首次正式发布之前，手动检查会显示「暂无可用的更新信息」，不会误报已是最新版。
 
@@ -80,7 +80,7 @@ git push origin v0.2.0
 
 项目公钥和更新地址保存在 `Configuration/updates.json`；私钥保存在本机登录钥匙串，账户名为 `local.tabby.desktop.pet`，没有写入仓库。请保留这把私钥；更换公钥会使已安装版本无法验证新包。可使用 Sparkle 的 `generate_keys --account local.tabby.desktop.pet -x <安全的仓库外文件>` 导出备份，不要把私钥粘贴到聊天、源码或日志。
 
-本机 `./release.sh` 默认使用钥匙串签名，也支持 `SPARKLE_PRIVATE_KEY_FILE` 指向安全保存的私钥文件。使用 GitHub 自动发布时，需要将同一私钥配置为仓库 Actions secret `ZHUOMI_SPARKLE_PRIVATE_KEY`；工作流经标准输入交给签名工具，未配置密钥时 CI 只构建验证包，并跳过自动创建 Release，保留本机签名发布途径。也可直接上传本机生成的 DMG、ZIP、SHA-256 与 `appcast.xml`，并使用 `dist/release-notes.md` 作为发布说明。普通构建验证可使用 `GENERATE_UPDATE_FEED=0 ./release.sh`，该验证包不应作为一次完整更新发布。
+本机 `./release.sh` 默认使用钥匙串签名，也支持 `SPARKLE_PRIVATE_KEY_FILE` 指向安全保存的私钥文件。使用 GitHub 自动发布时，需要将同一私钥配置为仓库 Actions secret `ZHUOMI_SPARKLE_PRIVATE_KEY`；工作流经标准输入交给签名工具，未配置密钥时 CI 只构建验证包，并跳过自动创建 Release，保留本机签名发布途径。也可下载 GitHub Actions 构建的 DMG 和 ZIP，在本机用同一把钥匙串私钥为该 ZIP 生成并验证 `appcast.xml`、补齐校验值，再一起发布；无需重新编译，也无需把私钥上传到 GitHub。也可直接上传本机生成的 DMG、ZIP、SHA-256 与 `appcast.xml`，并使用 `dist/release-notes.md` 作为发布说明。普通构建验证可使用 `GENERATE_UPDATE_FEED=0 ./release.sh`，该验证包不应作为一次完整更新发布。
 
 ### 签名与 Apple 公证
 

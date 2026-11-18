@@ -1136,9 +1136,6 @@ final class PetAppDelegate: NSObject, NSApplicationDelegate {
         addMenuItem("暂停闲逛", action: #selector(toggleRoaming), to: settings)
         addMenuItem("减少动态效果", action: #selector(toggleReducedMotion), to: settings)
         addMenuItem("播放音效", action: #selector(toggleSound), to: settings)
-        settings.addItem(.separator())
-        let automaticItem = settings.addItem(withTitle: "自动检查更新", action: #selector(AppUpdater.toggleAutomaticChecks(_:)), keyEquivalent: "")
-        automaticItem.target = appUpdater
         let settingsItem = NSMenuItem(title: "猫咪设置", action: nil, keyEquivalent: "")
         settingsItem.submenu = settings
         menu.addItem(settingsItem)
@@ -1228,11 +1225,10 @@ final class PetAppDelegate: NSObject, NSApplicationDelegate {
         menu.item(withTitle: "暂停闲逛")?.state = UserDefaults.standard.bool(forKey: "pauseRoaming") ? .on : .off
         menu.item(withTitle: "减少动态效果")?.state = UserDefaults.standard.bool(forKey: "reducedMotion") ? .on : .off
         menu.item(withTitle: "播放音效")?.state = UserDefaults.standard.bool(forKey: "soundEnabled") ? .on : .off
-        menu.item(withTitle: "自动检查更新")?.state = appUpdater.automaticallyChecks ? .on : .off
         updateMenuItem?.title = appUpdater.menuTitle
-        statusItem.button?.title = appUpdater.availableVersion == nil ? "" : "•"
+        statusItem.button?.title = ""
         statusItem.button?.imagePosition = .imageLeading
-        statusItem.button?.toolTip = "桌咪 \(appUpdater.currentVersion)" + (appUpdater.availableVersion.map { " · 发现新版 \($0)" } ?? "")
+        statusItem.button?.toolTip = "桌咪 \(appUpdater.currentVersion)"
     }
 
     @objc private func showAbout() {
