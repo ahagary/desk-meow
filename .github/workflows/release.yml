@@ -14,6 +14,8 @@ jobs:
   package:
     runs-on: macos-15
     timeout-minutes: 25
+    outputs:
+      signed_update: ${{ steps.signing.outputs.enabled }}
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
       - name: Check release version
@@ -25,21 +27,34 @@ jobs:
             echo 'Tag must match VERSION (for example v0.1.0).'
             exit 1
           fi
+      - name: Select update signing mode
+        id: signing
+        env:
+          UPDATE_KEY: ${{ secrets.ZHUOMI_SPARKLE_PRIVATE_KEY }}
+        run: |
+          if [[ "$GITHUB_REF_TYPE" == tag && -n "$UPDATE_KEY" ]]; then
+            echo 'enabled=1' >> "$GITHUB_OUTPUT"
+          else
+            echo 'enabled=0' >> "$GITHUB_OUTPUT"
+            echo 'Building verification artifacts; signed releases can be uploaded from the local release workflow.'
+          fi
       - name: Build, validate, and package arm64 app
         env:
           BUILD_NUMBER: ${{ github.run_number }}
           MACOSX_DEPLOYMENT_TARGET: '13.0'
+          GENERATE_UPDATE_FEED: ${{ steps.signing.outputs.enabled }}
+          SPARKLE_PRIVATE_KEY: ${{ secrets.ZHUOMI_SPARKLE_PRIVATE_KEY }}
         run: ./release.sh
       - name: Save installers
         uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
         with:
-          name: TabbyDesktopPet-macOS-arm64
+          name: ZhuoMi-macOS-arm64
           path: dist/*
           if-no-files-found: error
           retention-days: 14
 
   release:
-    if: startsWith(github.ref, 'refs/tags/v')
+    if: startsWith(github.ref, 'refs/tags/v') && needs.package.outputs.signed_update == '1'
     needs: package
     runs-on: ubuntu-latest
     timeout-minutes: 10
@@ -52,21 +67,14 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           GH_REPO: ${{ github.repository }}
           RUN_ID: ${{ github.run_id }}
-        run: gh run download "$RUN_ID" --name TabbyDesktopPet-macOS-arm64 --dir dist
+        run: gh run download "$RUN_ID" --name ZhuoMi-macOS-arm64 --dir dist
       - name: Create draft GitHub Release
         env:
           GH_TOKEN: ${{ github.token }}
           GH_REPO: ${{ github.repository }}
           RELEASE_TAG: ${{ github.ref_name }}
         run: |
-          cat > release-notes.txt <<'EOF'
-          适用于 Apple Silicon（M1/M2 等），最低 macOS 13。
-
-          下载 DMG，将应用拖入 Applications；也可以解压 ZIP 后移动应用。
-          本工作流生成的版本使用 ad-hoc 签名，尚未经过 Apple 公证。
-          首次打开若被拦截，请确认来源可信后前往“系统设置 → 隐私与安全性 → 仍要打开”。
-
-          同时提供 SHA-256 校验文件。安装者无需安装开发工具。
-          EOF
+          test -f dist/appcast.xml
+          test -f dist/release-notes.md
           gh release create "$RELEASE_TAG" dist/* --verify-tag --draft \
-            --title "狸花猫桌面宠物 $RELEASE_TAG" --notes-file release-notes.txt
+            --title "桌咪 $RELEASE_TAG" --notes-file dist/release-notes.md

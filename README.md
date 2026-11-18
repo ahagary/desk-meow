@@ -1,4 +1,6 @@
-# 狸花猫桌面宠物
+# 桌咪
+
+原名「狸花猫桌面宠物」。应用标识与本地数据目录沿用原值，更新后原有待办、便签、配色与猫咪设置继续保留。
 
 原生 macOS 桌面宠物。当前默认形象已恢复为用户选定的原稿 `Assets/tabby-preferred.png`；原文件未改动。待办、便签和历史数据仍保存在本机。
 
@@ -9,18 +11,24 @@
 ```sh
 xcode-select --install  # 只需安装一次，等待安装完成
 ./build.sh
-open 'build/狸花猫桌面宠物.app'
+open 'build/桌咪.app'
 ```
 
-本机已准备 Apple 工具链到 `~/.cache/tabby-build-tools/CommandLineTools`，构建脚本会优先使用它；可用 `DEVELOPER_DIR` 显式指定其他 Xcode/SDK。没有该目录的机器按上面的标准安装流程构建。
+本机已准备 Apple 工具链到 `~/.cache/tabby-build-tools/CommandLineTools`，构建脚本会优先使用它；可用 `DEVELOPER_DIR` 显式指定其他 Xcode/SDK。没有该目录的机器按上面的标准安装流程构建。首次构建会从 Sparkle 官方 Release 下载固定的 2.10.1 版本，并校验仓库中固定的 SHA-256；缓存位于 `~/.cache/zhuomi/`。
 
-点击猫咪打开「今日小纸条」；猫咪可拖动。菜单栏可打开动作预览、暂停闲逛、减少动态效果、开关声音与退出。数据存放在 `~/Library/Application Support/TabbyDesktopPet/data.json`。
+点击猫咪打开「今日小纸条」；猫咪可拖动。菜单栏显示当前版本（点击可打开关于窗口），并提供显示猫咪、打开小纸条、猫咪设置、检查更新与退出。大小、暂停闲逛、减少动态效果、声音和自动检查更新开关位于「猫咪设置」子菜单。试喂与动作预览不出现在用户菜单，开发验收仍可用 `--demo-feed`、`--preview` 启动。数据存放在 `~/Library/Application Support/TabbyDesktopPet/data.json`。
 
-点击范围贴合猫咪的可见轮廓，边缘保留约 2pt 容差；周围透明空白可点击穿透，不会打开便签。右键猫咪或点击菜单栏 🐈 →「调整猫咪大小…」，拖动滑杆可在 50%～200% 之间连续缩放，不限档位；也可以在猫咪上按住 ⌘ 滚动，或在触控板上双指捏合。调整立即生效，重启后保留，支持一键恢复默认的 100%。点击范围、投喂动画和卡片跟随缩放，便签保持原有字号和大小。
+应用图标是白底、黑色线条的轻跃小猫，源图与生成提示词在 `Assets/AppIcon/`。构建时自动导出 16～1024 像素的标准 macOS 图标规格并打包为 `AppIcon.icns`；Finder 和运行中的应用使用同一图标。菜单栏采用随系统明暗模式变化的单色猫咪符号（旧系统回退为爪印）。
+
+小纸条的「历史」支持开始／结束日期筛选（包含首尾两天），默认近 7 天，可快捷切换今天、近 30 天或全部。记录按日期从新到旧分组，向下滚动可查看整个范围的待办、完成记录与便签；跨天完成的任务分别保留原日期待办和完成日记录。同一天添加并完成只显示一条。待办、已完成和历史中的文字可直接选择复制，也可点击复制图标复制全文；待办支持右键复制，无需进入编辑。右上角调色盘提供奶油黄、蜜桃橙、樱花粉、薄荷绿、晴空蓝和浅藤紫，立即生效并在重启后保留。
+
+`--check-notes` 使用独立临时数据检查范围首尾、跨天完成、同日去重、便签、排序、日期联动和 120 天记录，不修改个人数据。
+
+点击范围贴合猫咪的可见轮廓，边缘保留约 2pt 容差；周围透明空白可点击穿透，不会打开便签。右键猫咪或点击菜单栏猫咪图标 →「猫咪设置」→「调整猫咪大小…」，拖动滑杆可在 50%～200% 之间连续缩放，不限档位；也可以在猫咪上按住 ⌘ 滚动，或在触控板上双指捏合。调整立即生效，重启后保留，支持一键恢复默认的 100%。点击范围、投喂动画和卡片跟随缩放，便签保持原有字号和大小。
 
 悬停从当前可见轮廓进入后，会保留进入时的轮廓和整段蹭人动作的活动范围，避免两耳之间的额头随动作移开时反复切换待机/悬停。点击范围仍只跟随当前可见像素；鼠标离开后立即结束悬停，透明区域继续穿透。`--check-interaction` 包含真实素材下静止指针 300 帧的回归检查，以及缩放、左右转向和离开后的恢复检查。
 
-构建后可运行 `build/狸花猫桌面宠物.app/Contents/MacOS/TabbyDesktopPet --check-interaction`，检查透明区域、图集裁切、镜像、帧混合、跳跃、连续缩放和屏幕边界；发布脚本也会执行此检查。桌面点击穿透、拖动和右键菜单仍需在真实窗口中验收。
+构建后可运行 `build/桌咪.app/Contents/MacOS/TabbyDesktopPet --check-interaction`，检查透明区域、图集裁切、镜像、帧混合、跳跃、连续缩放和屏幕边界；发布脚本也会执行此检查。桌面点击穿透、拖动和右键菜单仍需在真实窗口中验收。
 
 ## Git 仓库与发布
 
@@ -41,9 +49,11 @@ Git 提交邮箱与远程登录是两回事：推送仍需 GitHub 的 SSH 或 HT
 
 脚本从当前源码重新编译，检查 arm64 架构，运行资源、动画状态和投喂数据检查，再生成：
 
-- `dist/TabbyDesktopPet-0.1.0-macOS-arm64.dmg`：打开后将应用拖入 Applications。
-- `dist/TabbyDesktopPet-0.1.0-macOS-arm64.zip`：解压后将应用放入“应用程序”。
-- `dist/TabbyDesktopPet-0.1.0-macOS-arm64.sha256`：上述文件的 SHA-256 校验值。
+- `dist/ZhuoMi-0.2.0-macOS-arm64.dmg`：打开后将应用拖入 Applications。
+- `dist/ZhuoMi-0.2.0-macOS-arm64.zip`：首次安装与应用内更新使用的完整应用包。
+- `dist/ZhuoMi-0.2.0-macOS-arm64.sha256`：安装包与更新列表的 SHA-256 校验值。
+- `dist/appcast.xml`：签名的更新列表，嵌入此版本的变更说明。
+- `dist/release-notes.md`：用于 GitHub Release 的具体变更和签名状态。
 
 M1 和 M2 使用同一个 arm64 包。版本号由 `VERSION` 管理；更新发布前修改该文件。默认最低 macOS 13 是编译与安装元数据的目标，仍应在最低系统版本的真实机器上验收。升级时先退出旧版再替换 `.app`，待办和便签数据保留在用户目录。
 
@@ -51,14 +61,26 @@ M1 和 M2 使用同一个 arm64 包。版本号由 `VERSION` 管理；更新发�
 
 `.github/workflows/release.yml` 会在推送 `main`、Pull Request 和手动运行时编译并上传安装包。可以在 GitHub 仓库的 Actions 页面下载，默认保留 14 天。本机暂时没有编译工具时也能使用此方式。
 
-推送与 `VERSION` 一致的标签，会在构建和检查成功后创建带安装包的 **Release 草稿**：
+推送与 `VERSION` 一致的标签，会在构建和检查成功后创建带安装包的 **Release 草稿**。自动生成草稿需要预先配置更新签名密钥（见下一节）；未配置密钥时以及普通分支、PR 只构建验证包，正式发布可上传本机签好的产物：
 
 ```sh
-git tag -a v0.1.0 -m 'Release 0.1.0'
-git push origin v0.1.0
+git tag -a v0.2.0 -m 'Release 0.2.0'
+git push origin v0.2.0
 ```
 
 到 GitHub 的 Releases 页面检查草稿，再点击 Publish release，其他人就能在仓库可见范围内下载。不要把安装包提交进 Git 历史。工作流使用 [GitHub 官方 macOS 15 arm64 runner](https://github.com/actions/runner-images)。
+
+### 应用内更新与版本说明
+
+从 0.2.0 开始使用 [Sparkle 2](https://sparkle-project.org/documentation/) 完成更新。默认每天自动检查一次，在菜单栏以圆点和「发现新版」提示；不会自动安装或抢占当前工作。用户点击「检查更新…」可查看当前／最新版本、变更说明，再确认下载、安装并重启。新版本的任务数据仍使用原应用标识与目录。旧的 0.1.x 没有更新器，需要手动安装一次 0.2.0。
+
+更新列表固定为 `https://github.com/ahagary/desk-meow/releases/latest/download/appcast.xml`，下载链接固定指向对应版本标签的 ZIP。只有公开发布且标记为 Latest 的正式 Release 才会进入通道；草稿不会推送给用户。首次正式发布之前，手动检查会显示「暂无可用的更新信息」，不会误报已是最新版。
+
+每次发版先修改 `VERSION` 并新增 `ReleaseNotes/<版本>.md`。`CFBundleVersion` 与版本号同步递增（不使用各机器或 CI 的流水号进行版本比较），CI 流水号另存为 `ZhuoMiBuildNumber`。`release.sh` 会生成并签名 ZIP 的更新信息、内嵌变更说明和整个 appcast。客户端强制校验更新列表和安装包的 Ed25519 签名，且在解压前验证安装包。
+
+项目公钥和更新地址保存在 `Configuration/updates.json`；私钥保存在本机登录钥匙串，账户名为 `local.tabby.desktop.pet`，没有写入仓库。请保留这把私钥；更换公钥会使已安装版本无法验证新包。可使用 Sparkle 的 `generate_keys --account local.tabby.desktop.pet -x <安全的仓库外文件>` 导出备份，不要把私钥粘贴到聊天、源码或日志。
+
+本机 `./release.sh` 默认使用钥匙串签名，也支持 `SPARKLE_PRIVATE_KEY_FILE` 指向安全保存的私钥文件。使用 GitHub 自动发布时，需要将同一私钥配置为仓库 Actions secret `ZHUOMI_SPARKLE_PRIVATE_KEY`；工作流经标准输入交给签名工具，未配置密钥时 CI 只构建验证包，并跳过自动创建 Release，保留本机签名发布途径。也可直接上传本机生成的 DMG、ZIP、SHA-256 与 `appcast.xml`，并使用 `dist/release-notes.md` 作为发布说明。普通构建验证可使用 `GENERATE_UPDATE_FEED=0 ./release.sh`，该验证包不应作为一次完整更新发布。
 
 ### 签名与 Apple 公证
 
@@ -152,19 +174,19 @@ done
 
 `build/preview-feeding-model-v1/index.html` 播放应用原生状态机与渲染器导出的逐帧画面，提供完整播放、循环转身、半速和逐帧检查；同目录有含待机和便签开合的 `journey.gif`、单独投喂的 `feed.gif` 与 `feed-steps.png`。从项目根目录运行 `python3 -m http.server 8770 --bind 127.0.0.1 --directory build/preview-feeding-model-v1` 后访问 `http://127.0.0.1:8770/`。
 
-任务在播放前先落盘，退出不会丢失完成记录或重播。多项喂食排队，同一任务去重；等待中和播放中可撤销，播放结束后再保留 5 秒撤销入口。数据保存失败时保留未完成状态并显示错误。菜单栏「试喂一张卡片」可演示，不修改真实待办。
+任务在播放前先落盘，退出不会丢失完成记录或重播。多项喂食排队，同一任务去重；等待中和播放中可撤销，播放结束后再保留 5 秒撤销入口。数据保存失败时保留未完成状态并显示错误。开发验收可通过 `--demo-feed` 演示，不修改真实待办。
 
 低分辨率实验稿保存在 `Assets/pixel/`，对应清单是 `Assets/pet-animations-pixel.json`。它们**不会打包进当前应用**。`Tools/generate_pixel_sprites.py` 只更新实验清单，不会覆盖默认清单。
 
 可运行以下检查：
 
 ```sh
-'build/狸花猫桌面宠物.app/Contents/MacOS/TabbyDesktopPet' --validate-resources
-'build/狸花猫桌面宠物.app/Contents/MacOS/TabbyDesktopPet' --check-animation-flow
-'build/狸花猫桌面宠物.app/Contents/MacOS/TabbyDesktopPet' --check-feeding
-'build/狸花猫桌面宠物.app/Contents/MacOS/TabbyDesktopPet' --export-feed build/preview-feeding-model-v1
+'build/桌咪.app/Contents/MacOS/TabbyDesktopPet' --validate-resources
+'build/桌咪.app/Contents/MacOS/TabbyDesktopPet' --check-animation-flow
+'build/桌咪.app/Contents/MacOS/TabbyDesktopPet' --check-feeding
+'build/桌咪.app/Contents/MacOS/TabbyDesktopPet' --export-feed build/preview-feeding-model-v1
 cp Tools/feed-preview.html build/preview-feeding-model-v1/index.html
-'build/狸花猫桌面宠物.app/Contents/MacOS/TabbyDesktopPet' --export-preview build/preview-head-motion
+'build/桌咪.app/Contents/MacOS/TabbyDesktopPet' --export-preview build/preview-head-motion
 ```
 
 `--check-feeding` 使用临时数据验证保存、重复点击、队列、撤销、中断和减少动态效果，不修改个人任务。UI 验收可用 `--data-file /absolute/path/to/fixture.json --open-notes` 指定独立数据文件。

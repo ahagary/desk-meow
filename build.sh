@@ -2,7 +2,7 @@
 set -euo pipefail
 
 project_dir="${0:A:h}"
-app_dir="$project_dir/build/狸花猫桌面宠物.app"
+app_dir="$project_dir/build/桌咪.app"
 version="${APP_VERSION:-$(<"$project_dir/VERSION")}"
 build_number="${BUILD_NUMBER:-1}"
 minimum_macos="${MACOSX_DEPLOYMENT_TARGET:-13.0}"
@@ -20,22 +20,39 @@ if ! xcode-select -p >/dev/null 2>&1; then
 fi
 compiler="$(xcrun --find swiftc)"
 sdk="$(xcrun --sdk macosx --show-sdk-path)"
+sparkle_dir="$("$project_dir/Tools/fetch_sparkle.sh")"
 
 mkdir -p "$project_dir/build"
 work_dir="$(mktemp -d "$project_dir/build/.app-build.XXXXXX")"
 trap 'rm -rf "$work_dir"' EXIT
-staged_app="$work_dir/狸花猫桌面宠物.app"
-mkdir -p "$staged_app/Contents/MacOS" "$staged_app/Contents/Resources"
+staged_app="$work_dir/桌咪.app"
+mkdir -p "$staged_app/Contents/MacOS" "$staged_app/Contents/Resources" "$staged_app/Contents/Frameworks"
+ditto "$sparkle_dir/Sparkle.framework" "$staged_app/Contents/Frameworks/Sparkle.framework"
 
 "$compiler" -O -swift-version 5 -sdk "$sdk" \
   -target "arm64-apple-macosx${minimum_macos}" \
   -framework AppKit -framework SwiftUI \
+  -F "$sparkle_dir" -framework Sparkle -Xlinker -rpath -Xlinker '@executable_path/../Frameworks' \
   "$project_dir/Sources/main.swift" "$project_dir/Sources/PetAnimation.swift" \
   "$project_dir/Sources/FeedingEffects.swift" "$project_dir/Sources/FeedingChecks.swift" \
   "$project_dir/Sources/PetInteraction.swift" "$project_dir/Sources/InteractionChecks.swift" \
+  "$project_dir/Sources/NoteChecks.swift" \
+  "$project_dir/Sources/AppUpdater.swift" \
   -o "$staged_app/Contents/MacOS/TabbyDesktopPet"
 
-"$python" - "$project_dir/Assets" "$staged_app" "$version" "$build_number" "$minimum_macos" <<'PY'
+# Export every standard 1x/2x representation from the project-owned master.
+iconset="$work_dir/AppIcon.iconset"
+mkdir -p "$iconset"
+for icon_size in 16 32 128 256 512; do
+  sips -s format png -z "$icon_size" "$icon_size" "$project_dir/Assets/AppIcon/app-icon.png" \
+    --out "$iconset/icon_${icon_size}x${icon_size}.png" >/dev/null
+  icon_retina_size=$((icon_size * 2))
+  sips -s format png -z "$icon_retina_size" "$icon_retina_size" "$project_dir/Assets/AppIcon/app-icon.png" \
+    --out "$iconset/icon_${icon_size}x${icon_size}@2x.png" >/dev/null
+done
+iconutil -c icns "$iconset" -o "$staged_app/Contents/Resources/AppIcon.icns"
+
+"$python" - "$project_dir/Assets" "$staged_app" "$version" "$build_number" "$minimum_macos" "$project_dir/Configuration/updates.json" <<'PY'
 import json
 import plistlib
 import re
@@ -44,7 +61,8 @@ import sys
 from pathlib import Path
 
 assets, app = map(Path, sys.argv[1:3])
-version, build_number, minimum_macos = sys.argv[3:]
+version, build_number, minimum_macos = sys.argv[3:6]
+updates = json.loads(Path(sys.argv[6]).read_text())
 if not re.fullmatch(r"[0-9]+\.[0-9]+\.[0-9]+", version):
     raise SystemExit("APP_VERSION / VERSION 必须为三段数字，例如 0.1.0")
 if not re.fullmatch(r"[1-9][0-9]*", build_number):
@@ -64,17 +82,30 @@ for name in sorted(files):
     shutil.copyfile(source, destination)
 shutil.copyfile(manifest_path, resources / manifest_path.name)
 info = {
-    "CFBundleName": "狸花猫桌面宠物",
-    "CFBundleDisplayName": "狸花猫桌面宠物",
+    "CFBundleName": "桌咪",
+    "CFBundleDisplayName": "桌咪",
     "CFBundleIdentifier": "local.tabby.desktop.pet",
-    "CFBundleVersion": build_number,
+    "CFBundleVersion": version,
+    "ZhuoMiBuildNumber": build_number,
     "CFBundleShortVersionString": version,
     "CFBundleExecutable": "TabbyDesktopPet",
+    "CFBundleIconFile": "AppIcon.icns",
     "CFBundlePackageType": "APPL",
     "CFBundleSupportedPlatforms": ["MacOSX"],
     "LSMinimumSystemVersion": minimum_macos,
     "LSUIElement": True,
     "NSHighResolutionCapable": True,
+    "CFBundleDevelopmentRegion": "zh-Hans",
+    "CFBundleLocalizations": ["zh-Hans"],
+    "SUFeedURL": updates["feed_url"],
+    "SUPublicEDKey": updates["public_ed_key"],
+    "SUEnableAutomaticChecks": True,
+    "SUAllowsAutomaticUpdates": False,
+    "SUAutomaticallyUpdate": False,
+    "SUScheduledCheckInterval": 86400,
+    "SUVerifyUpdateBeforeExtraction": True,
+    "SURequireSignedFeed": True,
+    "SUSignedFeedFailureExpirationInterval": 0,
 }
 with (app / "Contents/Info.plist").open("wb") as handle:
     plistlib.dump(info, handle)
